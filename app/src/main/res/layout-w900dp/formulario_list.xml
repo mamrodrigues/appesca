@@ -1,0 +1,101 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:baselineAligned="false"
+    android:divider="?android:attr/dividerHorizontal"
+    android:orientation="horizontal"
+    android:showDividers="middle"
+    tools:context=".view.MenuSituationActivity">
+
+    <!--
+    This layout is a two-pane layout for the Formularios
+    master/detail flow.
+    -->
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:weightSum="1">
+
+        <ImageView
+        android:layout_width="92dp"
+        android:layout_height="92dp"
+        android:id="@+id/imageView2"
+        android:layout_gravity="center_horizontal"
+            android:src="@drawable/perfil" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nome do Pesquisador"
+            android:id="@+id/txtNomeUsuarioLogado"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="email"
+            android:id="@+id/txtEmailUsuarioLogado"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="italic" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Formulários"
+            android:id="@+id/textView" />
+
+        <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/formulario_list"
+            android:name="br.org.unesco.pesquisaunesco.FormularioListFragment"
+            android:layout_width="@dimen/item_width"
+            android:layout_height="150dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            app:layoutManager="LinearLayoutManager"
+            tools:context=".view.MenuSituationActivity"
+            tools:listitem="@layout/formulario_list_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Memória"
+            android:id="@+id/textView2" />
+
+        <ImageView
+            android:layout_width="158dp"
+            android:layout_height="67dp"
+            android:id="@+id/imageView"
+            android:src="@drawable/memoria_em_uso"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Localização"
+            android:id="@+id/textView3" />
+
+        <WebView
+            android:layout_width="fill_parent"
+            android:layout_height="300dp"
+            android:id="@+id/mapa" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/formulario_detail_container"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3" />
+
+</LinearLayout>
