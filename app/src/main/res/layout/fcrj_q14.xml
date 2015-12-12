@@ -22,7 +22,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Questão 06"
+                android:text="Questão 14"
                 android:textColor="@android:color/white"
                 android:textSize="40dp"
                 android:gravity="center"
@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
                 android:textAppearance="@style/style_questao"
-                android:text="Qual é a forma de abastecimento de energia elétrica na sua casa?"/>
+                android:text="Quais cursos você acha que poderiam ser realizados na comunidade?"/>
 
         </LinearLayout>
 
@@ -56,7 +56,7 @@
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="é filtrada"
+                android:text="Organização, associativismo e cooperativismo"
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/opcao_a"
                 android:checked="false" />
@@ -64,7 +64,7 @@
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="é tratada com cloro/hipoclorito"
+                android:text="Comercialização e acesso ao mercado"
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/opcao_b"
                 android:checked="false" />
@@ -72,7 +72,7 @@
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="é fervida"
+                android:text="Gerenciamento de projetos"
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/opcao_c"
                 android:checked="false" />
@@ -80,9 +80,74 @@
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Outro. Qual?"
+                android:text="Educação ambienta"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_d" />
+                android:id="@+id/opcao_d"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Segurança no trabalho da pesca"
+                android:textAppearance="@style/style_resposta"
+                android:id="@+id/opcao_e"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Técnicas de pesca"
+                android:textAppearance="@style/style_resposta"
+                android:id="@+id/opcao_f"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manejo do pescado"
+                android:textAppearance="@style/style_resposta"
+                android:id="@+id/opcao_g"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manutenção de embarcação"
+                android:textAppearance="@style/style_resposta"
+                android:id="@+id/opcao_h"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Confecção de apetrechos de pesca"
+                android:textAppearance="@style/style_resposta"
+                android:id="@+id/opcao_i"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manejo de produtos extrativistas"
+                android:textAppearance="@style/style_resposta"
+                android:id="@+id/opcao_j"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Produção agrícola"
+                android:textAppearance="@style/style_resposta"
+                android:id="@+id/opcao_k"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Outros. Quais? "
+                android:textAppearance="@style/style_resposta"
+                android:id="@+id/opcao_l"
+                android:checked="false" />
 
             <EditText
                 android:layout_width="241dp"
@@ -90,6 +155,7 @@
                 android:id="@+id/outro"
                 android:textAppearance="@style/style_resposta"
                 android:lines="2" />
+
         </LinearLayout>
 
     </LinearLayout>
