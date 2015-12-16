@@ -1,0 +1,1309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center">
+
+    <!-- CONTAINER GERAL -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@drawable/layout_questao">
+
+        <!-- TITULO -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/layout_titulo_questao">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Questão 01"
+                android:textColor="@android:color/white"
+                android:textSize="40dp"
+                android:gravity="center"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- QUESTAO -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:textAppearance="@style/style_questao"
+                android:text="Quantas pessoas moram na sua casa?"/>
+
+            <EditText
+                android:layout_width="241dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/resposta"
+                android:textAppearance="@style/style_resposta"
+                android:lines="1" />
+
+        </LinearLayout>
+
+        <!-- TABULACAO DAS OPCOES -->
+        <TableLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_gravity="center_vertical"
+            android:stretchColumns="0,1,2,3,4,5,6">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical"
+                android:textAlignment="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textAppearance="@style/style_questao"
+                    android:gravity="center"
+                    android:text="Identificação (primeiro nome)"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textAppearance="@style/style_questao"
+                    android:paddingBottom="5dp"
+                    android:text="Sexo"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textAppearance="@style/style_questao"
+                    android:paddingBottom="5dp"
+                    android:text="Idade"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textAppearance="@style/style_questao"
+                    android:paddingBottom="5dp"
+                    android:text="Parentesco"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textAppearance="@style/style_questao"
+                    android:paddingBottom="5dp"
+                    android:text="Já frequentou a escola?"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textAppearance="@style/style_questao"
+                    android:paddingBottom="5dp"
+                    android:text="Até que ano?"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textAppearance="@style/style_questao"
+                    android:paddingBottom="5dp"
+                    android:text="Atualmente estuda?"
+                    android:autoText="false" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nome_a"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="M"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/masculino_a"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="F"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/feminino_a"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/idade_a"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/parentesco_a"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sim"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_a_sim"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Não"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_a_nao"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ano_escola_a"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sim"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_atual_a_sim"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Não"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_atual_a_nao"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nome_b"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="M"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/masculino_b"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="F"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/feminino_b"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/idade_b"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/parentesco_b"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sim"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_b_sim"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Não"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_b_nao"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ano_escola_b"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sim"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_atual_b_sim"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Não"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_atual_b_nao"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nome_c"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="M"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/masculino_c"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="F"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/feminino_c"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/idade_c"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/parentesco_c"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sim"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_c_sim"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Não"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_c_nao"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ano_escola_c"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sim"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_atual_c_sim"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Não"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_atual_c_nao"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nome_d"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="M"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/masculino_d"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="F"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/feminino_d"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/idade_d"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/parentesco_d"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sim"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_d_sim"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Não"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_d_nao"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ano_escola_d"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sim"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_atual_d_sim"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Não"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_atual_d_nao"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nome_e"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="M"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/masculino_e"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="F"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/feminino_e"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/idade_e"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/parentesco_e"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sim"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_e_sim"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Não"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_e_nao"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ano_escola_e"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sim"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_atual_e_sim"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Não"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_atual_e_nao"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nome_f"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="M"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/masculino_f"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="F"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/feminino_f"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/idade_f"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/parentesco_f"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sim"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_f_sim"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Não"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_f_nao"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ano_escola_f"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sim"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_atual_f_sim"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Não"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_atual_f_nao"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nome_g"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="M"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/masculino_g"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="F"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/feminino_g"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/idade_g"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/parentesco_g"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sim"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_g_sim"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Não"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_g_nao"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ano_escola_g"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sim"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_atual_g_sim"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Não"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_atual_g_nao"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nome_h"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="M"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/masculino_h"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="F"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/feminino_h"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/idade_h"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/parentesco_h"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sim"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_h_sim"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Não"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_h_nao"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ano_escola_h"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sim"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_atual_h_sim"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Não"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_atual_h_nao"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nome_i"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="M"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/masculino_i"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="F"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/feminino_i"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/idade_i"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/parentesco_i"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sim"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_i_sim"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Não"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_i_nao"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ano_escola_i"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sim"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_atual_i_sim"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Não"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_atual_i_nao"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nome_j"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="M"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/masculino_j"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="F"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/feminino_j"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/idade_j"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/parentesco_j"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sim"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_j_sim"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Não"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_j_nao"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ano_escola_j"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sim"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_atual_j_sim"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Não"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/escola_atual_j_nao"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+
+            </TableRow>
+
+        </TableLayout>
+
+        <!-- QUESTAO -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:textAppearance="@style/style_questao"
+                android:text="Quem é responsável pela unidade familiar?"/>
+        </LinearLayout>
+
+        <!-- TABULACAO DAS OPCOES -->
+        <TableLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:paddingBottom="10dp"
+            android:layout_gravity="center_vertical"
+            android:stretchColumns="0,1,2">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/style_questao"
+                    android:paddingBottom="5dp"
+                    android:gravity="center"
+                    android:text="Parentesco/Vinculo"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textAppearance="@style/style_questao"
+                    android:paddingBottom="5dp"
+                    android:text="Sexo"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nome_a1"/>
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="M"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/masculino_a1"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="F"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/feminino_a1"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nome_b1"/>
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="M"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/masculino_b1"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="F"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/feminino_b1"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nome_c1"/>
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="M"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/masculino_c1"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="F"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/feminino_c1"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nome_d1"/>
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="M"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/masculino_d1"
+                            android:checked="false"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="F"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/feminino_d1"
+                            android:checked="false"/>
+                    </TableRow>
+                </TableLayout>
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+</ScrollView>

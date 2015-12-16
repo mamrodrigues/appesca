@@ -66,11 +66,13 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="@style/style_questao"
                     android:paddingBottom="5dp"
+                    android:gravity="center"
                     android:text="Parentesco/Vinculo"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:textAppearance="@style/style_questao"
                     android:paddingBottom="5dp"
                     android:text="Sexo"/>
@@ -78,6 +80,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:textAppearance="@style/style_questao"
                     android:paddingBottom="5dp"
                     android:text="Idade"/>
@@ -95,15 +98,15 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal">
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
                         <RadioButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="M"
                             android:textAppearance="@style/style_resposta"
                             android:id="@+id/masculino_a"
-                            android:checked="false"
-                            android:paddingRight="15dp"/>
+                            android:checked="false"/>
 
                         <RadioButton
                             android:layout_width="wrap_content"
@@ -111,8 +114,7 @@
                             android:text="F"
                             android:textAppearance="@style/style_resposta"
                             android:id="@+id/feminino_a"
-                            android:checked="false"
-                            android:paddingRight="15dp"/>
+                            android:checked="false"/>
                     </TableRow>
                 </TableLayout>
                 <EditText
@@ -133,15 +135,15 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal">
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
                         <RadioButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="M"
                             android:textAppearance="@style/style_resposta"
                             android:id="@+id/masculino_b"
-                            android:checked="false"
-                            android:paddingRight="15dp"/>
+                            android:checked="false"/>
 
                         <RadioButton
                             android:layout_width="wrap_content"
@@ -149,8 +151,7 @@
                             android:text="F"
                             android:textAppearance="@style/style_resposta"
                             android:id="@+id/feminino_b"
-                            android:checked="false"
-                            android:paddingRight="15dp"/>
+                            android:checked="false"/>
                     </TableRow>
                 </TableLayout>
                 <EditText
@@ -171,15 +172,15 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal">
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
                         <RadioButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="M"
                             android:textAppearance="@style/style_resposta"
                             android:id="@+id/masculino_c"
-                            android:checked="false"
-                            android:paddingRight="15dp"/>
+                            android:checked="false"/>
 
                         <RadioButton
                             android:layout_width="wrap_content"
@@ -187,8 +188,7 @@
                             android:text="F"
                             android:textAppearance="@style/style_resposta"
                             android:id="@+id/feminino_c"
-                            android:checked="false"
-                            android:paddingRight="15dp"/>
+                            android:checked="false"/>
                     </TableRow>
                 </TableLayout>
                 <EditText
@@ -209,15 +209,15 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal">
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
                         <RadioButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="M"
                             android:textAppearance="@style/style_resposta"
                             android:id="@+id/masculino_d"
-                            android:checked="false"
-                            android:paddingRight="15dp"/>
+                            android:checked="false"/>
 
                         <RadioButton
                             android:layout_width="wrap_content"
@@ -225,8 +225,7 @@
                             android:text="F"
                             android:textAppearance="@style/style_resposta"
                             android:id="@+id/feminino_d"
-                            android:checked="false"
-                            android:paddingRight="15dp"/>
+                            android:checked="false"/>
                     </TableRow>
                 </TableLayout>
                 <EditText
