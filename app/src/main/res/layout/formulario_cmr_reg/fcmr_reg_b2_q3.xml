@@ -82,7 +82,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Se sim, Qual?"
+                    android:text="Se Sim, Qual? (Pode haver mais de uma resposta)"
                     android:textAppearance="@style/style_questao"
                     android:paddingBottom="5dp"/>
 
