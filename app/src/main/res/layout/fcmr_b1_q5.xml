@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -21,7 +22,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Questão 15"
+                android:text="Questão 05"
                 android:textColor="@android:color/white"
                 android:textSize="40dp"
                 android:gravity="center"
@@ -40,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
                 android:textAppearance="@style/style_questao"
-                android:text="Quais são os principais problemas que atingem a comunidade hoje?"/>
+                android:text="Como é feito o abastecimento de água da sua casa?"/>
 
             <!-- RESPOSTA + TABULACAO DAS OPCOES -->
             <LinearLayout
@@ -50,10 +51,9 @@
                 android:paddingBottom="10dp"
                 android:paddingLeft="30dp">
 
-
             </LinearLayout>
 
-          <!-- CONDICAO E RESPOSTA 2 -->
+            <!-- CONDICAO E RESPOSTA 1 -->
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
@@ -70,105 +70,40 @@
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Falta de energia elétrica"
+                        android:text="rede de distribuiçāo"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_a" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Energia elétrica de má qualidade"
+                        android:text="poço"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_b" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Falta de distribuição de água"
+                        android:text="Pega do rio (ou igarapé) com o balde"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_c" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Água de má qualidade"
+                        android:text="Usa bomba elétrica para puxar a água do rio (ou igarapé)"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_d" />
 
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Falta de posto de saúde"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_e" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Má qualidade no atendimento de saúde"
+                        android:text="Outro. Qual?"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_f" />
 
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Lixo"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_g" />
 
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Violência"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_h" />
-
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Conflitos entre moradores"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_i" />
-
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Falta de oportunidades de emprego"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_j" />
-
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Falta de escola"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_k"/>
-
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Falta de transporte escolar"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_l" />
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Falta de estradas de acesso"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_m" />
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Falta de trapiche"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_n" />
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Outros. Quais?"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_o"
-                        android:checked="false" />
                     <EditText
                         android:layout_width="241dp"
                         android:layout_height="wrap_content"
