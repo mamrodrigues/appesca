@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <!-- CONTAINER GERAL -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@drawable/layout_questao">
+
+        <!-- TITULO -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/layout_titulo_questao">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Questão 10"
+                android:textColor="@android:color/white"
+                android:textSize="40dp"
+                android:gravity="center"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- QUESTAO -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:textAppearance="@style/style_questao"
+                android:text="Você faz parte de algum grupo ou organização (associação, sindicato, cooperativa colônia)?"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sim"
+                android:textAppearance="@style/style_resposta"
+                android:id="@+id/sim"
+                android:checked="false"
+                android:paddingRight="15dp"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Não"
+                android:textAppearance="@style/style_resposta"
+                android:id="@+id/nao"
+                android:checked="false"
+                android:paddingRight="15dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:textAppearance="@style/style_questao"
+                android:text="Se sim, quantos?"/>
+
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="241dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/quantos"
+            android:paddingBottom="5dp"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:textAppearance="@style/style_questao"
+                android:text="Qual(is) organização (ões)? (Pode haver mais de uma resposta)"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
+
+            <!-- TABULACAO DAS OPCOES -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="30dp">
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Associação comunitária"
+                    android:textAppearance="@style/style_resposta"
+                    android:id="@+id/opcao_a1" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Associação de pescadores"
+                    android:textAppearance="@style/style_resposta"
+                    android:id="@+id/opcao_b1" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Associação de mulheres"
+                    android:textAppearance="@style/style_resposta"
+                    android:id="@+id/opcao_c1" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Colônia de pescadores"
+                    android:textAppearance="@style/style_resposta"
+                    android:id="@+id/opcao_d1" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sindicato de pescadores"
+                    android:textAppearance="@style/style_resposta"
+                    android:id="@+id/opcao_e1" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sindicato dos Trabalhadores Rurais"
+                    android:textAppearance="@style/style_resposta"
+                    android:id="@+id/opcao_f1" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cooperativas de pesca"
+                    android:textAppearance="@style/style_resposta"
+                    android:id="@+id/opcao_g1" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Outras. Quais?"
+                        android:textAppearance="@style/style_resposta"
+                        android:id="@+id/opcao_h1" />
+
+                    <EditText
+                        android:layout_width="241dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/opcao_h1_edit_text"
+                        android:textAppearance="@style/style_resposta" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:gravity="center"
+                android:textAppearance="@style/style_questao"
+                android:text="Outra pessoa da sua família também faz parte de algum grupo ou organização (associação, sindicato, cooperativa, colônia)?"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sim"
+                android:textAppearance="@style/style_resposta"
+                android:id="@+id/sim_2"
+                android:checked="false"
+                android:paddingRight="15dp"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Não"
+                android:textAppearance="@style/style_resposta"
+                android:id="@+id/nao_2"
+                android:checked="false"
+                android:paddingRight="15dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:textAppearance="@style/style_questao"
+                android:text="Se sim, quem? (Pode haver mais de uma resposta)"/>
+
+        </LinearLayout>
+
+        <!-- CONDICAO E RESPOSTA 1 -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
+
+            <!-- TABULACAO DAS OPCOES -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="30dp">
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mãe"
+                    android:textAppearance="@style/style_resposta"
+                    android:id="@+id/opcao_a2" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pai"
+                    android:textAppearance="@style/style_resposta"
+                    android:id="@+id/opcao_b2" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Irmão / irmã. Quantos?"
+                        android:textAppearance="@style/style_resposta"
+                        android:id="@+id/opcao_c2" />
+
+                    <EditText
+                        android:layout_width="241dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/quantos_irmaos"
+                        android:textAppearance="@style/style_resposta"
+                        android:paddingBottom="5dp"/>
+                </LinearLayout>
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Marido / esposa"
+                    android:textAppearance="@style/style_resposta"
+                    android:id="@+id/opcao_d2" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Filha / filho. Quantos?"
+                        android:textAppearance="@style/style_resposta"
+                        android:id="@+id/opcao_e2" />
+
+                    <EditText
+                        android:layout_width="241dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/quantos_filhos"
+                        android:textAppearance="@style/style_resposta" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>
