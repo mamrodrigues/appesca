@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -22,7 +21,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Questão 05"
+                android:text="Questão 4"
                 android:textColor="@android:color/white"
                 android:textSize="40dp"
                 android:gravity="center"
@@ -41,11 +40,11 @@
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
                 android:textAppearance="@style/style_questao"
-                android:text="Em qual maré realiza a pesca?  (filtro de produção)"/>
+                android:text="Em qual estação do ano realiza a pesca? (filtro da questão de produção)"/>
 
         </LinearLayout>
 
-        <!-- TABULACAO DAS OPCOES -->
+        <!-- RESPOSTA + TABULACAO DAS OPCOES -->
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="wrap_content"
@@ -56,24 +55,23 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="pequena/baixa/morta"
+                android:text="Verão"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_a"
+                android:id="@+id/verao"
                 android:checked="false"
                 android:paddingRight="15dp"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="alta/grande/lançante"
+                android:text="Inverno"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_b"
+                android:id="@+id/inverno"
                 android:checked="false"
                 android:paddingRight="15dp"/>
 
         </LinearLayout>
 
     </LinearLayout>
-
 
 </LinearLayout>
