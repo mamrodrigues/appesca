@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:gravity="center">
 
-    <!-- CONTAINERa GERAL -->
+    <!-- CONTAINER GERAL -->
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"
@@ -27,57 +27,7 @@
                 android:gravity="center"
                 android:textStyle="bold" />
         </LinearLayout>
-
-        <!-- QUESTAO -->
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="20dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="5dp"
-                android:textAppearance="@style/style_questao"
-                android:text="Você já fez algum curso ou capacitação fora da comunidade?"/>
-
-            <!-- RESPOSTA + TABULACAO DAS OPCOES -->
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
-                android:layout_gravity="center">
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sim"
-                    android:textAppearance="@style/style_resposta"
-                    android:id="@+id/sim"
-                    android:checked="false"
-                    android:paddingRight="15dp"/>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Não"
-                    android:textAppearance="@style/style_resposta"
-                    android:id="@+id/nao"
-                    android:checked="false"
-                    android:paddingRight="15dp"/>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Não Lembra"
-                    android:textAppearance="@style/style_resposta"
-                    android:id="@+id/nao_lembra"
-                    android:checked="false"
-                    android:paddingRight="15dp"/>
-            </LinearLayout>
-
-            <!-- CONDICAO E RESPOSTA 2 -->
+    <!-- CONDICAO E RESPOSTA  -->
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
@@ -87,7 +37,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Se sim, qual foi o tema do curso?"
+                    android:text="Quais são os principais problemas que atingem a comunidade hoje? "
                     android:textAppearance="@style/style_questao"
                     android:paddingBottom="5dp"/>
 
@@ -101,79 +51,101 @@
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Organização, associativismo e cooperativismo"
+                        android:text="Falta de energia elétrica"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_a" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Comercialização e acesso ao mercado"
+                        android:text="Energia elétrica de má qualidade"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_b" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Gerenciamento de projetos"
+                        android:text="Falta de distribuição de água"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_c" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Educação ambiental"
+                        android:text="Água de má qualidade"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_d" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Segurança no trabalho da pesca"
+                        android:text="Falta de posto de saúde"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_e" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Técnicas de pesca"
+                        android:text="Má qualidade no atendimento de saúde"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_f" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Manejo do pescado"
+                        android:text="Lixo"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_g" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Manutenção de embarcação"
+                        android:text="Violência"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_h" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Confecção de apetrechos de pesca"
+                        android:text="Conflitos entre moradores"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_i" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Manejo de produtos extrativistas"
+                        android:text="Falta de oportunidades de emprego"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_j" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Produção agrícola"
+                        android:text="Falta de escola"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_k"/>
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Falta de transporte escolar"
+                        android:textAppearance="@style/style_resposta"
+                        android:id="@+id/opcao_l"/>
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Falta de estradas de acesso"
+                        android:textAppearance="@style/style_resposta"
+                        android:id="@+id/opcao_m"/>
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Falta de trapiche"
+                        android:textAppearance="@style/style_resposta"
+                        android:id="@+id/opcao_n"/>
+
+
+
+
 
                     <LinearLayout
                         android:orientation="horizontal"
@@ -185,7 +157,7 @@
                             android:layout_height="wrap_content"
                             android:text="Outros. Quais?"
                             android:textAppearance="@style/style_resposta"
-                            android:id="@+id/opcao_l" />
+                            android:id="@+id/opcao_o" />
 
                         <EditText
                             android:layout_width="241dp"
@@ -202,5 +174,3 @@
         </LinearLayout>
 
     </LinearLayout>
-
-</LinearLayout>
