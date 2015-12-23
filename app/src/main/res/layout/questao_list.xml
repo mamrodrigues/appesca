@@ -9,5 +9,5 @@
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
     app:layoutManager="LinearLayoutManager"
-    tools:context="br.org.unesco.appesca.view.QuestaoListActivity"
-    tools:listitem="@layout/questao_list_content" />
+    tools:context=".view.FormularioCaranguejoActivity"
+    tools:listitem="@layout/questao_list_title" />

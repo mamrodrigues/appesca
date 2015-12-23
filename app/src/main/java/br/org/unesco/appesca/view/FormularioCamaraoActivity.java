@@ -12,28 +12,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import br.org.unesco.appesca.R;
-
-import br.org.unesco.appesca.control.QuestaoDetailFragment;
-import br.org.unesco.appesca.model.ItemMenuLateral;
-
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * An activity representing a list of Questoes. This activity
- * has different presentations for handset and tablet-size devices. On
- * handsets, the activity presents a list of items, which when touched,
- * lead to a {@link QuestaoDetailActivity} representing
- * item details. On tablets, the activity presents the list of items and
- * item details side-by-side using two vertical panes.
- */
-public class QuestaoListActivity extends AppCompatActivity {
+import br.org.unesco.appesca.R;
+import br.org.unesco.appesca.control.QuestaoDetailFragment;
+import br.org.unesco.appesca.model.ItemMenuLateral;
+import br.org.unesco.appesca.util.ConstantesCamaraoRegional;
 
-    /**
-     * Whether or not the activity is in two-pane mode, i.e. running on a tablet
-     * device.
-     */
+
+public class FormularioCamaraoActivity extends AppCompatActivity {
+
     private boolean mTwoPane;
 
     @Override
@@ -50,20 +39,20 @@ public class QuestaoListActivity extends AppCompatActivity {
         setupRecyclerView((RecyclerView) recyclerView);
 
         if (findViewById(R.id.questao_detail_container) != null) {
-            // The detail container view will be present only in the
-            // large-screen layouts (res/values-w900dp).
-            // If this view is present, then the
-            // activity should be in two-pane mode.
             mTwoPane = true;
         }
     }
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView){
 
-        List<ItemMenuLateral> listaMenuLateral = new ArrayList<>();
-        listaMenuLateral.add(new ItemMenuLateral(1, "Identificação do entrevistado", "Cadastro do identificado", R.layout.questao_identificacao));
-        listaMenuLateral.add(new ItemMenuLateral(2, "Questão 1", "Questão 1", R.layout.questao_detail));
-        listaMenuLateral.add(new ItemMenuLateral(3, "Questão 2", "Questão 2", R.layout.questao_detail));
+        List<ItemMenuLateral> listaMenuLateral = new ArrayList<ItemMenuLateral>();
+        listaMenuLateral.add(new ItemMenuLateral(1, "Identificação do entrevistado", R.layout.questao_identificacao));
+
+        int[] questoesFormulario = ConstantesCamaraoRegional.getQuestoesArray;
+
+        for(int i=1; i<questoesFormulario.length; i++){
+            listaMenuLateral.add(new ItemMenuLateral(i, "Questão "+i, questoesFormulario[i]));
+        }
 
         recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(listaMenuLateral));
     }
@@ -71,24 +60,31 @@ public class QuestaoListActivity extends AppCompatActivity {
     public class SimpleItemRecyclerViewAdapter
             extends RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder> {
 
-        private final List<ItemMenuLateral> mValues;
+        private final List<ItemMenuLateral> mValues = new ArrayList<ItemMenuLateral>();
 
         public SimpleItemRecyclerViewAdapter(List<ItemMenuLateral> items) {
-            mValues = items;
+
+            mValues.add(new ItemMenuLateral(1, "Identificação do entrevistado", R.layout.questao_identificacao));
+
+            int[] questoesFormulario = ConstantesCamaraoRegional.getQuestoesArray;
+
+            for(int i=1; i<questoesFormulario.length; i++){
+                mValues.add(new ItemMenuLateral(i, "Questão "+i, questoesFormulario[i]));
+            }
+
         }
 
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.questao_list_content, parent, false);
+                    .inflate(R.layout.questao_list_title, parent, false);
             return new ViewHolder(view);
         }
 
         @Override
         public void onBindViewHolder(final ViewHolder holder, int position) {
             holder.mItem = mValues.get(position);
-            holder.mIdView.setText(mValues.get(position).id);
-            holder.mContentView.setText(mValues.get(position).content);
+            holder.mTitleView.setText(mValues.get(position).title);
 
             holder.mView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -119,21 +115,15 @@ public class QuestaoListActivity extends AppCompatActivity {
 
         public class ViewHolder extends RecyclerView.ViewHolder {
             public final View mView;
-            public final TextView mIdView;
-            public final TextView mContentView;
+            public final TextView mTitleView;
             public ItemMenuLateral mItem;
 
             public ViewHolder(View view) {
                 super(view);
                 mView = view;
-                mIdView = (TextView) view.findViewById(R.id.id);
-                mContentView = (TextView) view.findViewById(R.id.content);
+                mTitleView = (TextView) view.findViewById(R.id.title);
             }
 
-            @Override
-            public String toString() {
-                return super.toString() + " '" + mContentView.getText() + "'";
-            }
         }
     }
 }

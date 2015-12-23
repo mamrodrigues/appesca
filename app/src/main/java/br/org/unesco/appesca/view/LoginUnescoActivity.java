@@ -350,7 +350,7 @@ public class LoginUnescoActivity extends AppCompatActivity implements LoaderCall
             showProgress(false);
 
             if (success) {
-                Intent intent = new Intent(LoginUnescoActivity.this, MenuSituationActivity.class);
+                Intent intent = new Intent(LoginUnescoActivity.this, HomeActivity.class);
                 startActivity(intent);
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));

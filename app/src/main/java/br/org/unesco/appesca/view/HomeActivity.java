@@ -36,7 +36,7 @@ import br.org.unesco.appesca.model.MenuContent;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MenuSituationActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
 
     private FloatingActionMenu menu1;
 
@@ -115,7 +115,7 @@ public class MenuSituationActivity extends AppCompatActivity {
         assert recyclerView != null;
         setupRecyclerView((RecyclerView) recyclerView);
 
-        creatFloatButton();
+        createFloatButton();
     }
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
@@ -134,15 +134,15 @@ public class MenuSituationActivity extends AppCompatActivity {
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.formulario_list_content, parent, false);
+                    .inflate(R.layout.formulario_list_title, parent, false);
             return new ViewHolder(view);
         }
 
         @Override
         public void onBindViewHolder(final ViewHolder holder, int position) {
             holder.mItem = mValues.get(position);
-//            holder.mIdView.setText(mValues.get(position).id);
-            holder.mContentView.setText(mValues.get(position).content);
+
+            holder.mTitleView.setText(mValues.get(position).title);
 
             holder.mView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -165,58 +165,84 @@ public class MenuSituationActivity extends AppCompatActivity {
 
         public class ViewHolder extends RecyclerView.ViewHolder {
             public final View mView;
-            public final TextView mIdView;
-            public final TextView mContentView;
+            public final TextView mTitleView;
             public ItemMenuLateral mItem;
 
             public ViewHolder(View view) {
                 super(view);
                 mView = view;
-                mIdView = (TextView) view.findViewById(R.id.id);
-                mContentView = (TextView) view.findViewById(R.id.content);
+                mTitleView = (TextView) view.findViewById(R.id.title);
             }
 
             @Override
             public String toString() {
-                return super.toString() + " '" + mContentView.getText() + "'";
+                return super.toString() + " '" + mTitleView.getText() + "'";
             }
         }
     }
 
 
 
-    protected void creatFloatButton() {
+    protected void createFloatButton() {
 
-        final FloatingActionButton form1 = new FloatingActionButton(this);
-        form1.setButtonSize(FloatingActionButton.SIZE_MINI);
-        form1.setLabelText("Questoes para comunitarios");
-        form1.setImageResource(R.drawable.fab_add);
+        final FloatingActionButton formCamarao = new FloatingActionButton(this);
+        formCamarao.setButtonSize(FloatingActionButton.SIZE_MINI);
+        formCamarao.setLabelText("Formulário Camarão");
+        formCamarao.setImageResource(R.drawable.fab_add);
 
-        final FloatingActionButton form2 = new FloatingActionButton(this);
-        form2.setButtonSize(FloatingActionButton.SIZE_MINI);
-        form2.setLabelText("Questoes para agricultores");
-        form2.setImageResource(R.drawable.fab_add);
+        final FloatingActionButton formCaranguejo = new FloatingActionButton(this);
+        formCaranguejo.setButtonSize(FloatingActionButton.SIZE_MINI);
+        formCaranguejo.setLabelText("Formulário Caranguejo");
+        formCaranguejo.setImageResource(R.drawable.fab_add);
 
-        menu1.addMenuButton(form1);
-        menu1.addMenuButton(form2);
+        final FloatingActionButton formCamaraoRegional = new FloatingActionButton(this);
+        formCamaraoRegional.setButtonSize(FloatingActionButton.SIZE_MINI);
+        formCamaraoRegional.setLabelText("Formulário Camarão Regional");
+        formCamaraoRegional.setImageResource(R.drawable.fab_add);
 
-        form1.setOnClickListener(new View.OnClickListener() {
+        menu1.addMenuButton(formCamarao);
+        menu1.addMenuButton(formCaranguejo);
+        menu1.addMenuButton(formCamaraoRegional);
+
+        formCamarao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                formularioAtual  = new Formulario();
+                formularioAtual = new Formulario();
 
                 FormularioDAO.findListaFormulario().add(formularioAtual);
 
                 Context context = v.getContext();
-                Intent intent = new Intent(context, QuestaoListActivity.class);
+                Intent intent = new Intent(context, FormularioCamaraoActivity.class);
 
                 context.startActivity(intent);
             }
         });
-        form2.setOnClickListener(new View.OnClickListener() {
+
+        formCaranguejo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO agricultores
+                formularioAtual = new Formulario();
+
+                FormularioDAO.findListaFormulario().add(formularioAtual);
+
+                Context context = v.getContext();
+                Intent intent = new Intent(context, FormularioCaranguejoActivity.class);
+
+                context.startActivity(intent);
+            }
+        });
+
+        formCamaraoRegional.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                formularioAtual = new Formulario();
+
+                FormularioDAO.findListaFormulario().add(formularioAtual);
+
+                Context context = v.getContext();
+                Intent intent = new Intent(context, FormularioCamaraoRegionalActivity.class);
+
+                context.startActivity(intent);
             }
         });
 

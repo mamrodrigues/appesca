@@ -18,13 +18,25 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name="br.org.unesco.appesca.view.MenuSituationActivity"
+            android:name=".view.HomeActivity"
             android:label="@string/app_name"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity
-            android:name="br.org.unesco.appesca.view.QuestaoListActivity"
+            android:name=".view.FormularioCaranguejoActivity"
+            android:label="@string/title_questao_list"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".view.FormularioCamaraoActivity"
+            android:label="@string/title_questao_list"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".view.FormularioCamaraoRegionalActivity"
             android:label="@string/title_questao_list"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -32,12 +44,12 @@
         <activity
             android:name="br.org.unesco.appesca.view.QuestaoDetailActivity"
             android:label="@string/title_questao_detail"
-            android:parentActivityName="br.org.unesco.appesca.view.QuestaoListActivity"
+            android:parentActivityName=".view.FormularioCaranguejoActivity"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="br.org.unesco.appesca.view.QuestaoListActivity" />
+                android:value=".view.FormularioCaranguejoActivity" />
         </activity>
 
         <activity

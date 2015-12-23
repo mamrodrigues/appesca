@@ -17,7 +17,7 @@ import br.org.unesco.appesca.model.ItemMenuLateral;
  */
 public class FormularioDetailAdapter extends RecyclerView.Adapter<FormularioDetailAdapter.ViewHolder>{
 
-    private ArrayList<Formulario> mDataset;
+    private ArrayList<Formulario> mListFormulario = new ArrayList<Formulario>();
 
     private ItemMenuLateral mCurrentItemMenuLateral;
 
@@ -38,13 +38,13 @@ public class FormularioDetailAdapter extends RecyclerView.Adapter<FormularioDeta
     }
 
     public void add(int position, Formulario item) {
-        mDataset.add(position, item);
+        mListFormulario.add(position, item);
         notifyItemInserted(position);
     }
 
     public void remove(String item) {
-        int position = mDataset.indexOf(item);
-        mDataset.remove(position);
+        int position = mListFormulario.indexOf(item);
+        mListFormulario.remove(position);
         notifyItemRemoved(position);
     }
 
@@ -62,7 +62,7 @@ public class FormularioDetailAdapter extends RecyclerView.Adapter<FormularioDeta
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        final Formulario formulario = mDataset.get(position);
+        final Formulario formulario = mListFormulario.get(position);
         holder.nome.setText(formulario.getIdentificacaoEntrevistado().getNome());
         holder.ufmunicipio.setText(formulario.getIdentificacaoEntrevistado().getMunicipio().concat("/").concat(formulario.getIdentificacaoEntrevistado().getMunicipio()));
 
@@ -70,7 +70,7 @@ public class FormularioDetailAdapter extends RecyclerView.Adapter<FormularioDeta
 
     @Override
     public int getItemCount() {
-        return mDataset.size();
+        return mListFormulario.size();
     }
 
 

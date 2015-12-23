@@ -10,12 +10,12 @@ import android.view.ViewGroup;
 
 import br.org.unesco.appesca.R;
 import br.org.unesco.appesca.view.QuestaoDetailActivity;
-import br.org.unesco.appesca.view.QuestaoListActivity;
+import br.org.unesco.appesca.view.FormularioCaranguejoActivity;
 //import br.org.unesco.pesquisaunesco.view.dummy.DummyContent;
 
 /**
  * A fragment representing a single Questao detail screen.
- * This fragment is either contained in a {@link QuestaoListActivity}
+ * This fragment is either contained in a {@link FormularioCaranguejoActivity}
  * in two-pane mode (on tablets) or a {@link QuestaoDetailActivity}
  * on handsets.
  */

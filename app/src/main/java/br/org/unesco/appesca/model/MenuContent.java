@@ -12,9 +12,9 @@ public class MenuContent {
 
 
     static {
-            addItem(new ItemMenuLateral(1, "Todos", "Exibindo toda a lista de formulários.",1)); //TODO
-            addItem(new ItemMenuLateral(2, "Enviados", "Exibindo somente os formulários enviados.",2)); //TODO
-            addItem(new ItemMenuLateral(3, "Não Enviados","Exibindo somente os formulários não enviados.",3)); //TODO
+            addItem(new ItemMenuLateral(1, "Todos",1)); //TODO
+            addItem(new ItemMenuLateral(2, "Enviados", 2)); //TODO
+            addItem(new ItemMenuLateral(3, "Não Enviados",3)); //TODO
     }
 
     private static void addItem(ItemMenuLateral item) {

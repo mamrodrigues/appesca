@@ -9,7 +9,7 @@
     android:divider="?android:attr/dividerHorizontal"
     android:orientation="horizontal"
     android:showDividers="middle"
-    tools:context="br.org.unesco.appesca.view.QuestaoListActivity">
+    tools:context=".view.FormularioCaranguejoActivity">
 
     <!--
     This layout is a two-pane layout for the Questoes
@@ -26,8 +26,8 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         app:layoutManager="LinearLayoutManager"
-        tools:context="br.org.unesco.appesca.view.QuestaoListActivity"
-        tools:listitem="@layout/questao_list_content" />
+        tools:context=".view.FormularioCaranguejoActivity"
+        tools:listitem="@layout/questao_list_title" />
 
     <FrameLayout
         android:id="@+id/questao_detail_container"
