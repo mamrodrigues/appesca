@@ -130,7 +130,7 @@
                     <EditText
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
-                        android:id="@+id/quantos"/>
+                        android:id="@+id/quantosCidade"/>
                 </LinearLayout>
             </LinearLayout>
 
