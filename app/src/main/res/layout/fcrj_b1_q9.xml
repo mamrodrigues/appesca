@@ -29,53 +29,135 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <!-- QUESTAO -->
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="20dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="5dp"
-                android:textAppearance="@style/style_questao"
-                android:text="Você é faz parte de algum grupo ou
-organização (associação, sindicato, cooperativa colônia)?"/>
-
-            <!-- RESPOSTA + TABULACAO DAS OPCOES -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
-                android:paddingLeft="30dp">
-                <RadioButton
+                android:orientation="vertical"
+                android:layout_gravity="center">
+            <!-- QUESTAO -->
+                <LinearLayout
+                    android:orientation="vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sim"
-                    android:textAppearance="@style/style_resposta"
-                    android:id="@+id/sim"
-                    android:checked="false"
-                    android:paddingRight="15dp"/>
+                    android:padding="20dp">
 
-                <RadioButton
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="5dp"
+                        android:textAppearance="@style/style_questao"
+                        android:text="Se sim, quantas?"/>
+
+
+                    <EditText
+                        android:layout_width="241dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/outro"
+                        android:textAppearance="@style/style_resposta"
+                        android:lines="2" />
+
+                </LinearLayout>
+                <!-- QUESTAO -->
+                <LinearLayout
+                    android:orientation="vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Não"
-                    android:textAppearance="@style/style_resposta"
-                    android:id="@+id/nao"
-                    android:checked="false"
-                    android:paddingRight="15dp"/>
+                    android:padding="20dp">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="5dp"
+                        android:textAppearance="@style/style_questao"
+                        android:text="Qual (is) organização (ões)? (Pode haver mais de uma resposta)"/>
+
+                </LinearLayout>
+
+                <!-- TABULACAO DAS OPCOES -->
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="30dp"
+                    android:paddingBottom="10dp">
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Associação comunitária"
+                        android:textAppearance="@style/style_resposta"
+                        android:id="@+id/opcao_a"
+                        android:checked="false" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Associação de pescadores "
+                        android:textAppearance="@style/style_resposta"
+                        android:id="@+id/opcao_b"
+                        android:checked="false" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Associação de mulheres"
+                        android:textAppearance="@style/style_resposta"
+                        android:id="@+id/opcao_c"
+                        android:checked="false" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Colônia de pescadores"
+                        android:textAppearance="@style/style_resposta"
+                        android:id="@+id/opcao_d"
+                        android:checked="false" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Colônia de pescadores"
+                        android:textAppearance="@style/style_resposta"
+                        android:id="@+id/opcao_e"
+                        android:checked="false" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Colônia de pescadores"
+                        android:textAppearance="@style/style_resposta"
+                        android:id="@+id/opcao_f"
+                        android:checked="false" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Colônia de pescadores"
+                        android:textAppearance="@style/style_resposta"
+                        android:id="@+id/opcao_g"
+                        android:checked="false" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Outro. Qual?"
+                        android:textAppearance="@style/style_resposta"
+                        android:id="@+id/opcao_h" />
+
+
+                    <EditText
+                        android:layout_width="241dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/outro2"
+                        android:textAppearance="@style/style_resposta"
+                        android:lines="2" />
+                </LinearLayout>
             </LinearLayout>
 
-
-
-        </LinearLayout>
-
-
+         </ScrollView>
 
     </LinearLayout>
 

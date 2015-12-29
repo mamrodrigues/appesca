@@ -22,7 +22,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Questão 07"
+                android:text="Questão 08"
                 android:textColor="@android:color/white"
                 android:textSize="40dp"
                 android:gravity="center"

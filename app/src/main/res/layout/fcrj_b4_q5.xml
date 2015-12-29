@@ -22,7 +22,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Questão 9.2"
+                android:text="Questão 05"
                 android:textColor="@android:color/white"
                 android:textSize="40dp"
                 android:gravity="center"
@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
                 android:textAppearance="@style/style_questao"
-                android:text="Qual (is) organização (ões)? (Pode haver mais de uma resposta)"/>
+                android:text="Quais são os principais problemas ambientais que você percebe aqui na região atualmente? (Pode haver mais de uma resposta)"/>
 
         </LinearLayout>
 
@@ -56,7 +56,7 @@
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Associação comunitária"
+                android:text="Desmatamento das nascentes "
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/opcao_a"
                 android:checked="false" />
@@ -64,7 +64,7 @@
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Associação de pescadores "
+                android:text="Desmatamento dos rios e igarapés"
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/opcao_b"
                 android:checked="false" />
@@ -72,7 +72,7 @@
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Associação de mulheres"
+                android:text="Desmatamento da floresta"
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/opcao_c"
                 android:checked="false" />
@@ -80,7 +80,7 @@
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Colônia de pescadores"
+                android:text="Erosão "
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/opcao_d"
                 android:checked="false" />
@@ -88,7 +88,7 @@
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Colônia de pescadores"
+                android:text="Poluição das águas dos rios ou do mar"
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/opcao_e"
                 android:checked="false" />
@@ -96,7 +96,7 @@
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Colônia de pescadores"
+                android:text="Diminuição de produtos de extrativismo "
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/opcao_f"
                 android:checked="false" />
@@ -104,7 +104,7 @@
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Colônia de pescadores"
+                android:text="Diminuição dos pescados)"
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/opcao_g"
                 android:checked="false" />
@@ -112,9 +112,17 @@
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Puxador/a rezador/a, benzedor/a "
+                android:textAppearance="@style/style_resposta"
+                android:id="@+id/opcao_h"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="Outro. Qual?"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_h" />
+                android:id="@+id/opcao_i" />
 
 
             <EditText
@@ -123,6 +131,8 @@
                 android:id="@+id/outro"
                 android:textAppearance="@style/style_resposta"
                 android:lines="2" />
+
+
         </LinearLayout>
 
     </LinearLayout>

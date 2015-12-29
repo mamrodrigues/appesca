@@ -22,20 +22,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Questão 03"
+                android:text="Questão 04"
                 android:textColor="@android:color/white"
                 android:textSize="40dp"
                 android:gravity="center"
                 android:textStyle="bold" />
         </LinearLayout>
-        <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
                 <!-- QUESTAO -->
                 <LinearLayout
                     android:orientation="vertical"
@@ -48,7 +40,7 @@
                         android:layout_height="wrap_content"
                         android:paddingBottom="5dp"
                         android:textAppearance="@style/style_questao"
-                        android:text="Você é proprietário do terreno onde mora?"/>
+                        android:text="Existem pessoas de fora da comunidade que prejudicam o meio ambiente aqui na região?"/>
 
                     <!-- RESPOSTA + TABULACAO DAS OPCOES -->
                     <LinearLayout
@@ -89,8 +81,7 @@
                         android:layout_height="wrap_content"
                         android:paddingBottom="5dp"
                         android:textAppearance="@style/style_questao"
-                        android:text="Se sim, qual foi a forma de aquisição da moradia?"/>
-
+                        android:text="Se sim, de que forma? (Pode haver mais de uma resposta)"/>
                 </LinearLayout>
 
                 <!-- TABULACAO DAS OPCOES -->
@@ -104,7 +95,7 @@
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Compra"
+                        android:text="Desmatando a floresta"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_a"
                         android:checked="false" />
@@ -112,7 +103,7 @@
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Herança "
+                        android:text="Usando zangaria para a pesca do camarão  "
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_b"
                         android:checked="false" />
@@ -120,7 +111,7 @@
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Doação "
+                        android:text="Usando tapagem nos igarapés/rios "
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_c"
                         android:checked="false" />
@@ -128,25 +119,17 @@
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Reforma Agrária (INCRA) "
+                        android:text="Jogando lixo no rio "
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_d"
                         android:checked="false" />
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Ocupação "
+                        android:text="Pescando camarão pequeno"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_e"
                         android:checked="false" />
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Não sabe "
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_f"
-                        android:checked="false" />
-
 
                     <CheckBox
                         android:layout_width="wrap_content"
@@ -163,95 +146,6 @@
                         android:textAppearance="@style/style_resposta"
                         android:lines="2" />
                 </LinearLayout>
-
-                <!-- QUESTAO -->
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingBottom="5dp"
-                        android:textAppearance="@style/style_questao"
-                        android:text="Se não, qual é o seu vínculo com o proprietário do terreno?"/>
-
-                </LinearLayout>
-
-                <!-- TABULACAO DAS OPCOES -->
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="30dp"
-                    android:paddingBottom="10dp">
-
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Filho"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_a2"
-                        android:checked="false" />
-
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Cônjuge "
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_b2"
-                        android:checked="false" />
-
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Genro/Nora "
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_c2"
-                        android:checked="false" />
-
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Cunhado(a) "
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_d2"
-                        android:checked="false" />
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Sogro(a) "
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_e2"
-                        android:checked="false" />
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Arrendatário "
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_f2"
-                        android:checked="false" />
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Meeiro, terça ou quarta "
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_g2"
-                        android:checked="false" />
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Não sei "
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_h2"
-                        android:checked="false" />
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-        </ScrollView>
 
     </LinearLayout>
 

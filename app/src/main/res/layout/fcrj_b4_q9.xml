@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center">
 
-    <!-- CONTAINER GERAL -->
+    <!-- CONTAINERa GERAL -->
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"
@@ -41,19 +40,37 @@
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
                 android:textAppearance="@style/style_questao"
-                android:text="Se sim, quantas?"/>
+                android:text="Você acredita que as futuras gerações da comunidade poderão sobreviver dos recursos naturais? "/>
 
-
-            <EditText
-                android:layout_width="241dp"
+            <!-- RESPOSTA + TABULACAO DAS OPCOES -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/outro"
-                android:textAppearance="@style/style_resposta"
-                android:lines="2" />
+                android:paddingBottom="10dp"
+                android:layout_gravity="center">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sim"
+                    android:textAppearance="@style/style_resposta"
+                    android:id="@+id/sim"
+                    android:checked="false"
+                    android:paddingRight="15dp"/>
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Não"
+                    android:textAppearance="@style/style_resposta"
+                    android:id="@+id/nao"
+                    android:checked="false"
+                    android:paddingRight="15dp"/>
+
+
+            </LinearLayout>
 
         </LinearLayout>
-
-
 
     </LinearLayout>
 
