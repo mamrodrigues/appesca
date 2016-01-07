@@ -26,6 +26,8 @@ public class QuestaoDetailActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
+
+
         if (savedInstanceState == null) {
 
             Bundle arguments = new Bundle();

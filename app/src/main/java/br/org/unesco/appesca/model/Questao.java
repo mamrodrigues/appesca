@@ -1,67 +1,57 @@
 package br.org.unesco.appesca.model;
 
-import java.io.Serializable;
+public class Questao implements java.io.Serializable {
 
-/**
- * Created by yesus on 11/29/15.
- * Classe que representa a questão de qualquer tipo.
- */
-public class Questao implements Serializable{
+	private static final long serialVersionUID = -7214392109110721089L;
 
-    private long id;
-    private short numeroQuestao;
-    private byte tipoQuestao;
-    private String outroResposta;
+	private Integer id;
+	private String titulo;
+	private Integer ordem;
+	private int idFormulario;
 
-    private byte[] audio;
+	public Questao() {
+	}
 
-    private boolean respondida;
+	public Questao(int idFormulario) {
+		this.idFormulario = idFormulario;
+	}
 
-    public long getId() {
-        return id;
-    }
+	public Questao(String titulo, Integer ordem, int idFormulario) {
+		this.titulo = titulo;
+		this.ordem = ordem;
+		this.idFormulario = idFormulario;
+	}
 
-    public void setId(long id) {
-        this.id = id;
-    }
+	public Integer getId() {
+		return this.id;
+	}
 
-    public short getNumeroQuestao() {
-        return numeroQuestao;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public void setNumeroQuestao(short numeroQuestao) {
-        this.numeroQuestao = numeroQuestao;
-    }
+	public String getTitulo() {
+		return this.titulo;
+	}
 
-    public byte getTipoQuestao() {
-        return tipoQuestao;
-    }
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
 
-    public void setTipoQuestao(byte tipoQuestao) {
-        this.tipoQuestao = tipoQuestao;
-    }
+	public Integer getOrdem() {
+		return this.ordem;
+	}
 
-    public String getOutroResposta() {
-        return outroResposta;
-    }
+	public void setOrdem(Integer ordem) {
+		this.ordem = ordem;
+	}
 
-    public void setOutroResposta(String outroResposta) {
-        this.outroResposta = outroResposta;
-    }
+	public int getIdFormulario() {
+		return this.idFormulario;
+	}
 
-    public byte[] getAudio() {
-        return audio;
-    }
+	public void setIdFormulario(int idFormulario) {
+		this.idFormulario = idFormulario;
+	}
 
-    public void setAudio(byte[] audio) {
-        this.audio = audio;
-    }
-
-    public boolean isRespondida() {
-        return respondida;
-    }
-
-    public void setRespondida(boolean respondida) {
-        this.respondida = respondida;
-    }
 }

@@ -1,89 +1,65 @@
 package br.org.unesco.appesca.model;
 
-import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
-/**
- * Created by yesus on 11/29/15.
- */
-public class Formulario implements Serializable{
+public class Formulario implements java.io.Serializable {
 
-    private long id;
-    private String tipo;
-    private Date dataAplicacao;
-    private String nomePesquisador;
+	private static final long serialVersionUID = 2165508619825487958L;
 
-    private boolean enviado;
+	private Integer id;
+	private String nome;
+	private int idTipoFormulario;
+	private int idUsuario;
+	private Date dataAplicacao;
 
-    private IdentificacaoEntrevistado identificacaoEntrevistado;
+	public Formulario() {
+	}
 
-    private List<Questao> questoes;
+	public Formulario(String nome, int idTipoFormulario, int idUsuario, Date dataAplicacao) {
+		this.nome = nome;
+		this.idTipoFormulario = idTipoFormulario;
+		this.idUsuario = idUsuario;
+		this.dataAplicacao = dataAplicacao;
+	}
 
-    //Este campo será usado para armazenar o estado da última questão respondida, desta forma carregará direto nesta para retomar a pesquisa.
-    private short ultimaQuestaoRespondida;
+	public Integer getId() {
+		return this.id;
+	}
 
-    public long getId() {
-        return id;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public void setId(long id) {
-        this.id = id;
-    }
+	public String getNome() {
+		return this.nome;
+	}
 
-    public String getTipo() {
-        return tipo;
-    }
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
+	public int getIdTipoFormulario() {
+		return this.idTipoFormulario;
+	}
 
-    public Date getDataAplicacao() {
-        return dataAplicacao;
-    }
+	public void setIdTipoFormulario(int idTipoFormulario) {
+		this.idTipoFormulario = idTipoFormulario;
+	}
 
-    public void setDataAplicacao(Date dataAplicacao) {
-        this.dataAplicacao = dataAplicacao;
-    }
+	public int getIdUsuario() {
+		return this.idUsuario;
+	}
 
-    public String getNomePesquisador() {
-        return nomePesquisador;
-    }
+	public void setIdUsuario(int idUsuario) {
+		this.idUsuario = idUsuario;
+	}
 
-    public void setNomePesquisador(String nomePesquisador) {
-        this.nomePesquisador = nomePesquisador;
-    }
+	public Date getDataAplicacao() {
+		return this.dataAplicacao;
+	}
 
-    public boolean isEnviado() {
-        return enviado;
-    }
+	public void setDataAplicacao(Date dataAplicacao) {
+		this.dataAplicacao = dataAplicacao;
+	}
 
-    public void setEnviado(boolean enviado) {
-        this.enviado = enviado;
-    }
-
-    public IdentificacaoEntrevistado getIdentificacaoEntrevistado() {
-        return identificacaoEntrevistado;
-    }
-
-    public void setIdentificacaoEntrevistado(IdentificacaoEntrevistado identificacaoEntrevistado) {
-        this.identificacaoEntrevistado = identificacaoEntrevistado;
-    }
-
-    public List<Questao> getQuestoes() {
-        return questoes;
-    }
-
-    public void setQuestoes(List<Questao> questoes) {
-        this.questoes = questoes;
-    }
-
-    public short getUltimaQuestaoRespondida() {
-        return ultimaQuestaoRespondida;
-    }
-
-    public void setUltimaQuestaoRespondida(short ultimaQuestaoRespondida) {
-        this.ultimaQuestaoRespondida = ultimaQuestaoRespondida;
-    }
 }

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="appesca-common">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/appesca-common.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

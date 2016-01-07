@@ -63,8 +63,8 @@ public class FormularioDetailAdapter extends RecyclerView.Adapter<FormularioDeta
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         final Formulario formulario = mListFormulario.get(position);
-        holder.nome.setText(formulario.getIdentificacaoEntrevistado().getNome());
-        holder.ufmunicipio.setText(formulario.getIdentificacaoEntrevistado().getMunicipio().concat("/").concat(formulario.getIdentificacaoEntrevistado().getMunicipio()));
+        holder.nome.setText("Nome da identificacao do Entrevistado");
+        holder.ufmunicipio.setText("Estado".concat("/").concat("Municipio"));
 
     }
 

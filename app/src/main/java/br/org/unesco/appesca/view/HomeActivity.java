@@ -23,11 +23,10 @@ import android.view.animation.OvershootInterpolator;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
 
-
+import br.org.unesco.appesca.dao.FormularioDAO;
 import br.org.unesco.appesca.floatingbuttonlibrary.FloatingActionButton;
 import br.org.unesco.appesca.control.FormularioListDetailFragment;
 import br.org.unesco.appesca.R;
-import br.org.unesco.appesca.dao.FormularioDAO;
 import br.org.unesco.appesca.floatingbuttonlibrary.FloatingActionMenu;
 import br.org.unesco.appesca.model.Formulario;
 import br.org.unesco.appesca.model.ItemMenuLateral;
@@ -209,7 +208,8 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 formularioAtual = new Formulario();
 
-                FormularioDAO.findListaFormulario().add(formularioAtual);
+                FormularioDAO formularioDAO = new FormularioDAO(HomeActivity.this);
+                //FormularioDAO.findListaFormulario().add(formularioAtual);
 
                 Context context = v.getContext();
                 Intent intent = new Intent(context, FormularioCamaraoActivity.class);
@@ -223,7 +223,8 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 formularioAtual = new Formulario();
 
-                FormularioDAO.findListaFormulario().add(formularioAtual);
+                FormularioDAO formularioDAO = new FormularioDAO(HomeActivity.this);
+                //FormularioDAO.findListaFormulario().add(formularioAtual);
 
                 Context context = v.getContext();
                 Intent intent = new Intent(context, FormularioCaranguejoActivity.class);
@@ -237,7 +238,8 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 formularioAtual = new Formulario();
 
-                FormularioDAO.findListaFormulario().add(formularioAtual);
+                FormularioDAO formularioDAO = new FormularioDAO(HomeActivity.this);
+                //FormularioDAO.findListaFormulario().add(formularioAtual);
 
                 Context context = v.getContext();
                 Intent intent = new Intent(context, FormularioCamaraoRegionalActivity.class);
