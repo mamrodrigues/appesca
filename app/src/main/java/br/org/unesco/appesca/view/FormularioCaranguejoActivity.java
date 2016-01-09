@@ -16,7 +16,7 @@ import br.org.unesco.appesca.R;
 
 import br.org.unesco.appesca.control.QuestaoDetailFragment;
 import br.org.unesco.appesca.model.ItemMenuLateral;
-import br.org.unesco.appesca.util.ConstantesCamaraoRegional;
+import br.org.unesco.appesca.util.ConstantesIdsFormularios;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,7 +58,7 @@ public class FormularioCaranguejoActivity extends AppCompatActivity {
     private void setupRecyclerView(@NonNull RecyclerView recyclerView){
 
         List<ItemMenuLateral> listaMenuLateral = new ArrayList<ItemMenuLateral>();
-        int[] questoesFormulario = ConstantesCamaraoRegional.getQuestoesArray;
+        int[] questoesFormulario = ConstantesIdsFormularios.arrayIdsFragmentCamaraoRegional;
 
         listaMenuLateral.add(new ItemMenuLateral(1, "Identificação do entrevistado", R.layout.questao_identificacao));
         for(int i=1; i<questoesFormulario.length; i++){

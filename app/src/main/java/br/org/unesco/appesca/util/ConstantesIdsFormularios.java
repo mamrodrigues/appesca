@@ -8,9 +8,17 @@ import br.org.unesco.appesca.R;
 /**
  * Created by marcosmagalhaes on 22/12/15.
  */
-public class ConstantesCamaraoRegional {
+public class ConstantesIdsFormularios {
 
-    public static int[] getQuestoesArray = {
+
+        public static int[] arrayIdsFragmentCamaraoRegional4Piores = {
+                R.layout.fcmr_reg_b1_q1,
+                R.layout.fcmr_reg_b1_q2,
+                R.layout.fcmr_reg_b1_q3,
+                R.layout.fcmr_reg_b1_q4,
+        };
+
+    public static int[] arrayIdsFragmentCamaraoRegional = {
             R.layout.fcmr_reg_b1_q1,
             R.layout.fcmr_reg_b1_q2,
             R.layout.fcmr_reg_b1_q3,

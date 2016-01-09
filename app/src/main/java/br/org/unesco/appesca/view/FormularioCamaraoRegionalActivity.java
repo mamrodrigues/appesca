@@ -18,7 +18,7 @@ import java.util.List;
 import br.org.unesco.appesca.R;
 import br.org.unesco.appesca.control.QuestaoDetailFragment;
 import br.org.unesco.appesca.model.ItemMenuLateral;
-import br.org.unesco.appesca.util.ConstantesCamaraoRegional;
+import br.org.unesco.appesca.util.ConstantesIdsFormularios;
 
 public class FormularioCamaraoRegionalActivity extends AppCompatActivity {
 
@@ -47,7 +47,7 @@ public class FormularioCamaraoRegionalActivity extends AppCompatActivity {
         List<ItemMenuLateral> listaMenuLateral = new ArrayList<>();
         listaMenuLateral.add(new ItemMenuLateral(1, "Identificação do entrevistado", R.layout.questao_identificacao));
 
-        int[] questoesFormulario = ConstantesCamaraoRegional.getQuestoesArray;
+        int[] questoesFormulario = ConstantesIdsFormularios.arrayIdsFragmentCamaraoRegional;
 
         for(int i=1; i<questoesFormulario.length; i++){
             listaMenuLateral.add(new ItemMenuLateral(i, "Questão "+i, questoesFormulario[i]));

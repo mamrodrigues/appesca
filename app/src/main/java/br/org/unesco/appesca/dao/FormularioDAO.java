@@ -4,12 +4,17 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.org.unesco.appesca.model.Formulario;
+
 /**
- * Created by marcosmagalhaes on 06/01/2015.
+ * Created by marcosmagalhaes on 07/01/2015.
  */
 public class FormularioDAO {
 
@@ -21,70 +26,168 @@ public class FormularioDAO {
         appescaHelper = new AppescaHelper(this.context);
     }
 
- /**   public void insertCoordinate(Coordinate coordinate){
-        SQLiteDatabase db = bbPlantarHelper.getWritableDatabase();
+    public void insertFormulario(Formulario formulario){
+        SQLiteDatabase db = appescaHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(AppescaHelper.COL_POLYGON_ID, coordinate.getmIdPolygon());
-        values.put(AppescaHelper.COL_COORDINATE_LATITUDE, coordinate.getmLatitude());
-        values.put(AppescaHelper.COL_COORDINATE_LONGITUDE, coordinate.getmLongitude());
-        values.put(AppescaHelper.COL_COORDINATE_SEQ, coordinate.getmSequence());
-        values.put(AppescaHelper.COL_COORDINATE_TIME_STAMP, coordinate.getmTimeStamp());
+        values.put(AppescaHelper.COL_FORMULARIO_NOME, formulario.getNome());
+        String dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm a").format(formulario.getDataAplicacao());
+        values.put(AppescaHelper.COL_FORMULARIO_DATA_APLICACAO, dateFormat);
+        values.put(AppescaHelper.COL_FORMULARIO_ID_USUARIO, formulario.getIdUsuario());
+        values.put(AppescaHelper.COL_FORMULARIO_ID_TIPO_FORMULARIO, formulario.getIdTipoFormulario());
 
-        db.insert(AppescaHelper.TABLE_COORDINATE_NAME, null,values);
+        db.insert(AppescaHelper.TABLE_FORMULARIO, null,values);
     }
 
-    public void updateCoordinate(Coordinate coordinate){
-        SQLiteDatabase db = bbPlantarHelper.getWritableDatabase();
+    public void updateFormulario(Formulario formulario){
+        SQLiteDatabase db = appescaHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(AppescaHelper.COL_COORDINATE_ID, coordinate.getmId());
-        values.put(AppescaHelper.COL_POLYGON_ID, coordinate.getmIdPolygon());
-        values.put(AppescaHelper.COL_COORDINATE_LATITUDE, coordinate.getmLatitude());
-        values.put(AppescaHelper.COL_COORDINATE_LONGITUDE, coordinate.getmLongitude());
-        values.put(AppescaHelper.COL_COORDINATE_SEQ, coordinate.getmSequence());
-        values.put(AppescaHelper.COL_COORDINATE_TIME_STAMP, coordinate.getmTimeStamp());
+        values.put(AppescaHelper.COL_FORMULARIO_ID, formulario.getId());
+        values.put(AppescaHelper.COL_FORMULARIO_NOME, formulario.getNome());
+        String dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm a").format(formulario.getDataAplicacao());
+        values.put(AppescaHelper.COL_FORMULARIO_DATA_APLICACAO, dateFormat);
+        values.put(AppescaHelper.COL_FORMULARIO_ID_USUARIO, formulario.getIdUsuario());
+        values.put(AppescaHelper.COL_FORMULARIO_ID_TIPO_FORMULARIO, formulario.getIdTipoFormulario());
 
-        db.update(AppescaHelper.TABLE_COORDINATE_NAME, values,
-                AppescaHelper.COL_COORDINATE_ID + " = ?",
-                new String[]{String.valueOf(coordinate.getmId())});
+        db.update(AppescaHelper.TABLE_FORMULARIO, values,
+                AppescaHelper.COL_FORMULARIO_ID + " = ?",
+                new String[]{String.valueOf(formulario.getId())});
     }
 
-    public void deleteCoordinatesByPolygon(int idPolygon){
-        SQLiteDatabase db = bbPlantarHelper.getWritableDatabase();
+    public void deleteFormularioById(int idFormulario){
+        SQLiteDatabase db = appescaHelper.getWritableDatabase();
 
-        db.delete(AppescaHelper.TABLE_COORDINATE_NAME, AppescaHelper.COL_POLYGON_ID + " = ?",
-                new String[]{String.valueOf(idPolygon)});
+        db.delete(AppescaHelper.TABLE_FORMULARIO, AppescaHelper.COL_FORMULARIO_ID + " = ?",
+                new String[]{String.valueOf(idFormulario)});
     }
 
-    public List<Coordinate> getCoordinatesByPolygons(int idPolygon) {
-        SQLiteDatabase db = bbPlantarHelper.getReadableDatabase();
+    public List<Formulario> getAllFormularios() {
+        SQLiteDatabase db = appescaHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery(
-                "SELECT " + AppescaHelper.COL_COORDINATE_ID + " , " +
-                        AppescaHelper.COL_POLYGON_ID+ " , " +
-                        AppescaHelper.COL_COORDINATE_LATITUDE + " , " +
-                        AppescaHelper.COL_COORDINATE_LONGITUDE + " , " +
-                        AppescaHelper.COL_COORDINATE_SEQ + " , " +
-                        AppescaHelper.COL_COORDINATE_TIME_STAMP +
-                        " FROM " + AppescaHelper.TABLE_COORDINATE_NAME+
-                        " WHERE "+ AppescaHelper.COL_POLYGON_ID +" = ?", new String[]{String.valueOf(idPolygon)});
+                "SELECT " + AppescaHelper.COL_FORMULARIO_ID + " , " +
+                        AppescaHelper.COL_FORMULARIO_NOME + " , " +
+                        AppescaHelper.COL_FORMULARIO_DATA_APLICACAO + " , " +
+                        AppescaHelper.COL_FORMULARIO_ID_USUARIO+ " , " +
+                        AppescaHelper.COL_FORMULARIO_ID_TIPO_FORMULARIO+
+                        " FROM " + AppescaHelper.TABLE_FORMULARIO, null);
         cursor.moveToFirst();
 
-        List<Coordinate> coordinateList = new ArrayList<Coordinate>();
-        for (int i = 0; i < cursor.getCount(); i++) {
-            Coordinate c = new Coordinate();
-            c.setmId(cursor.getInt(0));
-            c.setmIdPolygon(cursor.getInt(1));
-            c.setmLatitude(cursor.getDouble(2));
-            c.setmLongitude(cursor.getDouble(3));
-            c.setmSequence(cursor.getInt(4));
-            c.setmTimeStamp(cursor.getString(5));
+        List<Formulario> formularioList = new ArrayList<Formulario>();
 
-            coordinateList.add(c);
+        for (int i = 0; i < cursor.getCount(); i++) {
+            Formulario formulario = new Formulario();
+            formulario.setId(cursor.getInt(0));
+            formulario.setNome(cursor.getString(1));
+            try {
+                formulario.setDataAplicacao(new SimpleDateFormat("dd-MM-yyyy HH:mm a").parse(cursor.getString(2)));
+            } catch (ParseException e) {
+                Log.e("FormularioDAO", "Erro ao efetuar o parse da data.");
+            }
+            formulario.setIdUsuario(cursor.getInt(3));
+            formulario.setIdTipoFormulario(cursor.getInt(4));
+
+            formularioList.add(formulario);
             cursor.moveToNext();
         }
+        return formularioList;
+    }
 
-        return coordinateList;
+    public List<Formulario> getFormulariosByUsuario(int idUsuario) {
+        SQLiteDatabase db = appescaHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery(
+                "SELECT " + AppescaHelper.COL_FORMULARIO_ID + " , " +
+                        AppescaHelper.COL_FORMULARIO_NOME + " , " +
+                        AppescaHelper.COL_FORMULARIO_DATA_APLICACAO + " , " +
+                        AppescaHelper.COL_FORMULARIO_ID_USUARIO+ " , " +
+                        AppescaHelper.COL_FORMULARIO_ID_TIPO_FORMULARIO+
+                        " FROM " + AppescaHelper.TABLE_FORMULARIO +
+                        " WHERE " + AppescaHelper.COL_FORMULARIO_ID_USUARIO + " = ?", new String[]{String.valueOf(idUsuario)});
+        cursor.moveToFirst();
 
-    } **/
+        List<Formulario> formularioList = new ArrayList<Formulario>();
+
+        for (int i = 0; i < cursor.getCount(); i++) {
+            Formulario formulario = new Formulario();
+            formulario.setId(cursor.getInt(0));
+            formulario.setNome(cursor.getString(1));
+            try {
+                formulario.setDataAplicacao(new SimpleDateFormat("dd-MM-yyyy HH:mm a").parse(cursor.getString(2)));
+            } catch (ParseException e) {
+                Log.e("FormularioDAO", "Erro ao efetuar o parse da data.");
+            }
+            formulario.setIdUsuario(cursor.getInt(3));
+            formulario.setIdTipoFormulario(cursor.getInt(4));
+
+            formularioList.add(formulario);
+            cursor.moveToNext();
+        }
+        return formularioList;
+
+    }
+
+    public List<Formulario> getFormulariosByTipoFormulario(int idTipoFormulariosuario) {
+        SQLiteDatabase db = appescaHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery(
+                "SELECT " + AppescaHelper.COL_FORMULARIO_ID + " , " +
+                        AppescaHelper.COL_FORMULARIO_NOME + " , " +
+                        AppescaHelper.COL_FORMULARIO_DATA_APLICACAO + " , " +
+                        AppescaHelper.COL_FORMULARIO_ID_USUARIO+ " , " +
+                        AppescaHelper.COL_FORMULARIO_ID_TIPO_FORMULARIO+
+                        " FROM " + AppescaHelper.TABLE_FORMULARIO +
+                        " WHERE " + AppescaHelper.COL_FORMULARIO_ID_TIPO_FORMULARIO + " = ?", new String[]{String.valueOf(idTipoFormulariosuario)});
+        cursor.moveToFirst();
+
+        List<Formulario> formularioList = new ArrayList<Formulario>();
+
+        for (int i = 0; i < cursor.getCount(); i++) {
+            Formulario formulario = new Formulario();
+            formulario.setId(cursor.getInt(0));
+            formulario.setNome(cursor.getString(1));
+            try {
+                formulario.setDataAplicacao(new SimpleDateFormat("dd-MM-yyyy HH:mm a").parse(cursor.getString(2)));
+            } catch (ParseException e) {
+                Log.e("FormularioDAO", "Erro ao efetuar o parse da data.");
+            }
+            formulario.setIdUsuario(cursor.getInt(3));
+            formulario.setIdTipoFormulario(cursor.getInt(4));
+
+            formularioList.add(formulario);
+            cursor.moveToNext();
+        }
+        return formularioList;
+    }
+
+    public List<Formulario> getFormulariosByUsuarioAndTipoFormulario(int idUsuario, int idTipoFormulario) {
+        SQLiteDatabase db = appescaHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery(
+                "SELECT " + AppescaHelper.COL_FORMULARIO_ID + " , " +
+                        AppescaHelper.COL_FORMULARIO_NOME + " , " +
+                        AppescaHelper.COL_FORMULARIO_DATA_APLICACAO + " , " +
+                        AppescaHelper.COL_FORMULARIO_ID_USUARIO+ " , " +
+                        AppescaHelper.COL_FORMULARIO_ID_TIPO_FORMULARIO+
+                        " FROM " + AppescaHelper.TABLE_FORMULARIO +
+                        " WHERE " + AppescaHelper.COL_FORMULARIO_ID_USUARIO + " = ?"+
+                        " AND "+ AppescaHelper.COL_FORMULARIO_ID_TIPO_FORMULARIO + " = ?", new String[]{String.valueOf(idUsuario), String.valueOf(idTipoFormulario)});
+        cursor.moveToFirst();
+
+        List<Formulario> formularioList = new ArrayList<Formulario>();
+
+        for (int i = 0; i < cursor.getCount(); i++) {
+            Formulario formulario = new Formulario();
+            formulario.setId(cursor.getInt(0));
+            formulario.setNome(cursor.getString(1));
+            try {
+                formulario.setDataAplicacao(new SimpleDateFormat("dd-MM-yyyy HH:mm a").parse(cursor.getString(2)));
+            } catch (ParseException e) {
+                Log.e("FormularioDAO", "Erro ao efetuar o parse da data.");
+            }
+            formulario.setIdUsuario(cursor.getInt(3));
+            formulario.setIdTipoFormulario(cursor.getInt(4));
+
+            formularioList.add(formulario);
+            cursor.moveToNext();
+        }
+        return formularioList;
+    }
 }
