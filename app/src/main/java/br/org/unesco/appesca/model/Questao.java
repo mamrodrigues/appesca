@@ -1,5 +1,8 @@
 package br.org.unesco.appesca.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Questao implements java.io.Serializable {
 
 	private static final long serialVersionUID = -7214392109110721089L;
@@ -8,6 +11,7 @@ public class Questao implements java.io.Serializable {
 	private String titulo;
 	private Integer ordem;
 	private int idFormulario;
+	private List<Pergunta> perguntas;
 
 	public Questao() {
 	}
@@ -52,6 +56,14 @@ public class Questao implements java.io.Serializable {
 
 	public void setIdFormulario(int idFormulario) {
 		this.idFormulario = idFormulario;
+	}
+
+	public List<Pergunta> getPerguntas() {
+		return perguntas;
+	}
+
+	public void setPerguntas(List<Pergunta> perguntas) {
+		this.perguntas = perguntas;
 	}
 
 }

@@ -10,6 +10,10 @@ import br.org.unesco.appesca.R;
  */
 public class ConstantesIdsFormularios {
 
+        public static String PERGUNTA = "perg";
+        public static String TYPE_RADIO_BUTTON = "_rb_resp";
+        public static String TYPE_CHECK_BOX = "_cb_resp";
+        public static String TYPE_EDIT_TEXT = "_et_resp";
 
         public static int[] arrayIdsFragmentCamaraoRegional4Piores = {
                 R.layout.fcmr_reg_b1_q1,

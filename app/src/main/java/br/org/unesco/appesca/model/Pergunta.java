@@ -1,5 +1,7 @@
 package br.org.unesco.appesca.model;
 
+import java.util.List;
+
 public class Pergunta implements java.io.Serializable {
 
 	private static final long serialVersionUID = -8806813412918825907L;
@@ -9,6 +11,7 @@ public class Pergunta implements java.io.Serializable {
 	private Boolean respBooleana;
 	private Integer ordem;
 	private int idQuestao;
+	private List<Resposta> respostas;
 
 	public Pergunta() {
 	}
@@ -64,4 +67,11 @@ public class Pergunta implements java.io.Serializable {
 		this.idQuestao = idQuestao;
 	}
 
+	public List<Resposta> getRespostas() {
+		return respostas;
+	}
+
+	public void setRespostas(List<Resposta> respostas) {
+		this.respostas = respostas;
+	}
 }

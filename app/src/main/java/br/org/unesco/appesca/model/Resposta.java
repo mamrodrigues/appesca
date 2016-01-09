@@ -3,10 +3,10 @@ package br.org.unesco.appesca.model;
 public class Resposta implements java.io.Serializable {
 
 	private static final long serialVersionUID = 6100540469341649847L;
-	
+
 	private Integer id;
 	private Integer opcao;
-	private byte[] texto;
+	private String texto;
 	private byte[] audio;
 	private int idPergunta;
 
@@ -17,7 +17,7 @@ public class Resposta implements java.io.Serializable {
 		this.idPergunta = idPergunta;
 	}
 
-	public Resposta(Integer opcao, byte[] texto, byte[] audio, int idPergunta) {
+	public Resposta(Integer opcao, String texto, byte[] audio, int idPergunta) {
 		this.opcao = opcao;
 		this.texto = texto;
 		this.audio = audio;
@@ -40,11 +40,11 @@ public class Resposta implements java.io.Serializable {
 		this.opcao = opcao;
 	}
 
-	public byte[] getTexto() {
-		return this.texto;
+	public String getTexto() {
+		return texto;
 	}
 
-	public void setTexto(byte[] texto) {
+	public void setTexto(String texto) {
 		this.texto = texto;
 	}
 

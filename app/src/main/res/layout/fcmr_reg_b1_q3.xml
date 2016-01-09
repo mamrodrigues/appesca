@@ -37,6 +37,7 @@
             android:padding="20dp">
 
             <TextView
+                android:id="@+id/perg1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
@@ -50,23 +51,30 @@
                 android:layout_height="wrap_content"
                 android:paddingBottom="10dp"
                 android:paddingLeft="30dp">
-                <RadioButton
-                    android:layout_width="wrap_content"
+                <RadioGroup
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Sim"
-                    android:textAppearance="@style/style_resposta"
-                    android:id="@+id/sim"
-                    android:checked="false"
-                    android:paddingRight="15dp"/>
+                    android:layout_below="@+id/text"
+                    android:orientation="horizontal"
+                    android:checkedButton="@+id/perg1_rb_resp1">
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sim"
+                        android:textAppearance="@style/style_resposta"
+                        android:id="@+id/perg1_rb_resp1"
+                        android:checked="false"
+                        android:paddingRight="15dp"/>
 
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Não"
-                    android:textAppearance="@style/style_resposta"
-                    android:id="@+id/nao"
-                    android:checked="false"
-                    android:paddingRight="15dp"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Não"
+                        android:textAppearance="@style/style_resposta"
+                        android:id="@+id/perg1_rb_resp2"
+                        android:checked="false"
+                        android:paddingRight="15dp"/>
+                </RadioGroup>
 
             </LinearLayout>
 
@@ -78,6 +86,7 @@
                 android:paddingBottom="10dp">
 
                 <TextView
+                    android:id="@+id/perg2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Se sim, qual foi a forma de aquisição?"
@@ -96,54 +105,54 @@
                         android:layout_height="wrap_content"
                         android:text="Compra"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_a" />
+                        android:id="@+id/perg2_cb_resp1" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Herança"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_b" />
+                        android:id="@+id/perg2_cb_resp2" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Doação"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_c" />
+                        android:id="@+id/perg2_cb_resp3" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Proveniente de assentamento"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_d" />
+                        android:id="@+id/perg2_cb_resp4" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Ocupação"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_e" />
+                        android:id="@+id/perg2_cb_resp5" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Não Sabe"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_f" />
+                        android:id="@+id/perg2_cb_resp6" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Outro. Qual?"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_g" />
+                        android:id="@+id/perg2_cb_resp7" />
 
                     <EditText
                         android:layout_width="241dp"
                         android:layout_height="wrap_content"
-                        android:id="@+id/outro"
+                        android:id="@+id/perg2_et_resp"
                         android:textAppearance="@style/style_resposta"
                         android:lines="2" />
                 </LinearLayout>
@@ -157,6 +166,7 @@
                 android:paddingBottom="10dp">
 
                 <TextView
+                    android:id="@+id/perg3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Se não, qual é o seu vínculo com o proprietário do terreno?"
@@ -175,63 +185,63 @@
                         android:layout_height="wrap_content"
                         android:text="Filho"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_a2" />
+                        android:id="@+id/perg3_cb_resp1" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Cônjuge"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_b2" />
+                        android:id="@+id/perg3_cb_resp2" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Genro/Nora"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_c2" />
+                        android:id="@+id/perg3_cb_resp3" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Cunhado(a)"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_d2" />
+                        android:id="@+id/perg3_cb_resp4" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Sogro(a)"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_e2" />
+                        android:id="@+id/perg3_cb_resp5" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Locatário"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_f2" />
+                        android:id="@+id/perg3_cb_resp6" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Arrendatário"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_g2" />
+                        android:id="@+id/perg3_cb_resp7" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Meeiro, terça ou quarta"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_h2" />
+                        android:id="@+id/perg3_cb_resp8" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Não sei"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_i2" />
+                        android:id="@+id/perg3_cb_resp9" />
 
                 </LinearLayout>
             </LinearLayout>

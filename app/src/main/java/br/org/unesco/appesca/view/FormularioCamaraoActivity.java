@@ -13,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -88,50 +90,71 @@ public class FormularioCamaraoActivity extends AppCompatActivity {
                 }
 
                 Questao questao = new Questao();
+                List<Pergunta> perguntas = new ArrayList<Pergunta>();
                 questao.setId(ultQuestPos);
 
-                //PEGANDO AS RESPOSTAS
-                for(int i=1; i<100; i++){
-                    Pergunta pergunta = new Pergunta();
-                    pergunta.setOrdem(i);
-                    pergunta.setId(i);
-                    pergunta.setIdQuestao(questao.getId());
+                /** PERGUNTAS **/
+                for(int seqPergunta=1; seqPergunta<10; seqPergunta++){
 
-                    String currentQuestion = "perg"+i;
+                    String currentPergunta = ConstantesIdsFormularios.PERGUNTA.concat(String.valueOf(seqPergunta));
+                    TextView perguntaTextView = (TextView) findViewById(getResources().getIdentifier(currentPergunta ,"id", getPackageName()));
 
-                    //POSIBILIDADE 1 -> RADIOBUTTONS
-                    for(int rb=1; rb<=10; rb++) {
-                        currentQuestion = currentQuestion+"_rb_resp"+rb;
-                        RadioButton radioButton = (RadioButton) findViewById(getResources().getIdentifier(currentQuestion ,"id", getPackageName()));
+                    if(perguntaTextView != null) {
+                        List<Resposta> respostas = new ArrayList<Resposta>();
 
-                        if(radioButton != null && radioButton.isChecked()){
-                            Resposta resp = new Resposta();
-                            resp.setOpcao(rb);
-                            resp.setIdPergunta(pergunta.getId());
-                            Toast.makeText(FormularioCamaraoActivity.this, "Pergunta:"+pergunta.getId()+" Resposta:"+rb, Toast.LENGTH_SHORT).show();
+                        Pergunta pergunta = new Pergunta();
+                        pergunta.setOrdem(seqPergunta);
+                        pergunta.setId(seqPergunta);
+                        pergunta.setIdQuestao(questao.getId());
+
+                        /** RADIOBUTTON **/
+                        for (int rb = 1; rb <= 10; rb++) {
+                            String currentRadioButton = currentPergunta.concat(ConstantesIdsFormularios.TYPE_RADIO_BUTTON + rb);
+                            RadioButton radioButton = (RadioButton) findViewById(getResources().getIdentifier(currentRadioButton, "id", getPackageName()));
+
+                            if (radioButton != null && radioButton.isChecked()) {
+                                Resposta resp = new Resposta();
+                                resp.setOpcao(rb);
+                                resp.setIdPergunta(pergunta.getId());
+                                Toast.makeText(FormularioCamaraoActivity.this, "Pergunta:" + pergunta.getId() + " Resposta:" + rb, Toast.LENGTH_SHORT).show();
+                                respostas.add(resp);
+                                break;
+                            }
                         }
-                        currentQuestion = "perg"+i;
-                    }
 
-                    //POSSIBILIDADE 2 -> CHECKBOX
-                    for(int radI=1; radI<=10; radI++) {
-                        try {
-//                            CHECKBOX check =
+                        /** CHECKBOX **/
+                        for (int cb = 1; cb <= 10; cb++) {
+                            String currentCheckBox = currentPergunta.concat(ConstantesIdsFormularios.TYPE_CHECK_BOX + cb);
+                            CheckBox checkBox = (CheckBox) findViewById(getResources().getIdentifier(currentCheckBox, "id", getPackageName()));
 
-                            Resposta resp = new Resposta();
-                            resp.setOpcao(radI);
-                            //pergunta.addResposta(resp);
-                            break;
-                        } catch (Exception e) {
-
-                            break;
+                            if (checkBox != null && checkBox.isChecked()) {
+                                Resposta resp = new Resposta();
+                                resp.setOpcao(cb);
+                                resp.setIdPergunta(pergunta.getId());
+                                Toast.makeText(FormularioCamaraoActivity.this, "Pergunta:" + pergunta.getId() + " Resposta:" + cb, Toast.LENGTH_SHORT).show();
+                                respostas.add(resp);
+                            }
                         }
+
+                        /** EDITTEXT**/
+                        for (int et = 1; et <= 10; et++) {
+                            String currentEditText = currentPergunta.concat(ConstantesIdsFormularios.TYPE_EDIT_TEXT + et);
+                            EditText editText = (EditText) findViewById(getResources().getIdentifier(currentEditText, "id", getPackageName()));
+
+                            if (editText != null && !editText.getText().toString().isEmpty()) {
+                                Resposta resp = new Resposta();
+                                resp.setTexto(editText.getText().toString());
+                                resp.setIdPergunta(pergunta.getId());
+                                Toast.makeText(FormularioCamaraoActivity.this, "Pergunta:" + pergunta.getId() + " Resposta:" + et, Toast.LENGTH_SHORT).show();
+                                respostas.add(resp);
+                            }
+                        }
+                        pergunta.setRespostas(respostas);
+                        perguntas.add(pergunta);
                     }
-
-                    //questao.addPergunta(pergunta);
-
                 }
 
+                questao.setPerguntas(perguntas);
                 openFragment(++ultQuestPos, v);
             }
         });
