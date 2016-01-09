@@ -90,71 +90,9 @@ public class FormularioCamaraoActivity extends AppCompatActivity {
                 }
 
                 Questao questao = new Questao();
-                List<Pergunta> perguntas = new ArrayList<Pergunta>();
                 questao.setId(ultQuestPos);
+                questao.setPerguntas(buildPerguntaList(questao.getId()));
 
-                /** PERGUNTAS **/
-                for(int seqPergunta=1; seqPergunta<10; seqPergunta++){
-
-                    String currentPergunta = ConstantesIdsFormularios.PERGUNTA.concat(String.valueOf(seqPergunta));
-                    TextView perguntaTextView = (TextView) findViewById(getResources().getIdentifier(currentPergunta ,"id", getPackageName()));
-
-                    if(perguntaTextView != null) {
-                        List<Resposta> respostas = new ArrayList<Resposta>();
-
-                        Pergunta pergunta = new Pergunta();
-                        pergunta.setOrdem(seqPergunta);
-                        pergunta.setId(seqPergunta);
-                        pergunta.setIdQuestao(questao.getId());
-
-                        /** RADIOBUTTON **/
-                        for (int rb = 1; rb <= 10; rb++) {
-                            String currentRadioButton = currentPergunta.concat(ConstantesIdsFormularios.TYPE_RADIO_BUTTON + rb);
-                            RadioButton radioButton = (RadioButton) findViewById(getResources().getIdentifier(currentRadioButton, "id", getPackageName()));
-
-                            if (radioButton != null && radioButton.isChecked()) {
-                                Resposta resp = new Resposta();
-                                resp.setOpcao(rb);
-                                resp.setIdPergunta(pergunta.getId());
-                                Toast.makeText(FormularioCamaraoActivity.this, "Pergunta:" + pergunta.getId() + " Resposta:" + rb, Toast.LENGTH_SHORT).show();
-                                respostas.add(resp);
-                                break;
-                            }
-                        }
-
-                        /** CHECKBOX **/
-                        for (int cb = 1; cb <= 10; cb++) {
-                            String currentCheckBox = currentPergunta.concat(ConstantesIdsFormularios.TYPE_CHECK_BOX + cb);
-                            CheckBox checkBox = (CheckBox) findViewById(getResources().getIdentifier(currentCheckBox, "id", getPackageName()));
-
-                            if (checkBox != null && checkBox.isChecked()) {
-                                Resposta resp = new Resposta();
-                                resp.setOpcao(cb);
-                                resp.setIdPergunta(pergunta.getId());
-                                Toast.makeText(FormularioCamaraoActivity.this, "Pergunta:" + pergunta.getId() + " Resposta:" + cb, Toast.LENGTH_SHORT).show();
-                                respostas.add(resp);
-                            }
-                        }
-
-                        /** EDITTEXT**/
-                        for (int et = 1; et <= 10; et++) {
-                            String currentEditText = currentPergunta.concat(ConstantesIdsFormularios.TYPE_EDIT_TEXT + et);
-                            EditText editText = (EditText) findViewById(getResources().getIdentifier(currentEditText, "id", getPackageName()));
-
-                            if (editText != null && !editText.getText().toString().isEmpty()) {
-                                Resposta resp = new Resposta();
-                                resp.setTexto(editText.getText().toString());
-                                resp.setIdPergunta(pergunta.getId());
-                                Toast.makeText(FormularioCamaraoActivity.this, "Pergunta:" + pergunta.getId() + " Resposta:" + et, Toast.LENGTH_SHORT).show();
-                                respostas.add(resp);
-                            }
-                        }
-                        pergunta.setRespostas(respostas);
-                        perguntas.add(pergunta);
-                    }
-                }
-
-                questao.setPerguntas(perguntas);
                 openFragment(++ultQuestPos, v);
             }
         });
@@ -165,6 +103,10 @@ public class FormularioCamaraoActivity extends AppCompatActivity {
                 if(ultQuestPos == 0){
                     return;
                 }
+
+                Questao questao = new Questao();
+                questao.setId(ultQuestPos);
+                questao.setPerguntas(buildPerguntaList(questao.getId()));
 
                 openFragment(--ultQuestPos, v);
 
@@ -182,6 +124,70 @@ public class FormularioCamaraoActivity extends AppCompatActivity {
         if (findViewById(R.id.questao_detail_container) != null) {
             mTwoPane = true;
         }
+    }
+
+    private List<Pergunta> buildPerguntaList(int idQuestao){
+
+        List<Pergunta> perguntas = new ArrayList<Pergunta>();
+
+        /** PERGUNTAS **/
+        for(int seqPergunta=1; seqPergunta<10; seqPergunta++){
+
+            String currentPergunta = ConstantesIdsFormularios.PERGUNTA.concat(String.valueOf(seqPergunta));
+            TextView perguntaTextView = (TextView) findViewById(getResources().getIdentifier(currentPergunta ,"id", getPackageName()));
+
+            if(perguntaTextView != null) {
+                List<Resposta> respostas = new ArrayList<Resposta>();
+
+                Pergunta pergunta = new Pergunta();
+                pergunta.setOrdem(seqPergunta);
+                pergunta.setId(seqPergunta);
+                pergunta.setIdQuestao(idQuestao);
+
+                /** RADIOBUTTON **/
+                for (int rb = 1; rb <= 10; rb++) {
+                    String currentRadioButton = currentPergunta.concat(ConstantesIdsFormularios.TYPE_RADIO_BUTTON + rb);
+                    RadioButton radioButton = (RadioButton) findViewById(getResources().getIdentifier(currentRadioButton, "id", getPackageName()));
+
+                    if (radioButton != null && radioButton.isChecked()) {
+                        Resposta resp = new Resposta();
+                        resp.setOpcao(rb);
+                        resp.setIdPergunta(pergunta.getId());
+                        respostas.add(resp);
+                        break;
+                    }
+                }
+
+                /** CHECKBOX **/
+                for (int cb = 1; cb <= 10; cb++) {
+                    String currentCheckBox = currentPergunta.concat(ConstantesIdsFormularios.TYPE_CHECK_BOX + cb);
+                    CheckBox checkBox = (CheckBox) findViewById(getResources().getIdentifier(currentCheckBox, "id", getPackageName()));
+
+                    if (checkBox != null && checkBox.isChecked()) {
+                        Resposta resp = new Resposta();
+                        resp.setOpcao(cb);
+                        resp.setIdPergunta(pergunta.getId());
+                        respostas.add(resp);
+                    }
+                }
+
+                /** EDITTEXT **/
+                for (int et = 1; et <= 10; et++) {
+                    String currentEditText = currentPergunta.concat(ConstantesIdsFormularios.TYPE_EDIT_TEXT + et);
+                    EditText editText = (EditText) findViewById(getResources().getIdentifier(currentEditText, "id", getPackageName()));
+
+                    if (editText != null && !editText.getText().toString().isEmpty()) {
+                        Resposta resp = new Resposta();
+                        resp.setTexto(editText.getText().toString());
+                        resp.setIdPergunta(pergunta.getId());
+                        respostas.add(resp);
+                    }
+                }
+                pergunta.setRespostas(respostas);
+                perguntas.add(pergunta);
+            }
+        }
+        return perguntas;
     }
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView){

@@ -54,7 +54,6 @@
                 <RadioGroup
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/text"
                     android:orientation="horizontal"
                     android:checkedButton="@+id/perg1_rb_resp1">
                     <RadioButton
@@ -152,7 +151,7 @@
                     <EditText
                         android:layout_width="241dp"
                         android:layout_height="wrap_content"
-                        android:id="@+id/perg2_et_resp"
+                        android:id="@+id/perg2_et_resp1"
                         android:textAppearance="@style/style_resposta"
                         android:lines="2" />
                 </LinearLayout>
