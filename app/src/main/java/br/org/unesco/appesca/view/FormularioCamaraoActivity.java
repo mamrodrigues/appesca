@@ -102,7 +102,7 @@ public class FormularioCamaraoActivity extends AppCompatActivity {
                     //POSIBILIDADE 1 -> RADIOBUTTONS
                     for(int rb=1; rb<=10; rb++) {
                         currentQuestion = currentQuestion+"_rb_resp"+rb;
-                        RadioButton radioButton = (RadioButton) findViewById(getResources().getIdentifier(currentQuestion , "id", getPackageName()));
+                        RadioButton radioButton = (RadioButton) findViewById(getResources().getIdentifier(currentQuestion ,"id", getPackageName()));
 
                         if(radioButton != null && radioButton.isChecked()){
                             Resposta resp = new Resposta();
@@ -110,7 +110,7 @@ public class FormularioCamaraoActivity extends AppCompatActivity {
                             resp.setIdPergunta(pergunta.getId());
                             Toast.makeText(FormularioCamaraoActivity.this, "Pergunta:"+pergunta.getId()+" Resposta:"+rb, Toast.LENGTH_SHORT).show();
                         }
-                        break;
+                        currentQuestion = "perg"+i;
                     }
 
                     //POSSIBILIDADE 2 -> CHECKBOX
