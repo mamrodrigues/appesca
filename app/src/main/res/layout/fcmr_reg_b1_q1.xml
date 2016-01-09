@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="wrap_content"
@@ -145,21 +144,27 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
+                        <RadioGroup
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="M"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/masculino_a"
-                            android:checked="false"/>
+                            android:layout_below="@+id/text"
+                            android:orientation="horizontal"
+                            android:id="@+id/perg2"
+                            android:checkedButton="@+id/perg2_rb_resp1">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="M"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg2_rb_resp1"/>
 
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="F"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/feminino_a"
-                            android:checked="false"/>
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="F"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg2_rb_resp2"/>
+                        </RadioGroup>
                     </TableRow>
                 </TableLayout>
 

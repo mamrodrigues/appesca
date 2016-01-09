@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,16 +42,7 @@ public class FormularioCamaraoActivity extends AppCompatActivity {
     private Button btnProx;
     private Button btnAnt;
 
-   static List<ItemMenuLateral> mValues = new ArrayList<ItemMenuLateral>();
-
-    static {
-        mValues.add(new ItemMenuLateral(1, "Identificação do entrevistado", R.layout.questao_identificacao));
-//        int[] questoesFormulario = ConstantesIdsFormularios.arrayIdsFragmentCamaraoRegional4Piores;
-        for(int i=1; i<=9; i++){
-            //int idFormulario = Resources.getSystem().getIdentifier("fcrj_b1_q" + i + ".xml", "layout", FormularioCamaraoActivity.getPackageName());
-           // mValues.add(new ItemMenuLateral(i, "Questão "+i, idFormulario));
-        }
-    }
+    static List<ItemMenuLateral> mValues = new ArrayList<ItemMenuLateral>();
 
     public void openFragment(int position, View v){
         if (mTwoPane) {
@@ -75,6 +68,13 @@ public class FormularioCamaraoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questao_list);
 
+        mValues.add(new ItemMenuLateral(1, "Identificação do entrevistado", R.layout.questao_identificacao));
+        int[] questoesFormulario = ConstantesIdsFormularios.arrayIdsFragmentCamaraoRegional4Piores;
+        for(int i=1; i<=9; i++){
+            int idFormulario = getResources().getIdentifier("fcmr_reg_b1_q"+i, "layout", getPackageName());
+            mValues.add(new ItemMenuLateral(i, "Questão "+i, idFormulario));
+        }
+
         formulario = new Formulario();
 
         btnProx = (Button) findViewById(R.id.btnQuestProx) ;
@@ -88,30 +88,30 @@ public class FormularioCamaraoActivity extends AppCompatActivity {
                 }
 
                 Questao questao = new Questao();
-
+                questao.setId(ultQuestPos);
 
                 //PEGANDO AS RESPOSTAS
-                for(int i=1; i<10; i++){
-                    Pergunta perg = new Pergunta();
+                for(int i=1; i<100; i++){
+                    Pergunta pergunta = new Pergunta();
+                    pergunta.setOrdem(i);
+                    pergunta.setId(i);
+                    pergunta.setIdQuestao(questao.getId());
 
-                    //PEGANDO RESPOSTA DA PERGUNTA CORRENTE
-                    //TODO CONSTRUIR ARRAY?
+                    String currentQuestion = "perg"+i;
 
                     //POSIBILIDADE 1 -> RADIOBUTTONS
-                    for(int radI=1; radI<=10; radI++) {
-                        try {
-                            //RadioButton radioButton = new RadioButton();
+                    for(int rb=1; rb<=10; rb++) {
+                        currentQuestion = currentQuestion+"_rb_resp"+rb;
+                        RadioButton radioButton = (RadioButton) findViewById(getResources().getIdentifier(currentQuestion , "id", getPackageName()));
 
+                        if(radioButton != null && radioButton.isChecked()){
                             Resposta resp = new Resposta();
-
-                            //perg.addResposta(resp);
-                            break;
-                        } catch (Exception e) {
-
-                            break;
+                            resp.setOpcao(rb);
+                            resp.setIdPergunta(pergunta.getId());
+                            Toast.makeText(FormularioCamaraoActivity.this, "Pergunta:"+pergunta.getId()+" Resposta:"+rb, Toast.LENGTH_SHORT).show();
                         }
+                        break;
                     }
-
 
                     //POSSIBILIDADE 2 -> CHECKBOX
                     for(int radI=1; radI<=10; radI++) {
@@ -119,8 +119,8 @@ public class FormularioCamaraoActivity extends AppCompatActivity {
 //                            CHECKBOX check =
 
                             Resposta resp = new Resposta();
-
-                            //perg.addResposta(resp);
+                            resp.setOpcao(radI);
+                            //pergunta.addResposta(resp);
                             break;
                         } catch (Exception e) {
 
@@ -128,7 +128,7 @@ public class FormularioCamaraoActivity extends AppCompatActivity {
                         }
                     }
 
-                    //questao.addPergunta(perg);
+                    //questao.addPergunta(pergunta);
 
                 }
 

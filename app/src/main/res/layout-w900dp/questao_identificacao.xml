@@ -10,7 +10,7 @@
         android:layout_height="286dp"
         android:padding="50dp"
         android:layout_gravity="center_horizontal|top"
-        android:src="@mipmap/ic_user1"
+        android:src="@mipmap/ic_user"
         android:id="@+id/entrevistadoImg"
         android:onClick="onClickCamera"
         android:clickable="true"
