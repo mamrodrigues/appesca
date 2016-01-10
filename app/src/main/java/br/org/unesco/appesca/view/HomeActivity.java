@@ -212,7 +212,7 @@ public class HomeActivity extends AppCompatActivity {
                 //TipoFormularioDAO.findListaFormulario().add(formularioAtual);
 
                 Context context = v.getContext();
-                Intent intent = new Intent(context, FormularioCamaraoActivity.class);
+                Intent intent = new Intent(context, FormularioCamaraoRegionalActivity.class);
 
                 context.startActivity(intent);
             }
@@ -242,7 +242,7 @@ public class HomeActivity extends AppCompatActivity {
                 //TipoFormularioDAO.findListaFormulario().add(formularioAtual);
 
                 Context context = v.getContext();
-                Intent intent = new Intent(context, FormularioCamaraoRegionalActivity.class);
+                Intent intent = new Intent(context, FormularioCamaraoActivity.class);
 
                 context.startActivity(intent);
             }

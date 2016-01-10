@@ -26,7 +26,7 @@ public class FormularioDAO {
         appescaHelper = new AppescaHelper(this.context);
     }
 
-    public void insertFormulario(Formulario formulario){
+    public Formulario insertFormulario(Formulario formulario){
         SQLiteDatabase db = appescaHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -36,7 +36,8 @@ public class FormularioDAO {
         values.put(AppescaHelper.COL_FORMULARIO_ID_USUARIO, formulario.getIdUsuario());
         values.put(AppescaHelper.COL_FORMULARIO_ID_TIPO_FORMULARIO, formulario.getIdTipoFormulario());
 
-        db.insert(AppescaHelper.TABLE_FORMULARIO, null,values);
+        long id = db.insert(AppescaHelper.TABLE_FORMULARIO, null, values);
+        return getFormularioById((int)id);
     }
 
     public void updateFormulario(Formulario formulario){
@@ -92,6 +93,32 @@ public class FormularioDAO {
         }
         return formularioList;
     }
+    public Formulario getFormularioById(int idFormulario) {
+        SQLiteDatabase db = appescaHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery(
+                "SELECT " + AppescaHelper.COL_FORMULARIO_ID + " , " +
+                        AppescaHelper.COL_FORMULARIO_NOME + " , " +
+                        AppescaHelper.COL_FORMULARIO_DATA_APLICACAO + " , " +
+                        AppescaHelper.COL_FORMULARIO_ID_USUARIO+ " , " +
+                        AppescaHelper.COL_FORMULARIO_ID_TIPO_FORMULARIO+
+                        " FROM " + AppescaHelper.TABLE_FORMULARIO +
+                        " WHERE " + AppescaHelper.COL_FORMULARIO_ID + " = ?", new String[]{String.valueOf(idFormulario)});
+        cursor.moveToFirst();
+
+        Formulario formulario = new Formulario();
+        formulario.setId(cursor.getInt(0));
+        formulario.setNome(cursor.getString(1));
+        try {
+            formulario.setDataAplicacao(new SimpleDateFormat("dd-MM-yyyy HH:mm a").parse(cursor.getString(2)));
+        } catch (ParseException e) {
+            Log.e("FormularioDAO", "Erro ao efetuar o parse da data.");
+        }
+        formulario.setIdUsuario(cursor.getInt(3));
+        formulario.setIdTipoFormulario(cursor.getInt(4));
+
+        return formulario;
+    }
+
 
     public List<Formulario> getFormulariosByUsuario(int idUsuario) {
         SQLiteDatabase db = appescaHelper.getReadableDatabase();
@@ -123,7 +150,6 @@ public class FormularioDAO {
             cursor.moveToNext();
         }
         return formularioList;
-
     }
 
     public List<Formulario> getFormulariosByTipoFormulario(int idTipoFormulariosuario) {

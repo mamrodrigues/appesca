@@ -34,13 +34,13 @@
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".view.FormularioCamaraoActivity"
+            android:name=".view.FormularioCamaraoRegionalActivity"
             android:label="@string/title_questao_list"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".view.FormularioCamaraoRegionalActivity"
+            android:name=".view.FormularioCamaraoActivity"
             android:label="@string/title_questao_list"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
