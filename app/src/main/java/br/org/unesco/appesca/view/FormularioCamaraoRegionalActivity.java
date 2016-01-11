@@ -12,7 +12,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -22,7 +21,9 @@ import java.util.List;
 import br.org.unesco.appesca.R;
 import br.org.unesco.appesca.control.QuestaoDetailFragment;
 import br.org.unesco.appesca.dao.FormularioDAO;
+import br.org.unesco.appesca.dao.PerguntaDAO;
 import br.org.unesco.appesca.dao.QuestaoDAO;
+import br.org.unesco.appesca.dao.RespostaDAO;
 import br.org.unesco.appesca.model.Formulario;
 import br.org.unesco.appesca.model.ItemMenuLateral;
 import br.org.unesco.appesca.model.Pergunta;
@@ -56,12 +57,13 @@ public class FormularioCamaraoRegionalActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_questao_list);
+        setContentView(R.layout.recycler_view_questoes);
 
         mValues.add(new ItemMenuLateral(1, "Identificação do entrevistado", R.layout.questao_identificacao));
         int[] questoesFormulario = ConstantesIdsFormularios.arrayIdsFragmentCamaraoRegional;
         for(int i=1; i<=questoesFormulario.length; i++){
             int idFormulario = getResources().getIdentifier("fcmr_reg_b1_q"+i, "layout", getPackageName());
+            //TODO pegar a resposta de todos os blocos
             mValues.add(new ItemMenuLateral(i, "Questão "+i, idFormulario));
         }
 
@@ -85,27 +87,27 @@ public class FormularioCamaraoRegionalActivity extends AppCompatActivity {
                     return;
                 }
 
-                Questao questao;
-
                 QuestaoDAO questaoDAO = new QuestaoDAO(FormularioCamaraoRegionalActivity.this);
-                questao = questaoDAO.findQuestaoByOrdemIdFormulario(ultQuestPos, formulario.getId());
+                Questao questao = questaoDAO.findQuestaoByOrdemIdFormulario(ultQuestPos, formulario.getId());
 
                 if(questao == null){
                     questao = new Questao();
                     questao.setOrdem(ultQuestPos);
                     questao.setIdFormulario(formulario.getId());
-                    questao.setPerguntas(buildPerguntaList(questao.getId())); //Constroi Perguntas e Respostas
-                    if(questao.getPerguntas() != null && !questao.getPerguntas().isEmpty())
-                        questoes.add(questaoDAO.insertQuestao(questao));
+                    questao.setTitulo("Questao" + ultQuestPos);
+                    questao = questaoDAO.insertQuestao(questao);
+
+                    questao.setPerguntas(buildPerguntaList(questao));
+
+                    if(questao.getPerguntas() != null && !questao.getPerguntas().isEmpty()){
+                        questaoDAO.updateQuestao(questao);
+                        questoes.add(questao);
+                    }
                 }else{
-
-                    questao.setOrdem(ultQuestPos);
-                    questao.setIdFormulario(formulario.getId());
-                    questao.setPerguntas(buildPerguntaList(questao.getId())); //Constroi Perguntas e Respostas
+                    questao.setPerguntas(buildPerguntaList(questao));
                     if(questao.getPerguntas() != null && !questao.getPerguntas().isEmpty())
-                        questaoDAO.updateQuestao(questao); //TODO Atualizar a lista com essa questao atualizada
+                        questaoDAO.updateQuestao(questao);
                 }
-
                 openFragment(++ultQuestPos, v);
             }
         });
@@ -119,7 +121,7 @@ public class FormularioCamaraoRegionalActivity extends AppCompatActivity {
 
                 Questao questao = new Questao();
                 questao.setId(ultQuestPos);
-                questao.setPerguntas(buildPerguntaList(questao.getId()));
+                questao.setPerguntas(buildPerguntaList(questao));
 
                 openFragment(--ultQuestPos, v);
             }
@@ -132,15 +134,17 @@ public class FormularioCamaraoRegionalActivity extends AppCompatActivity {
         View recyclerView = findViewById(R.id.questao_list);
         assert recyclerView != null;
         setupRecyclerView((RecyclerView) recyclerView);
-
     }
 
-    private List<Pergunta> buildPerguntaList(int idQuestao){
+    private List<Pergunta> buildPerguntaList(Questao questao){
 
         List<Pergunta> perguntas = new ArrayList<Pergunta>();
 
         /** PERGUNTAS **/
         for(int seqPergunta=1; seqPergunta<10; seqPergunta++){
+
+            PerguntaDAO perguntaDAO = new PerguntaDAO(this);
+            RespostaDAO respostaDAO = new RespostaDAO(this);
 
             String currentPergunta = ConstantesIdsFormularios.PERGUNTA.concat(String.valueOf(seqPergunta));
             TextView perguntaTextView = (TextView) findViewById(getResources().getIdentifier(currentPergunta ,"id", getPackageName())); //perg1
@@ -148,9 +152,15 @@ public class FormularioCamaraoRegionalActivity extends AppCompatActivity {
             if(perguntaTextView != null) {
                 List<Resposta> respostas = new ArrayList<Resposta>();
 
-                Pergunta pergunta = new Pergunta();
-                pergunta.setOrdem(seqPergunta);
-                pergunta.setIdQuestao(idQuestao);
+                Pergunta pergunta = perguntaDAO.findPerguntaByOrdemIdQuestao(seqPergunta, questao.getId());
+
+                if(pergunta == null){
+                    pergunta = new Pergunta();
+                    pergunta.setOrdem(seqPergunta);
+                    pergunta.setBooleana(false);
+                    pergunta.setRespBooleana(false);
+                    pergunta = perguntaDAO.insertPergunta(pergunta);
+                }
 
                 /** RADIOBUTTON **/
                 for (int rb = 1; rb <= 20; rb++) { //
@@ -161,6 +171,9 @@ public class FormularioCamaraoRegionalActivity extends AppCompatActivity {
                         Resposta resp = new Resposta();
                         resp.setOpcao(rb);
                         resp.setIdPergunta(pergunta.getId());
+                        resp.setOrdem(rb);
+
+                        resp = respostaDAO.insertResposta(resp);
                         respostas.add(resp);
                         break;
                     }
@@ -175,6 +188,9 @@ public class FormularioCamaraoRegionalActivity extends AppCompatActivity {
                         Resposta resp = new Resposta();
                         resp.setOpcao(cb);
                         resp.setIdPergunta(pergunta.getId());
+                        resp.setOrdem(cb);
+
+                        resp = respostaDAO.insertResposta(resp);
                         respostas.add(resp);
                     }
                 }
@@ -188,6 +204,9 @@ public class FormularioCamaraoRegionalActivity extends AppCompatActivity {
                         Resposta resp = new Resposta();
                         resp.setTexto(editText.getText().toString());
                         resp.setIdPergunta(pergunta.getId());
+                        resp.setOrdem(et);
+
+                        resp = respostaDAO.insertResposta(resp);
                         respostas.add(resp);
                     }
                 }
@@ -207,10 +226,7 @@ public class FormularioCamaraoRegionalActivity extends AppCompatActivity {
             extends RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder> {
 
 
-        public SimpleItemRecyclerViewAdapter(List<ItemMenuLateral> items) {
-
-
-        }
+        public SimpleItemRecyclerViewAdapter(List<ItemMenuLateral> items) { }
 
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -242,14 +258,12 @@ public class FormularioCamaraoRegionalActivity extends AppCompatActivity {
             public final View mView;
             public final TextView mTitleView;
 
-            public RadioGroup mRadioGroup;
             public ItemMenuLateral mItem;
 
             public ViewHolder(View view) {
                 super(view);
                 mView = view;
                 mTitleView = (TextView) view.findViewById(R.id.title);
-//                mRadioGroup =  (RadioGroup) view.findViewById()
             }
 
         }

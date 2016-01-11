@@ -23,7 +23,7 @@ public class PerguntaDAO {
         appescaHelper = new AppescaHelper(this.context);
     }
 
-    public void insertPergunta(Pergunta pergunta){
+    public Pergunta insertPergunta(Pergunta pergunta){
         SQLiteDatabase db = appescaHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -32,7 +32,36 @@ public class PerguntaDAO {
         values.put(AppescaHelper.COL_PERGUNTA_ORDEM, pergunta.getOrdem());
         values.put(AppescaHelper.COL_PERGUNTA_ID_QUESTAO, pergunta.getIdQuestao());
 
-        db.insert(AppescaHelper.TABLE_PERGUNTA, null,values);
+        long id = db.insert(AppescaHelper.TABLE_PERGUNTA, null, values);
+        return findPerguntaByQuestao((int) id);
+    }
+
+    public Pergunta findPerguntaByQuestao(int idPergunta) {
+        SQLiteDatabase db = appescaHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery(
+                "SELECT " + AppescaHelper.COL_PERGUNTA_ID + " , " +
+                        AppescaHelper.COL_PERGUNTA_BOOLEANA + " , " +
+                        AppescaHelper.COL_PERGUNTA_RESP_BOOLEANA + " , " +
+                        AppescaHelper.COL_PERGUNTA_ORDEM + " , " +
+                        AppescaHelper.COL_PERGUNTA_ID_QUESTAO +
+                        " FROM " + AppescaHelper.TABLE_PERGUNTA +
+                        " WHERE " + AppescaHelper.COL_PERGUNTA_ID + " = ?", new String[]{String.valueOf(idPergunta)});
+
+        Pergunta pergunta = null;
+        if(cursor.moveToFirst()){
+            pergunta = new Pergunta();
+            pergunta.setId(cursor.getInt(0));
+            if(cursor.getInt(1) == 1)
+                pergunta.setBooleana(true);
+            if(cursor.getInt(2) == 2)
+                pergunta.setRespBooleana(true);
+            pergunta.setOrdem(cursor.getInt(3));
+            pergunta.setIdQuestao(cursor.getInt(4));
+
+            RespostaDAO respostaDAO = new RespostaDAO(context);
+            pergunta.setRespostas(respostaDAO.findRespostasByPergunta(pergunta.getId()));
+        }
+        return pergunta;
     }
 
     public void updatePergunta(Pergunta pergunta){
@@ -57,7 +86,7 @@ public class PerguntaDAO {
                 new String[]{String.valueOf(idPergunta)});
     }
 
-    public List<Pergunta> getAllPerguntas() {
+    public List<Pergunta> findAllPerguntas() {
         SQLiteDatabase db = appescaHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery(
                 "SELECT " + AppescaHelper.COL_PERGUNTA_ID + " , " +
@@ -85,7 +114,7 @@ public class PerguntaDAO {
         return perguntaList;
     }
 
-    public List<Pergunta> getPerguntasByQuestao(int idQuestao) {
+    public List<Pergunta> findPerguntasByQuestao(int idQuestao) {
         SQLiteDatabase db = appescaHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery(
                 "SELECT " + AppescaHelper.COL_PERGUNTA_ID + " , " +
@@ -110,11 +139,40 @@ public class PerguntaDAO {
             pergunta.setIdQuestao(cursor.getInt(4));
 
             RespostaDAO respostaDAO = new RespostaDAO(context);
-            pergunta.setRespostas(respostaDAO.getRespostasByPergunta(pergunta.getId()));
+            pergunta.setRespostas(respostaDAO.findRespostasByPergunta(pergunta.getId()));
 
             perguntaList.add(pergunta);
             cursor.moveToNext();
         }
         return perguntaList;
+    }
+
+    public Pergunta findPerguntaByOrdemIdQuestao(int ordem, int idQuestao) {
+        SQLiteDatabase db = appescaHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery(
+                "SELECT " + AppescaHelper.COL_PERGUNTA_ID + " , " +
+                        AppescaHelper.COL_PERGUNTA_BOOLEANA + " , " +
+                        AppescaHelper.COL_PERGUNTA_RESP_BOOLEANA + " , " +
+                        AppescaHelper.COL_PERGUNTA_ORDEM + " , " +
+                        AppescaHelper.COL_PERGUNTA_ID_QUESTAO +
+                        " FROM " + AppescaHelper.TABLE_PERGUNTA +
+                        " WHERE " + AppescaHelper.COL_PERGUNTA_ORDEM + " = ?"+
+                        " AND " + AppescaHelper.COL_PERGUNTA_ID_QUESTAO + " = ?", new String[]{String.valueOf(ordem), String.valueOf(idQuestao)});
+
+        Pergunta pergunta = null;
+        if(cursor.moveToFirst()){
+            pergunta = new Pergunta();
+            pergunta.setId(cursor.getInt(0));
+            if(cursor.getInt(1) == 1)
+                pergunta.setBooleana(true);
+            if(cursor.getInt(2) == 2)
+                pergunta.setRespBooleana(true);
+            pergunta.setOrdem(cursor.getInt(3));
+            pergunta.setIdQuestao(cursor.getInt(4));
+
+            RespostaDAO respostaDAO = new RespostaDAO(context);
+            pergunta.setRespostas(respostaDAO.findRespostasByPergunta(pergunta.getId()));
+        }
+        return pergunta;
     }
 }

@@ -44,6 +44,7 @@ public class AppescaHelper extends SQLiteOpenHelper{
     public static final String COL_RESPOSTA_OPCAO = "OPCAO";
     public static final String COL_RESPOSTA_TEXTO = "TEXTO";
     public static final String COL_RESPOSTA_AUDIO = "AUDIO";
+    public static final String COL_RESPOSTA_ORDEM = "ORDEM";
     public static final String COL_RESPOSTA_ID_PERGUNTA = "ID_PERGUNTA";
 
     public static final String TABLE_USUARIO = "USUARIO";
@@ -210,6 +211,7 @@ public class AppescaHelper extends SQLiteOpenHelper{
         sql.append(COL_RESPOSTA_OPCAO + " INTEGER , ");
         sql.append(COL_RESPOSTA_TEXTO + " TEXT , ");
         sql.append(COL_RESPOSTA_AUDIO + " TEXT , ");
+        sql.append(COL_RESPOSTA_ORDEM + " INTEGER , ");
         sql.append(COL_RESPOSTA_ID_PERGUNTA + " INTEGER , ");
         sql.append(" FOREIGN KEY ("+ COL_RESPOSTA_ID_PERGUNTA +") REFERENCES "+ TABLE_PERGUNTA+" ("+ COL_PERGUNTA_ID +") ");
 

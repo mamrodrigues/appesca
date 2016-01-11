@@ -8,6 +8,7 @@ public class Resposta implements java.io.Serializable {
 	private Integer opcao;
 	private String texto;
 	private byte[] audio;
+	private int ordem;
 	private int idPergunta;
 
 	public Resposta() {
@@ -64,4 +65,11 @@ public class Resposta implements java.io.Serializable {
 		this.idPergunta = idPergunta;
 	}
 
+	public int getOrdem() {
+		return ordem;
+	}
+
+	public void setOrdem(int ordem) {
+		this.ordem = ordem;
+	}
 }
