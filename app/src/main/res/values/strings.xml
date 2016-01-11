@@ -8,7 +8,7 @@
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Senha</string>
-    <string name="action_sign_in">Entrar ou registrar</string>
+    <string name="action_sign_in">Entrar</string>
     <string name="action_sign_in_short">Entrar</string>
     <string name="error_invalid_email">O endereço de email não é válido</string>
     <string name="error_invalid_password">Esta senha é muito curta</string>
