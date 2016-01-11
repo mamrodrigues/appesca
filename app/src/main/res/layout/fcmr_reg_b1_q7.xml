@@ -37,6 +37,7 @@
             android:padding="20dp">
 
             <TextView
+                android:id="@+id/perg1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
@@ -72,28 +73,28 @@
                         android:layout_height="wrap_content"
                         android:text="é queimado"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_a" />
+                        android:id="@+id/perg1_cb_resp1" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="é enterrado"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_b" />
+                        android:id="@+id/perg1_cb_resp2" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="jogado no terreno"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_c" />
+                        android:id="@+id/perg1_cb_resp3" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="jogado em rio, igarapé, lago ou mar"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_d" />
+                        android:id="@+id/perg1_cb_resp4" />
 
 
                     <CheckBox
@@ -101,13 +102,13 @@
                         android:layout_height="wrap_content"
                         android:text="Outro. Qual?"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_f" />
+                        android:id="@+id/perg1_cb_resp5" />
 
 
                     <EditText
                         android:layout_width="241dp"
                         android:layout_height="wrap_content"
-                        android:id="@+id/outro"
+                        android:id="@+id/perg1_et_resp1"
                         android:textAppearance="@style/style_resposta"
                         android:lines="2" />
                 </LinearLayout>

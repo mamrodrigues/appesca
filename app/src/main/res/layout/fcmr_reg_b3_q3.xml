@@ -37,6 +37,7 @@
             android:padding="20dp">
 
             <TextView
+                android:id="@+id/perg1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
@@ -67,54 +68,54 @@ do entrevistado)"/>
                         android:layout_height="wrap_content"
                         android:text="Católica"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_a" />
+                        android:id="@+id/perg1_cb_resp1" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Protestante"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_b" />
+                        android:id="@+id/perg1_cb_resp2" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Evangélica"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_c" />
+                        android:id="@+id/perg1_cb_resp3" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Espírita"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_d" />
+                        android:id="@+id/perg1_cb_resp4" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Umbanda"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_e" />
+                        android:id="@+id/perg1_cb_resp5" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Candomblé"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_f" />
+                        android:id="@+id/perg1_cb_resp6" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Outro. Qual?"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_g" />
+                        android:id="@+id/perg1_cb_resp7" />
 
                     <EditText
                         android:layout_width="241dp"
                         android:layout_height="wrap_content"
-                        android:id="@+id/outro"
+                        android:id="@+id/perg1_et_resp1"
                         android:textAppearance="@style/style_resposta"
                         android:lines="2" />
                 </LinearLayout>

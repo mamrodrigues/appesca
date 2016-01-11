@@ -37,6 +37,7 @@
             android:padding="20dp">
 
             <TextView
+                android:id="@+id/perg1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
@@ -85,13 +86,13 @@
                     android:layout_height="wrap_content"
                     android:text="Bolsa Família"
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/opcao_a"
+                    android:id="@+id/perg1_cb_resp1"
                     android:checked="false" />
 
                 <EditText
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/opcao_a_edit_text" />
+                    android:id="@+id/perg1_et_resp1" />
             </TableRow>
 
             <TableRow
@@ -103,13 +104,13 @@
                     android:layout_height="wrap_content"
                     android:text="Luz para Todos"
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/opcao_b"
+                    android:id="@+id/perg1_cb_resp2"
                     android:checked="false" />
 
                 <EditText
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/opcao_b_edit_text" />
+                    android:id="@+id/perg1_et_resp2" />
             </TableRow>
 
             <TableRow
@@ -121,12 +122,12 @@
                     android:layout_height="wrap_content"
                     android:text="Bolsa Verde"
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/opcao_c"
+                    android:id="@+id/perg1_cb_resp3"
                     android:checked="false" />
                 <EditText
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/opcao_c_edit_text" />
+                    android:id="@+id/perg1_et_resp3" />
             </TableRow>
 
             <TableRow
@@ -138,11 +139,11 @@
                     android:layout_height="wrap_content"
                     android:text="Seguro defeso"
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/opcao_d" />
+                    android:id="@+id/perg1_cb_resp4" />
                 <EditText
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/opcao_d_edit_text" />
+                    android:id="@+id/perg1_et_resp4" />
             </TableRow>
 
             <TableRow
@@ -154,11 +155,11 @@
                     android:layout_height="wrap_content"
                     android:text="Seguro desemprego"
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/opcao_e" />
+                    android:id="@+id/perg1_cb_resp5" />
                 <EditText
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/opcao_e_edit_text" />
+                    android:id="@+id/perg1_et_resp5" />
             </TableRow>
 
             <TableRow
@@ -170,11 +171,11 @@
                     android:layout_height="wrap_content"
                     android:text="Aposentadoria"
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/opcao_f" />
+                    android:id="@+id/perg1_cb_resp6" />
                 <EditText
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/opcao_f_edit_text" />
+                    android:id="@+id/perg1_et_resp6" />
             </TableRow>
 
             <TableRow
@@ -186,11 +187,11 @@
                     android:layout_height="wrap_content"
                     android:text="Auxílio-doença"
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/opcao_g" />
+                    android:id="@+id/perg1_cb_resp7" />
                 <EditText
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/opcao_g_edit_text" />
+                    android:id="@+id/perg1_et_resp7" />
             </TableRow>
 
             <TableRow
@@ -202,11 +203,11 @@
                     android:layout_height="wrap_content"
                     android:text="Seguro maternidade"
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/opcao_h" />
+                    android:id="@+id/perg1_cb_resp8" />
                 <EditText
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/opcao_h_edit_text" />
+                    android:id="@+id/perg1_et_resp8" />
             </TableRow>
 
             <TableRow
@@ -218,11 +219,11 @@
                     android:layout_height="wrap_content"
                     android:text="Minha casa, minha vida"
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/opcao_i" />
+                    android:id="@+id/perg1_cb_resp9" />
                 <EditText
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/opcao_i_edit_text" />
+                    android:id="@+id/perg1_et_resp9" />
             </TableRow>
 
             <TableRow
@@ -234,12 +235,12 @@
                     android:layout_height="wrap_content"
                     android:text="Outros. Quais?"
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/opcao_j" />
+                    android:id="@+id/perg1_cb_resp10" />
 
                 <EditText
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/opcao_j_edit_text" />
+                    android:id="@+id/perg1_et_resp10" />
             </TableRow>
 
         </TableLayout>

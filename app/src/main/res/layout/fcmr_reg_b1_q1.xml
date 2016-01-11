@@ -38,6 +38,7 @@
             android:padding="20dp">
 
             <TextView
+                android:id="@+id/perg1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
@@ -47,7 +48,7 @@
             <EditText
                 android:layout_width="241dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/resposta"
+                android:id="@+id/perg1_et_resp1"
                 android:textAppearance="@style/style_resposta"
                 android:lines="1" />
 
@@ -72,6 +73,7 @@
                 android:orientation="vertical"
                 android:textAlignment="center">
                 <TextView
+                    android:id="@+id/perg2"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textAppearance="@style/style_questao"
@@ -79,6 +81,7 @@
                     android:text="Identificação (primeiro nome)"/>
 
                 <TextView
+                    android:id="@+id/perg3"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -87,6 +90,7 @@
                     android:text="Sexo"/>
 
                 <TextView
+                    android:id="@+id/perg4"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -95,6 +99,7 @@
                     android:text="Idade"/>
 
                 <TextView
+                    android:id="@+id/perg5"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -103,6 +108,7 @@
                     android:text="Parentesco"/>
 
                 <TextView
+                    android:id="@+id/perg6"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -111,6 +117,7 @@
                     android:text="Já frequentou a escola?"/>
 
                 <TextView
+                    android:id="@+id/perg7"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -119,6 +126,7 @@
                     android:text="Até que ano?"/>
 
                 <TextView
+                    android:id="@+id/perg8"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -136,7 +144,7 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/nome_a"/>
+                    android:id="@+id/perg2_et_resp1"/>
 
                 <TableLayout>
                     <TableRow
@@ -149,20 +157,20 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/text"
                             android:orientation="horizontal"
-                            android:checkedButton="@+id/perg2_rb_resp1">
+                            android:checkedButton="@+id/perg3_rb_resp1">
                             <RadioButton
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="M"
                                 android:textAppearance="@style/style_resposta"
-                                android:id="@+id/perg2_rb_resp1"/>
+                                android:id="@+id/perg3_rb_resp1"/>
 
                             <RadioButton
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="F"
                                 android:textAppearance="@style/style_resposta"
-                                android:id="@+id/perg2_rb_resp2"/>
+                                android:id="@+id/perg3_rb_resp2"/>
                         </RadioGroup>
                     </TableRow>
                 </TableLayout>
@@ -170,12 +178,12 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/idade_a"/>
+                    android:id="@+id/perg4_et_resp1"/>
 
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/parentesco_a"/>
+                    android:id="@+id/perg5_et_resp1"/>
 
                 <TableLayout>
                     <TableRow
@@ -183,28 +191,34 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
+                        <RadioGroup
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Sim"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_a_sim"
-                            android:checked="false"/>
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg6_rb_resp1">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sim"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg6_rb_resp1"
+                                android:checked="false"/>
 
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Não"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_a_nao"
-                            android:checked="false"/>
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Não"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg6_rb_resp2"
+                                android:checked="false"/>
+                        </RadioGroup>
                     </TableRow>
                 </TableLayout>
 
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/ano_escola_a"/>
+                    android:id="@+id/perg6_et_resp7"/>
 
                 <TableLayout>
                     <TableRow
@@ -212,120 +226,27 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
+                        <RadioGroup
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Sim"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_atual_a_sim"
-                            android:checked="false"/>
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg7_rb_resp1">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sim"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg7_rb_resp1"
+                                android:checked="false"/>
 
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Não"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_atual_a_nao"
-                            android:checked="false"/>
-                    </TableRow>
-                </TableLayout>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal">
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/nome_b"/>
-
-                <TableLayout>
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="M"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/masculino_b"
-                            android:checked="false"/>
-
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="F"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/feminino_b"
-                            android:checked="false"/>
-                    </TableRow>
-                </TableLayout>
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/idade_b"/>
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/parentesco_b"/>
-
-                <TableLayout>
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Sim"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_b_sim"
-                            android:checked="false"/>
-
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Não"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_b_nao"
-                            android:checked="false"/>
-                    </TableRow>
-                </TableLayout>
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/ano_escola_b"/>
-
-                <TableLayout>
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Sim"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_atual_b_sim"
-                            android:checked="false"/>
-
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Não"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_atual_b_nao"
-                            android:checked="false"/>
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Não"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg7_rb_resp2"
+                                android:checked="false"/>
+                        </RadioGroup>
                     </TableRow>
                 </TableLayout>
 
@@ -339,7 +260,7 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/nome_c"/>
+                    android:id="@+id/perg2_et_resp2"/>
 
                 <TableLayout>
                     <TableRow
@@ -347,33 +268,39 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
+                        <RadioGroup
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="M"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/masculino_c"
-                            android:checked="false"/>
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg3_rb_resp3">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="M"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg3_rb_resp3"
+                                android:checked="false"/>
 
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="F"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/feminino_c"
-                            android:checked="false"/>
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="F"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg3_rb_resp4"
+                                android:checked="false"/>
+                        </RadioGroup>
                     </TableRow>
                 </TableLayout>
 
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/idade_c"/>
+                    android:id="@+id/perg4_et_resp2"/>
 
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/parentesco_c"/>
+                    android:id="@+id/perg5_et_resp2"/>
 
                 <TableLayout>
                     <TableRow
@@ -381,28 +308,34 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
+                        <RadioGroup
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Sim"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_c_sim"
-                            android:checked="false"/>
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg6_rb_resp3">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sim"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg6_rb_resp3"
+                                android:checked="false"/>
 
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Não"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_c_nao"
-                            android:checked="false"/>
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Não"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg6_rb_resp4"
+                                android:checked="false"/>
+                        </RadioGroup>
                     </TableRow>
                 </TableLayout>
 
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/ano_escola_c"/>
+                    android:id="@+id/perg7_et_resp2"/>
 
                 <TableLayout>
                     <TableRow
@@ -410,120 +343,27 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
+                        <RadioGroup
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Sim"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_atual_c_sim"
-                            android:checked="false"/>
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg8_rb_resp3">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sim"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg8_rb_resp3"
+                                android:checked="false"/>
 
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Não"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_atual_c_nao"
-                            android:checked="false"/>
-                    </TableRow>
-                </TableLayout>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal">
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/nome_d"/>
-
-                <TableLayout>
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="M"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/masculino_d"
-                            android:checked="false"/>
-
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="F"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/feminino_d"
-                            android:checked="false"/>
-                    </TableRow>
-                </TableLayout>
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/idade_d"/>
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/parentesco_d"/>
-
-                <TableLayout>
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Sim"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_d_sim"
-                            android:checked="false"/>
-
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Não"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_d_nao"
-                            android:checked="false"/>
-                    </TableRow>
-                </TableLayout>
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/ano_escola_d"/>
-
-                <TableLayout>
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Sim"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_atual_d_sim"
-                            android:checked="false"/>
-
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Não"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_atual_d_nao"
-                            android:checked="false"/>
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Não"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg8_rb_resp4"
+                                android:checked="false"/>
+                        </RadioGroup>
                     </TableRow>
                 </TableLayout>
 
@@ -537,7 +377,7 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/nome_e"/>
+                    android:id="@+id/perg2_et_resp3"/>
 
                 <TableLayout>
                     <TableRow
@@ -545,33 +385,39 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
+                        <RadioGroup
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="M"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/masculino_e"
-                            android:checked="false"/>
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg3_rb_resp5">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="M"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg3_rb_resp5"
+                                android:checked="false"/>
 
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="F"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/feminino_e"
-                            android:checked="false"/>
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="F"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg3_rb_resp6"
+                                android:checked="false"/>
+                        </RadioGroup>
                     </TableRow>
                 </TableLayout>
 
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/idade_e"/>
+                    android:id="@+id/perg4_et_resp3"/>
 
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/parentesco_e"/>
+                    android:id="@+id/perg5_et_resp3"/>
 
                 <TableLayout>
                     <TableRow
@@ -579,28 +425,34 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
+                        <RadioGroup
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Sim"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_e_sim"
-                            android:checked="false"/>
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg6_rb_resp5">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sim"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg6_rb_resp5"
+                                android:checked="false"/>
 
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Não"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_e_nao"
-                            android:checked="false"/>
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Não"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg6_rb_resp6"
+                                android:checked="false"/>
+                        </RadioGroup>
                     </TableRow>
                 </TableLayout>
 
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/ano_escola_e"/>
+                    android:id="@+id/perg7_et_resp3"/>
 
                 <TableLayout>
                     <TableRow
@@ -608,120 +460,27 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
+                        <RadioGroup
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Sim"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_atual_e_sim"
-                            android:checked="false"/>
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg8_rb_resp5">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sim"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg8_rb_resp5"
+                                android:checked="false"/>
 
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Não"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_atual_e_nao"
-                            android:checked="false"/>
-                    </TableRow>
-                </TableLayout>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal">
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/nome_f"/>
-
-                <TableLayout>
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="M"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/masculino_f"
-                            android:checked="false"/>
-
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="F"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/feminino_f"
-                            android:checked="false"/>
-                    </TableRow>
-                </TableLayout>
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/idade_f"/>
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/parentesco_f"/>
-
-                <TableLayout>
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Sim"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_f_sim"
-                            android:checked="false"/>
-
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Não"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_f_nao"
-                            android:checked="false"/>
-                    </TableRow>
-                </TableLayout>
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/ano_escola_f"/>
-
-                <TableLayout>
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Sim"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_atual_f_sim"
-                            android:checked="false"/>
-
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Não"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_atual_f_nao"
-                            android:checked="false"/>
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Não"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg8_rb_resp6"
+                                android:checked="false"/>
+                        </RadioGroup>
                     </TableRow>
                 </TableLayout>
 
@@ -735,7 +494,7 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/nome_g"/>
+                    android:id="@+id/perg2_ed_resp4"/>
 
                 <TableLayout>
                     <TableRow
@@ -743,33 +502,39 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
+                        <RadioGroup
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="M"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/masculino_g"
-                            android:checked="false"/>
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg3_rb_resp7">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="M"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg3_rb_resp7"
+                                android:checked="false"/>
 
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="F"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/feminino_g"
-                            android:checked="false"/>
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="F"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg3_rb_resp8"
+                                android:checked="false"/>
+                        </RadioGroup>
                     </TableRow>
                 </TableLayout>
 
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/idade_g"/>
+                    android:id="@+id/perg4_et_resp4"/>
 
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/parentesco_g"/>
+                    android:id="@+id/perg5_et_resp4"/>
 
                 <TableLayout>
                     <TableRow
@@ -777,28 +542,34 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
+                        <RadioGroup
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Sim"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_g_sim"
-                            android:checked="false"/>
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg6_rb_resp7">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sim"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg6_rb_resp7"
+                                android:checked="false"/>
 
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Não"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_g_nao"
-                            android:checked="false"/>
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Não"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg6_rb_resp8"
+                                android:checked="false"/>
+                        </RadioGroup>
                     </TableRow>
                 </TableLayout>
 
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/ano_escola_g"/>
+                    android:id="@+id/perg7_et_resp4"/>
 
                 <TableLayout>
                     <TableRow
@@ -806,120 +577,27 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
+                        <RadioGroup
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Sim"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_atual_g_sim"
-                            android:checked="false"/>
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg8_rb_resp7">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sim"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg8_rb_resp7"
+                                android:checked="false"/>
 
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Não"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_atual_g_nao"
-                            android:checked="false"/>
-                    </TableRow>
-                </TableLayout>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal">
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/nome_h"/>
-
-                <TableLayout>
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="M"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/masculino_h"
-                            android:checked="false"/>
-
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="F"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/feminino_h"
-                            android:checked="false"/>
-                    </TableRow>
-                </TableLayout>
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/idade_h"/>
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/parentesco_h"/>
-
-                <TableLayout>
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Sim"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_h_sim"
-                            android:checked="false"/>
-
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Não"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_h_nao"
-                            android:checked="false"/>
-                    </TableRow>
-                </TableLayout>
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/ano_escola_h"/>
-
-                <TableLayout>
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Sim"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_atual_h_sim"
-                            android:checked="false"/>
-
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Não"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_atual_h_nao"
-                            android:checked="false"/>
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Não"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg8_rb_resp8"
+                                android:checked="false"/>
+                        </RadioGroup>
                     </TableRow>
                 </TableLayout>
 
@@ -933,7 +611,7 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/nome_i"/>
+                    android:id="@+id/perg2_et_resp5"/>
 
                 <TableLayout>
                     <TableRow
@@ -941,33 +619,39 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
+                        <RadioGroup
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="M"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/masculino_i"
-                            android:checked="false"/>
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg3_rb_resp9">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="M"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg3_rb_resp9"
+                                android:checked="false"/>
 
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="F"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/feminino_i"
-                            android:checked="false"/>
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="F"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg3_rb_resp10"
+                                android:checked="false"/>
+                        </RadioGroup>
                     </TableRow>
                 </TableLayout>
 
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/idade_i"/>
+                    android:id="@+id/perg4_et_resp5"/>
 
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/parentesco_i"/>
+                    android:id="@+id/perg5_et_resp5"/>
 
                 <TableLayout>
                     <TableRow
@@ -975,28 +659,34 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
+                        <RadioGroup
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Sim"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_i_sim"
-                            android:checked="false"/>
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg6_rb_resp9">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sim"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg6_rb_resp9"
+                                android:checked="false"/>
 
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Não"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_i_nao"
-                            android:checked="false"/>
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Não"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg6_rb_resp10"
+                                android:checked="false"/>
+                        </RadioGroup>
                     </TableRow>
                 </TableLayout>
 
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/ano_escola_i"/>
+                    android:id="@+id/perg7_et_resp5"/>
 
                 <TableLayout>
                     <TableRow
@@ -1004,21 +694,27 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
+                        <RadioGroup
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Sim"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_atual_i_sim"
-                            android:checked="false"/>
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg8_rb_resp9">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sim"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg8_rb_resp9"
+                                android:checked="false"/>
 
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Não"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_atual_i_nao"
-                            android:checked="false"/>
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Não"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg8_rb_resp10"
+                                android:checked="false"/>
+                        </RadioGroup>
                     </TableRow>
                 </TableLayout>
 
@@ -1032,7 +728,7 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/nome_j"/>
+                    android:id="@+id/perg2_et_resp6"/>
 
                 <TableLayout>
                     <TableRow
@@ -1040,33 +736,39 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
+                        <RadioGroup
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="M"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/masculino_j"
-                            android:checked="false"/>
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg3_rb_resp11">
+                                <RadioButton
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="M"
+                                    android:textAppearance="@style/style_resposta"
+                                    android:id="@+id/perg3_rb_resp11"
+                                    android:checked="false"/>
 
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="F"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/feminino_j"
-                            android:checked="false"/>
+                                <RadioButton
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="F"
+                                    android:textAppearance="@style/style_resposta"
+                                    android:id="@+id/perg3_rb_resp12"
+                                    android:checked="false"/>
+                        </RadioGroup>
                     </TableRow>
                 </TableLayout>
 
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/idade_j"/>
+                    android:id="@+id/perg4_et_resp6"/>
 
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/parentesco_j"/>
+                    android:id="@+id/perg5_et_resp6"/>
 
                 <TableLayout>
                     <TableRow
@@ -1074,28 +776,34 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
+                        <RadioGroup
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Sim"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_j_sim"
-                            android:checked="false"/>
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg6_rb_resp11">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sim"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg6_rb_resp11"
+                                android:checked="false"/>
 
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Não"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_j_nao"
-                            android:checked="false"/>
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Não"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg6_rb_resp12"
+                                android:checked="false"/>
+                        </RadioGroup>
                     </TableRow>
                 </TableLayout>
 
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/ano_escola_j"/>
+                    android:id="@+id/perg7_et_resp6"/>
 
                 <TableLayout>
                     <TableRow
@@ -1103,21 +811,495 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
+                        <RadioGroup
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Sim"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_atual_j_sim"
-                            android:checked="false"/>
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg8_rb_resp11">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sim"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg8_rb_resp11"
+                                android:checked="false"/>
 
-                        <RadioButton
-                            android:layout_width="wrap_content"
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Não"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg8_rb_resp12"
+                                android:checked="false"/>
+                        </RadioGroup>
+                    </TableRow>
+                </TableLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/perg2_et_resp7"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioGroup
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Não"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/escola_atual_j_nao"
-                            android:checked="false"/>
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg3_rb_resp13">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="M"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg3_rb_resp13"
+                                android:checked="false"/>
+
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="F"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg3_rb_resp14"
+                                android:checked="false"/>
+                        </RadioGroup>
+                    </TableRow>
+                </TableLayout>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/perg4_et_resp7"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/perg5_et_resp7"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg6_rb_resp13">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sim"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg6_rb_resp13"
+                                android:checked="false"/>
+
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Não"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg6_rb_resp14"
+                                android:checked="false"/>
+                        </RadioGroup>
+                    </TableRow>
+                </TableLayout>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/perg7_et_resp7"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg8_rb_resp13">
+                                <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sim"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg8_rb_resp13"
+                                android:checked="false"/>
+
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Não"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg8_rb_resp14"
+                                android:checked="false"/>
+                        </RadioGroup>
+                    </TableRow>
+                </TableLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/perg2_et_resp8"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg3_rb_resp15">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="M"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg3_rb_resp15"
+                                android:checked="false"/>
+
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="F"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg3_rb_resp16"
+                                android:checked="false"/>
+                        </RadioGroup>
+                    </TableRow>
+                </TableLayout>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/perg4_et_resp8"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/perg5_et_resp8"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg6_rb_resp15">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sim"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg6_rb_resp15"
+                                android:checked="false"/>
+
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Não"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg6_rb_resp16"
+                                android:checked="false"/>
+                        </RadioGroup>
+                    </TableRow>
+                </TableLayout>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/perg7_et_resp8"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg8_rb_resp15">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sim"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg8_rb_resp15"
+                                android:checked="false"/>
+
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Não"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg8_rb_resp16"
+                                android:checked="false"/>
+                        </RadioGroup>
+                    </TableRow>
+                </TableLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/perg2_et_resp9"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg3_rg_resp17">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="M"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg3_rb_resp17"
+                                android:checked="false"/>
+
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="F"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg3_rb_resp18"
+                                android:checked="false"/>
+                        </RadioGroup>
+                    </TableRow>
+                </TableLayout>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/perg4_et_resp9"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/perg5_et_resp9"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg6_rg_resp17">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sim"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg6_rg_resp17"
+                                android:checked="false"/>
+
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Não"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg6_rg_resp18"
+                                android:checked="false"/>
+                        </RadioGroup>
+                    </TableRow>
+                </TableLayout>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/perg7_et_resp9"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg8_rg_resp17">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sim"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg8_rg_resp17"
+                                android:checked="false"/>
+
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Não"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg8_rg_resp18"
+                                android:checked="false"/>
+                        </RadioGroup>
+                    </TableRow>
+                </TableLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/perg2_et_resp10"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg3_rg_resp19">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="M"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg3_rg_resp19"
+                                android:checked="false"/>
+
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="F"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg3_rg_resp20"
+                                android:checked="false"/>
+                        </RadioGroup>
+                    </TableRow>
+                </TableLayout>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/perg4_et_resp10"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/perg5_et_resp10"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg6_rg_resp19">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sim"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg6_rg_resp19"
+                                android:checked="false"/>
+
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Não"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg6_rg_resp20"
+                                android:checked="false"/>
+                        </RadioGroup>
+                    </TableRow>
+                </TableLayout>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/perg7_et_resp10"/>
+
+                <TableLayout>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center">
+                        <RadioGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg8_rg_resp19">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sim"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg8_rg_resp19"
+                                android:checked="false"/>
+
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Não"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg8_rg_resp20"
+                                android:checked="false"/>
+                        </RadioGroup>
                     </TableRow>
                 </TableLayout>
 
@@ -1134,6 +1316,7 @@
             android:padding="20dp">
 
             <TextView
+                android:id="@+id/perg9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
@@ -1158,6 +1341,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal">
                 <TextView
+                    android:id="@+id/perg10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="@style/style_questao"
@@ -1166,6 +1350,7 @@
                     android:text="Parentesco/Vinculo"/>
 
                 <TextView
+                    android:id="@+id/perg11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -1182,28 +1367,34 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/nome_a1"/>
+                    android:id="@+id/perg10_et_resp1"/>
                 <TableLayout>
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
+                        <RadioGroup
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="M"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/masculino_a1"
-                            android:checked="false"/>
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg11_rg_resp3">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="M"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg11_rg_resp3"
+                                android:checked="false"/>
 
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="F"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/feminino_a1"
-                            android:checked="false"/>
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="F"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg11_rg_resp4"
+                                android:checked="false"/>
+                        </RadioGroup>
                     </TableRow>
                 </TableLayout>
             </TableRow>
@@ -1215,28 +1406,34 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/nome_b1"/>
+                    android:id="@+id/perg10_et_resp2"/>
                 <TableLayout>
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
+                        <RadioGroup
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="M"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/masculino_b1"
-                            android:checked="false"/>
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg11_rg_resp5">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="M"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg11_rg_resp5"
+                                android:checked="false"/>
 
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="F"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/feminino_b1"
-                            android:checked="false"/>
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="F"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg11_rg_resp6"
+                                android:checked="false"/>
+                        </RadioGroup>
                     </TableRow>
                 </TableLayout>
             </TableRow>
@@ -1248,28 +1445,34 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/nome_c1"/>
+                    android:id="@+id/perg10_et_resp3"/>
                 <TableLayout>
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
+                        <RadioGroup
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="M"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/masculino_c1"
-                            android:checked="false"/>
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg11_rg_resp7">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="M"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg11_rg_resp7"
+                                android:checked="false"/>
 
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="F"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/feminino_c1"
-                            android:checked="false"/>
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="F"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg11_rg_resp8"
+                                android:checked="false"/>
+                        </RadioGroup>
                     </TableRow>
                 </TableLayout>
             </TableRow>
@@ -1281,28 +1484,34 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/nome_d1"/>
+                    android:id="@+id/perg10_et_resp4"/>
                 <TableLayout>
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
+                        <RadioGroup
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="M"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/masculino_d1"
-                            android:checked="false"/>
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg11_rg_resp9">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="M"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg11_rg_resp9"
+                                android:checked="false"/>
 
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="F"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/feminino_d1"
-                            android:checked="false"/>
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="F"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg11_rg_resp10"
+                                android:checked="false"/>
+                        </RadioGroup>
                     </TableRow>
                 </TableLayout>
             </TableRow>

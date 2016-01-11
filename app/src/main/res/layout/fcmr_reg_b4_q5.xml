@@ -37,6 +37,7 @@
             android:padding="20dp">
 
             <TextView
+                android:id="@+id/perg1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
@@ -59,7 +60,7 @@ região atualmente? (Pode haver mais de uma resposta)"/>
                 android:layout_height="wrap_content"
                 android:text="Desmatamento das nascentes"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_a"
+                android:id="@+id/perg1_cb_resp1"
                 android:checked="false" />
 
             <CheckBox
@@ -67,7 +68,7 @@ região atualmente? (Pode haver mais de uma resposta)"/>
                 android:layout_height="wrap_content"
                 android:text="Desmatamento dos rios e igarapés"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_b"
+                android:id="@+id/perg1_cb_resp2"
                 android:checked="false" />
 
             <CheckBox
@@ -75,7 +76,7 @@ região atualmente? (Pode haver mais de uma resposta)"/>
                 android:layout_height="wrap_content"
                 android:text="Desmatamento da floresta"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_c"
+                android:id="@+id/perg1_cb_resp3"
                 android:checked="false" />
 
             <CheckBox
@@ -83,7 +84,7 @@ região atualmente? (Pode haver mais de uma resposta)"/>
                 android:layout_height="wrap_content"
                 android:text="Erosão"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_d"
+                android:id="@+id/perg1_cb_resp4"
                 android:checked="false" />
 
             <CheckBox
@@ -91,7 +92,7 @@ região atualmente? (Pode haver mais de uma resposta)"/>
                 android:layout_height="wrap_content"
                 android:text="Poluição das águas dos rios ou do mar"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_e"
+                android:id="@+id/perg1_cb_resp5"
                 android:checked="false" />
 
             <CheckBox
@@ -99,7 +100,7 @@ região atualmente? (Pode haver mais de uma resposta)"/>
                 android:layout_height="wrap_content"
                 android:text="extrativismo"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_f"
+                android:id="@+id/perg1_cb_resp6"
                 android:checked="false" />
 
             <CheckBox
@@ -107,7 +108,7 @@ região atualmente? (Pode haver mais de uma resposta)"/>
                 android:layout_height="wrap_content"
                 android:text="Diminuição dos pescados"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_g"
+                android:id="@+id/perg1_cb_resp7"
                 android:checked="false" />
 
 
@@ -116,13 +117,13 @@ região atualmente? (Pode haver mais de uma resposta)"/>
                 android:layout_height="wrap_content"
                 android:text="Outros. Quais? "
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_h"
+                android:id="@+id/perg1_cb_resp8"
                 android:checked="false" />
 
             <EditText
                 android:layout_width="241dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/outro"
+                android:id="@+id/perg1_et_resp1"
                 android:textAppearance="@style/style_resposta"
                 android:lines="2" />
 

@@ -36,6 +36,7 @@
             android:padding="20dp">
 
             <TextView
+                android:id="@+id/perg1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
@@ -50,7 +51,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/resposta"
+                    android:id="@+id/perg1_et_resp1"
                     android:textAppearance="@style/style_resposta"/>
 
             </LinearLayout>
@@ -64,6 +65,7 @@
             android:padding="20dp">
 
             <TextView
+                android:id="@+id/perg2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
@@ -78,7 +80,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/resposta1"
+                    android:id="@+id/perg2_et_resp1"
                     android:textAppearance="@style/style_resposta"/>
 
             </LinearLayout>
@@ -91,33 +93,38 @@
                 android:paddingBottom="10dp"
                 android:paddingLeft="30dp">
 
-                <RadioButton
-                    android:layout_width="wrap_content"
+                <RadioGroup
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Horas"
-                    android:textAppearance="@style/style_resposta"
-                    android:id="@+id/horas1"
-                    android:checked="false"
-                    android:paddingRight="15dp"/>
+                    android:orientation="horizontal"
+                    android:checkedButton="@+id/perg2_rb_resp1">
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Horas"
+                        android:textAppearance="@style/style_resposta"
+                        android:id="@+id/perg2_rb_resp1"
+                        android:checked="false"
+                        android:paddingRight="15dp"/>
 
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Não sabe"
-                    android:textAppearance="@style/style_resposta"
-                    android:id="@+id/nao_sabe1"
-                    android:checked="false"
-                    android:paddingRight="15dp"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Não sabe"
+                        android:textAppearance="@style/style_resposta"
+                        android:id="@+id/perg2_rb_resp2"
+                        android:checked="false"
+                        android:paddingRight="15dp"/>
 
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Não respondeu"
-                    android:textAppearance="@style/style_resposta"
-                    android:id="@+id/nao_respondeu1"
-                    android:checked="false"
-                    android:paddingRight="15dp"/>
-
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Não respondeu"
+                        android:textAppearance="@style/style_resposta"
+                        android:id="@+id/perg2_rb_resp3"
+                        android:checked="false"
+                        android:paddingRight="15dp"/>
+                </RadioGroup>
             </LinearLayout>
 
         </LinearLayout>
@@ -129,6 +136,7 @@
         android:padding="20dp">
 
         <TextView
+            android:id="@+id/perg3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="5dp"
@@ -143,7 +151,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/resposta2"
+                android:id="@+id/perg3_et_resp1"
                 android:textAppearance="@style/style_resposta"/>
 
         </LinearLayout>
@@ -156,33 +164,38 @@
             android:paddingBottom="10dp"
             android:paddingLeft="30dp">
 
-            <RadioButton
-                android:layout_width="wrap_content"
+            <RadioGroup
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Horas"
-                android:textAppearance="@style/style_resposta"
-                android:id="@+id/horas2"
-                android:checked="false"
-                android:paddingRight="15dp"/>
+                android:orientation="horizontal"
+                android:checkedButton="@+id/perg3_rb_resp1">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Horas"
+                    android:textAppearance="@style/style_resposta"
+                    android:id="@+id/perg3_rb_resp1"
+                    android:checked="false"
+                    android:paddingRight="15dp"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Não sabe"
-                android:textAppearance="@style/style_resposta"
-                android:id="@+id/nao_sabe2"
-                android:checked="false"
-                android:paddingRight="15dp"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Não sabe"
+                    android:textAppearance="@style/style_resposta"
+                    android:id="@+id/perg3_rb_resp2"
+                    android:checked="false"
+                    android:paddingRight="15dp"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Não respondeu"
-                android:textAppearance="@style/style_resposta"
-                android:id="@+id/nao_respondeu2"
-                android:checked="false"
-                android:paddingRight="15dp"/>
-
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Não respondeu"
+                    android:textAppearance="@style/style_resposta"
+                    android:id="@+id/perg3_rb_resp3"
+                    android:checked="false"
+                    android:paddingRight="15dp"/>
+            </RadioGroup>
         </LinearLayout>
 
     </LinearLayout>

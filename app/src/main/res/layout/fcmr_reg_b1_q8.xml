@@ -37,6 +37,7 @@
             android:padding="20dp">
 
             <TextView
+                android:id="@+id/perg1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
@@ -58,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:text="Televisão"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_a"
+                android:id="@+id/perg1_cb_resp1"
                 android:checked="false" />
 
             <CheckBox
@@ -66,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:text="Rádio"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_b"
+                android:id="@+id/perg1_cb_resp2"
                 android:checked="false" />
 
             <CheckBox
@@ -74,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:text="Rádio Comunitária"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_c"
+                android:id="@+id/perg1_cb_resp3"
                 android:checked="false" />
 
             <CheckBox
@@ -82,77 +83,77 @@
                 android:layout_height="wrap_content"
                 android:text="Rádio amador"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_d" />
+                android:id="@+id/perg1_cb_resp4" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Internet"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_e" />
+                android:id="@+id/perg1_cb_resp5" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Telefone celular"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_f" />
+                android:id="@+id/perg1_cb_resp6" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Telefone Fixo"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_g" />
+                android:id="@+id/perg1_cb_resp7" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Telefone público (orelhão)"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_h" />
+                android:id="@+id/perg1_cb_resp8" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Telefone rural"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_i" />
+                android:id="@+id/perg1_cb_resp9" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sindicato"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_j" />
+                android:id="@+id/perg1_cb_resp10" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Associação"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_k" />
+                android:id="@+id/perg1_cb_resp11" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sistema de Som (carro, moto, bicicleta)"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_l" />
+                android:id="@+id/perg1_cb_resp12" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sistema público de Som"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_m" />
+                android:id="@+id/perg1_cb_resp13" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Material impresso (jornal, revista, jornal comunitário)"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_n" />
+                android:id="@+id/perg1_cb_resp14" />
 
         </LinearLayout>
 

@@ -38,6 +38,7 @@
             android:padding="20dp">
 
             <TextView
+                android:id="@+id/perg1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
@@ -53,32 +54,38 @@
             android:layout_height="wrap_content"
             android:paddingBottom="10dp"
             android:paddingLeft="30dp">
-            <RadioButton
-                android:layout_width="wrap_content"
+            <RadioGroup
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Sim"
-                android:textAppearance="@style/style_resposta"
-                android:id="@+id/sim"
-                android:checked="false"
-                android:paddingRight="15dp"/>
+                android:orientation="horizontal"
+                android:checkedButton="@+id/perg1_rb_resp1">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sim"
+                    android:textAppearance="@style/style_resposta"
+                    android:id="@+id/perg1_rb_resp1"
+                    android:checked="false"
+                    android:paddingRight="15dp"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Não"
-                android:textAppearance="@style/style_resposta"
-                android:id="@+id/nao"
-                android:checked="false"
-                android:paddingRight="15dp"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Não"
+                    android:textAppearance="@style/style_resposta"
+                    android:id="@+id/perg1_rb_resp2"
+                    android:checked="false"
+                    android:paddingRight="15dp"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Não se aplica"
-                android:textAppearance="@style/style_resposta"
-                android:id="@+id/nao_se_aplica"
-                android:checked="false"
-                android:paddingRight="15dp"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Não se aplica"
+                    android:textAppearance="@style/style_resposta"
+                    android:id="@+id/perg1_rb_resp3"
+                    android:checked="false"
+                    android:paddingRight="15dp"/>
+            </RadioGroup>
 
         </LinearLayout>
 
@@ -89,6 +96,7 @@
             android:padding="20dp">
 
             <TextView
+                android:id="@+id/perg2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
@@ -137,13 +145,13 @@
                     android:layout_height="wrap_content"
                     android:text="Pronaf"
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/opcao_a1"
+                    android:id="@+id/perg2_cb_resp1"
                     android:checked="false" />
 
                 <EditText
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/opcao_a1_edit_text" />
+                    android:id="@+id/perg2_et_resp1" />
             </TableRow>
 
             <TableRow
@@ -155,13 +163,13 @@
                     android:layout_height="wrap_content"
                     android:text="Pronaf Mulher"
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/opcao_b1"
+                    android:id="@+id/perg2_cb_resp2"
                     android:checked="false" />
 
                 <EditText
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/opcao_b1_edit_text" />
+                    android:id="@+id/perg2_et_resp2" />
             </TableRow>
 
             <TableRow
@@ -173,12 +181,12 @@
                     android:layout_height="wrap_content"
                     android:text="Crédito Amigo"
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/opcao_c1"
+                    android:id="@+id/perg2_cb_resp3"
                     android:checked="false" />
                 <EditText
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/opcao_c1_edit_text" />
+                    android:id="@+id/perg2_et_resp3" />
             </TableRow>
 
             <TableRow
@@ -190,11 +198,11 @@
                     android:layout_height="wrap_content"
                     android:text="PAA"
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/opcao_d1" />
+                    android:id="@+id/perg2_cb_resp4" />
                 <EditText
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/opcao_d1_edit_text" />
+                    android:id="@+id/perg2_et_resp4" />
             </TableRow>
 
             <TableRow
@@ -206,11 +214,11 @@
                     android:layout_height="wrap_content"
                     android:text="PNAE"
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/opcao_e1" />
+                    android:id="@+id/perg2_cb_resp5" />
                 <EditText
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/opcao_e1_edit_text" />
+                    android:id="@+id/perg2_et_resp5" />
             </TableRow>
 
             <TableRow
@@ -222,12 +230,12 @@
                     android:layout_height="match_parent"
                     android:text="Política de Garantia de Preços Mínimos para Produtos da Sociobiodiversidade – PGPMBio"
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/opcao_f1"
+                    android:id="@+id/perg2_cb_resp6"
                     android:checked="false" />
                 <EditText
                     android:layout_width="200dp"
                     android:layout_height="match_parent"
-                    android:id="@+id/opcao_f1_edit_text" />
+                    android:id="@+id/perg2_et_resp6" />
             </TableRow>
 
             <TableRow
@@ -239,11 +247,11 @@
                     android:layout_height="match_parent"
                     android:text="Programa de Organização Produtiva de Mulheres Rurais – POPMR"
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/opcao_g1" />
+                    android:id="@+id/perg2_cb_resp7" />
                 <EditText
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/opcao_g1_edit_text" />
+                    android:id="@+id/perg2_et_resp7" />
             </TableRow>
 
             <TableRow
@@ -255,12 +263,12 @@
                     android:layout_height="wrap_content"
                     android:text="Outros. Quais?"
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/opcao_h1" />
+                    android:id="@+id/perg2_cb_resp8" />
 
                 <EditText
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/opcao_h1_edit_text" />
+                    android:id="@+id/perg2_et_resp8" />
             </TableRow>
 
         </TableLayout>
@@ -272,6 +280,7 @@
             android:padding="20dp">
 
             <TextView
+                android:id="@+id/perg3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
@@ -291,7 +300,7 @@
                 android:layout_height="wrap_content"
                 android:text="Compra de material de pesca"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_a2"
+                android:id="@+id/perg3_cb_resp1"
                 android:checked="false" />
 
             <CheckBox
@@ -299,7 +308,7 @@
                 android:layout_height="wrap_content"
                 android:text="Compra de embarcação"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_b2"
+                android:id="@+id/perg3_cb_resp2"
                 android:checked="false" />
 
             <CheckBox
@@ -307,7 +316,7 @@
                 android:layout_height="wrap_content"
                 android:text="Beneficiamento de pescado"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_c2"
+                android:id="@+id/perg3_cb_resp4"
                 android:checked="false" />
 
             <CheckBox
@@ -315,7 +324,7 @@
                 android:layout_height="wrap_content"
                 android:text="Produção agrícola"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_d2"
+                android:id="@+id/perg3_cb_resp5"
                 android:checked="false" />
 
             <CheckBox
@@ -323,7 +332,7 @@
                 android:layout_height="wrap_content"
                 android:text="Criação de animais"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_e2"
+                android:id="@+id/perg3_cb_resp6"
                 android:checked="false" />
 
             <CheckBox
@@ -331,7 +340,7 @@
                 android:layout_height="wrap_content"
                 android:text="Pequenos empreendimentos"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_f2"
+                android:id="@+id/perg3_cb_resp7"
                 android:checked="false" />
 
             <CheckBox
@@ -339,7 +348,7 @@
                 android:layout_height="wrap_content"
                 android:text="Artesanato"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_g2"
+                android:id="@+id/perg3_cb_resp8"
                 android:checked="false" />
 
             <CheckBox
@@ -347,7 +356,7 @@
                 android:layout_height="wrap_content"
                 android:text="Beneficiamento de produtos extrativistas"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_h2"
+                android:id="@+id/perg3_cb_resp9"
                 android:checked="false" />
 
             <CheckBox
@@ -355,13 +364,13 @@
                 android:layout_height="wrap_content"
                 android:text="Outros. Quais?"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_i2"
+                android:id="@+id/perg3_cb_resp10"
                 android:checked="false" />
 
             <EditText
                 android:layout_width="241dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/outro2"
+                android:id="@+id/perg3_et_resp1"
                 android:textAppearance="@style/style_resposta"
                 android:lines="2" />
 
@@ -374,6 +383,7 @@
             android:padding="20dp">
 
             <TextView
+                android:id="@+id/perg4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
@@ -393,7 +403,7 @@
                 android:layout_height="wrap_content"
                 android:text="Banco da Amazônia"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_a3"
+                android:id="@+id/perg4_cb_resp1"
                 android:checked="false" />
 
             <CheckBox
@@ -401,7 +411,7 @@
                 android:layout_height="wrap_content"
                 android:text="Banco do Nordeste"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_b3"
+                android:id="@+id/perg4_cb_resp2"
                 android:checked="false" />
 
             <CheckBox
@@ -409,7 +419,7 @@
                 android:layout_height="wrap_content"
                 android:text="Caixa Econômica"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_c3"
+                android:id="@+id/perg4_cb_resp3"
                 android:checked="false" />
 
             <CheckBox
@@ -417,7 +427,7 @@
                 android:layout_height="wrap_content"
                 android:text="Banco do Pará"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_d3"
+                android:id="@+id/perg4_cb_resp4"
                 android:checked="false" />
 
             <CheckBox
@@ -425,7 +435,7 @@
                 android:layout_height="wrap_content"
                 android:text="Banco do Brasil"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_e3"
+                android:id="@+id/perg4_cb_resp5"
                 android:checked="false" />
 
             <CheckBox
@@ -433,13 +443,13 @@
                 android:layout_height="wrap_content"
                 android:text="Outro. Qual?"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_f3"
+                android:id="@+id/perg4_cb_resp6"
                 android:checked="false" />
 
             <EditText
                 android:layout_width="241dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/outro3"
+                android:id="@+id/perg4_et_resp1"
                 android:textAppearance="@style/style_resposta"
                 android:lines="2" />
         </LinearLayout>

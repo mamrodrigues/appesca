@@ -37,6 +37,7 @@
             android:padding="20dp">
 
             <TextView
+                android:id="@+id/perg1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/style_questao"
@@ -50,24 +51,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="30dp">
-            <RadioButton
-                android:layout_width="wrap_content"
+            <RadioGroup
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Sim"
-                android:textAppearance="@style/style_resposta"
-                android:id="@+id/sim"
-                android:checked="false"
-                android:paddingRight="15dp"/>
+                android:orientation="horizontal"
+                android:checkedButton="@+id/perg1_rb_resp1">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sim"
+                    android:textAppearance="@style/style_resposta"
+                    android:id="@+id/perg1_rb_resp1"
+                    android:checked="false"
+                    android:paddingRight="15dp"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Não"
-                android:textAppearance="@style/style_resposta"
-                android:id="@+id/nao"
-                android:checked="false"
-                android:paddingRight="15dp"/>
-
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Não"
+                    android:textAppearance="@style/style_resposta"
+                    android:id="@+id/perg1_rb_resp2"
+                    android:checked="false"
+                    android:paddingRight="15dp"/>
+            </RadioGroup>
         </LinearLayout>
 
         <LinearLayout
@@ -77,6 +83,7 @@
             android:padding="20dp">
 
             <TextView
+                android:id="@+id/perg2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
@@ -96,21 +103,21 @@
                 android:layout_height="wrap_content"
                 android:text="Desmatando a floresta"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_a" />
+                android:id="@+id/perg2_cb_resp1" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Usando zangaria para a pesca do camarão"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_b" />
+                android:id="@+id/perg2_cb_resp2" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Usando tapagem nos igarapés/rios"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_c"
+                android:id="@+id/perg2_cb_resp3"
                 android:checked="false" />
 
             <CheckBox
@@ -118,33 +125,33 @@
                 android:layout_height="wrap_content"
                 android:text="Jogando lixo no rio"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_d" />
+                android:id="@+id/perg2_cb_resp4" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Criando gado/búfalo"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_e" />
+                android:id="@+id/perg2_cb_resp5" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Pescando camarão pequeno"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_f" />
+                android:id="@+id/perg2_cb_resp6" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Outros. Qual?"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_g" />
+                android:id="@+id/perg2_cb_resp7" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/outros"/>
+                android:id="@+id/perg2_et_resp1"/>
 
         </LinearLayout>
 

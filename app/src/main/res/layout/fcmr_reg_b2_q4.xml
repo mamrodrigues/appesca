@@ -37,6 +37,7 @@
             android:padding="20dp">
 
             <TextView
+                android:id="@+id/perg1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
@@ -93,34 +94,40 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/nome_a"/>
+                    android:id="@+id/perg1_et_resp1"/>
                 <TableLayout>
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
+                        <RadioGroup
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="M"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/masculino_a"
-                            android:checked="false"/>
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg1_rb_resp1">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="M"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg1_rb_resp1"
+                                android:checked="false"/>
 
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="F"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/feminino_a"
-                            android:checked="false"/>
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="F"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg1_rb_resp2"
+                                android:checked="false"/>
+                        </RadioGroup>
                     </TableRow>
                 </TableLayout>
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/idade_a"/>
+                    android:id="@+id/perg1_et_resp2"/>
             </TableRow>
 
             <TableRow
@@ -130,34 +137,40 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/nome_b"/>
+                    android:id="@+id/perg1_et_resp3"/>
                 <TableLayout>
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
+                        <RadioGroup
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="M"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/masculino_b"
-                            android:checked="false"/>
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg1_rb_resp3">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="M"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg1_rb_resp3"
+                                android:checked="false"/>
 
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="F"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/feminino_b"
-                            android:checked="false"/>
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="F"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg1_rb_resp4"
+                                android:checked="false"/>
+                        </RadioGroup>
                     </TableRow>
                 </TableLayout>
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/idade_b"/>
+                    android:id="@+id/perg1_et_resp4"/>
             </TableRow>
 
             <TableRow
@@ -167,34 +180,40 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/nome_c"/>
+                    android:id="@+id/perg1_et_resp5"/>
                 <TableLayout>
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
+                        <RadioGroup
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="M"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/masculino_c"
-                            android:checked="false"/>
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg1_rb_resp5">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="M"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg1_rb_resp5"
+                                android:checked="false"/>
 
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="F"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/feminino_c"
-                            android:checked="false"/>
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="F"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg1_rb_resp6"
+                                android:checked="false"/>
+                        </RadioGroup>
                     </TableRow>
                 </TableLayout>
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/idade_c"/>
+                    android:id="@+id/perg1_et_resp6"/>
             </TableRow>
 
             <TableRow
@@ -204,28 +223,34 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/nome_d"/>
+                    android:id="@+id/perg1_et_resp7"/>
                 <TableLayout>
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center">
-                        <RadioButton
-                            android:layout_width="wrap_content"
+                        <RadioGroup
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="M"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/masculino_d"
-                            android:checked="false"/>
+                            android:orientation="horizontal"
+                            android:checkedButton="@+id/perg1_rb_resp7">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="M"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg1_rb_resp7"
+                                android:checked="false"/>
 
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="F"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/feminino_d"
-                            android:checked="false"/>
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="F"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg1_rb_resp8"
+                                android:checked="false"/>
+                        </RadioGroup>
                     </TableRow>
                 </TableLayout>
                 <EditText

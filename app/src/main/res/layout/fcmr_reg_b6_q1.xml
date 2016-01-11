@@ -37,6 +37,7 @@
             android:padding="20dp">
 
             <TextView
+                android:id="@+id/perg1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
@@ -58,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:text="Individual (sozinho)"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/opcao_a"
+                android:id="@+id/perg1_cb_resp1"
                 android:checked="false" />
 
             <LinearLayout
@@ -71,7 +72,7 @@
                     android:layout_height="wrap_content"
                     android:text="Em família."
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/opcao_b"
+                    android:id="@+id/perg1_cb_resp2"
                     android:checked="false" />
                 <TextView
                     android:layout_width="wrap_content"
@@ -84,7 +85,7 @@
                 <EditText
                     android:layout_width="241dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/quantasPessoas_1"
+                    android:id="@+id/perg1_et_resp1"
                     android:textAppearance="@style/style_resposta"
                     android:lines="1" />
             </LinearLayout>
@@ -99,7 +100,7 @@
                     android:layout_height="wrap_content"
                     android:text="Em grupo de companheiros (as)."
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/opcao_c"
+                    android:id="@+id/perg1_cb_resp3"
                     android:checked="false" />
                 <TextView
                     android:layout_width="wrap_content"
@@ -112,7 +113,7 @@
                 <EditText
                     android:layout_width="241dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/quantasPessoas_2"
+                    android:id="@+id/perg1_et_resp2"
                     android:textAppearance="@style/style_resposta"
                     android:lines="1" />
             </LinearLayout>
@@ -127,7 +128,7 @@
                     android:layout_height="wrap_content"
                     android:text="Em grupo de companheiros (as) e família."
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/opcao_d"
+                    android:id="@+id/perg1_cb_resp4"
                     android:checked="false" />
                 <TextView
                     android:layout_width="wrap_content"
@@ -140,7 +141,7 @@
                 <EditText
                     android:layout_width="241dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/quantasPessoas_3"
+                    android:id="@+id/perg1_et_resp3"
                     android:textAppearance="@style/style_resposta"
                     android:lines="1" />
             </LinearLayout>
@@ -155,12 +156,12 @@
                     android:layout_height="wrap_content"
                     android:text="Outros"
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/opcao_e"
+                    android:id="@+id/perg1_cb_resp5"
                     android:checked="false" />
                 <EditText
                     android:layout_width="241dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/outro"
+                    android:id="@+id/perg1_et_resp4"
                     android:textAppearance="@style/style_resposta"
                     android:lines="1" />
 
@@ -175,7 +176,7 @@
                 <EditText
                     android:layout_width="241dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/quantasPessoas_4"
+                    android:id="@+id/perg1_et_resp5"
                     android:textAppearance="@style/style_resposta"
                     android:lines="1" />
             </LinearLayout>

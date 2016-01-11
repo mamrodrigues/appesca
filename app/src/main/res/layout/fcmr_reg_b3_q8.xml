@@ -37,6 +37,7 @@
             android:padding="20dp">
 
             <TextView
+                android:id="@+id/perg1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
@@ -63,77 +64,77 @@
                         android:layout_height="wrap_content"
                         android:text="Extrativismo/coleta"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_a" />
+                        android:id="@+id/perg1_cb_resp1" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Caça"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_b" />
+                        android:id="@+id/perg1_cb_resp2" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Pesca"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_c" />
+                        android:id="@+id/perg1_cb_resp3" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Fabricação de apetrechos de pesca"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_d" />
+                        android:id="@+id/perg1_cb_resp4" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Agricultura"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_e" />
+                        android:id="@+id/perg1_cb_resp5" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Arte, música, cantos (Quadrilha, Bumba Boi, Marabaixo, Carimbó, Caixa do Divino, etc.)"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_f" />
+                        android:id="@+id/perg1_cb_resp6" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Puxador/a rezador/a, benzedor/a"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_g" />
+                        android:id="@+id/perg1_cb_resp7" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Participar de missas, cultos"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_h" />
+                        android:id="@+id/perg1_cb_resp8"/>
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Participar de festas religiosas"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_i" />
+                        android:id="@+id/perg1_cb_resp9" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Construir canoa, casas e (outras)"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_j" />
+                        android:id="@+id/perg1_cb_resp10" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Utilizar remédios caseiros, erveiros/as"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_k" />
+                        android:id="@+id/perg1_cb_resp11" />
 
                 </LinearLayout>
 

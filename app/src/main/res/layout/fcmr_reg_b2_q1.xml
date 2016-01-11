@@ -36,6 +36,7 @@
             android:padding="20dp">
 
             <TextView
+                android:id="@+id/perg1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
@@ -72,106 +73,106 @@
                         android:layout_height="wrap_content"
                         android:text="Pescador(a)"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_a" />
+                        android:id="@+id/perg1_cb_resp1" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Energia elétrica de má qualidade"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_b" />
+                        android:id="@+id/perg1_cb_resp2" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Falta de distribuição de água"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_c" />
+                        android:id="@+id/perg1_cb_resp3" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Água de má qualidade"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_d" />
+                        android:id="@+id/perg1_cb_resp4" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Falta de posto de saúde"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_e" />
+                        android:id="@+id/perg1_cb_resp5" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Má qualidade no atendimento de saúde"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_f" />
+                        android:id="@+id/perg1_cb_resp6" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Lixo"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_g" />
+                        android:id="@+id/perg1_cb_resp7" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Violência"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_h" />
+                        android:id="@+id/perg1_cb_resp8" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Conflitos entre moradores"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_i" />
+                        android:id="@+id/perg1_cb_resp9" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Falta de oportunidades de emprego"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_j" />
+                        android:id="@+id/perg1_cb_resp10" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Falta de escola"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_k"/>
+                        android:id="@+id/perg1_cb_resp11"/>
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Falta de transporte escolar"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_l" />
+                        android:id="@+id/perg1_cb_resp12" />
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Falta de estradas de acesso"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_m" />
+                        android:id="@+id/perg1_cb_resp13" />
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Falta de trapiche"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_n" />
+                        android:id="@+id/perg1_cb_resp14" />
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Outros"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_o" />
+                        android:id="@+id/perg1_cb_resp15" />
                     <EditText
                         android:layout_width="241dp"
                         android:layout_height="wrap_content"
-                        android:id="@+id/outro"
+                        android:id="@+id/perg1_et_resp1"
                         android:textAppearance="@style/style_resposta"
                         android:lines="2" />
                 </LinearLayout>

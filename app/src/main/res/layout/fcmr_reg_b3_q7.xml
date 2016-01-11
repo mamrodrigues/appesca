@@ -37,6 +37,7 @@
             />
 
             <TextView
+                android:id="@+id/perg1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
@@ -67,63 +68,61 @@
                         android:layout_height="wrap_content"
                         android:text="Plantas medicinais"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_a" />
+                        android:id="@+id/perg1_cb_resp1" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Chás e infusões"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_b" />
+                        android:id="@+id/perg1_cb_resp2" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Banhos de ervas"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_c" />
+                        android:id="@+id/perg1_cb_resp3" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Preparados e garrafadas"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_d" />
+                        android:id="@+id/perg1_cb_resp4" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Tinturas"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_e" />
+                        android:id="@+id/perg1_cb_resp5" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Xaropes, raízes e outros alimentos"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_f" />
+                        android:id="@+id/perg1_cb_resp6" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Rezas e benzeduras"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_g" />
-
-
+                        android:id="@+id/perg1_cb_resp7" />
 
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Outros"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_l" />
+                        android:id="@+id/perg1_cb_resp8" />
 
                     <EditText
                         android:layout_width="241dp"
                         android:layout_height="wrap_content"
-                        android:id="@+id/outro"
+                        android:id="@+id/perg1_et_resp1"
                         android:textAppearance="@style/style_resposta"
                         android:lines="2" />
                 </LinearLayout>
