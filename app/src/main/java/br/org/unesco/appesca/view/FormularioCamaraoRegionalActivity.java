@@ -1,7 +1,5 @@
 package br.org.unesco.appesca.view;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -35,8 +33,6 @@ import br.org.unesco.appesca.util.ConstantesIdsFormularios;
 
 public class FormularioCamaraoRegionalActivity extends AppCompatActivity {
 
-    private boolean mTwoPane;
-
     private static Formulario formulario = new Formulario();
     private List<Questao> questoes = new ArrayList<Questao>();
 
@@ -48,22 +44,13 @@ public class FormularioCamaraoRegionalActivity extends AppCompatActivity {
     static List<ItemMenuLateral> mValues = new ArrayList<ItemMenuLateral>();
 
     public void openFragment(int position, View v){
-        if (mTwoPane) {
-            Bundle arguments = new Bundle();
-            arguments.putString(QuestaoDetailFragment.ARG_ITEM_ID, String.valueOf(mValues.get(position).id_layout_inflate));
-            QuestaoDetailFragment fragment = new QuestaoDetailFragment();
-            fragment.setArguments(arguments);
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.questao_detail_container, fragment)
-                    .commit();
-        } else {
-            Context context = v.getContext();
-            Intent intent = new Intent(context, QuestaoDetailActivity.class);
-            intent.putExtra(QuestaoDetailFragment.ARG_ITEM_ID, mValues.get(position).id);
-
-            context.startActivity(intent);
-        }
-
+        Bundle arguments = new Bundle();
+        arguments.putString(QuestaoDetailFragment.ARG_ITEM_ID, String.valueOf(mValues.get(position).id_layout_inflate));
+        QuestaoDetailFragment fragment = new QuestaoDetailFragment();
+        fragment.setArguments(arguments);
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.questao_detail_container, fragment)
+                .commit();
     }
 
     @Override
@@ -72,8 +59,8 @@ public class FormularioCamaraoRegionalActivity extends AppCompatActivity {
         setContentView(R.layout.activity_questao_list);
 
         mValues.add(new ItemMenuLateral(1, "Identificação do entrevistado", R.layout.questao_identificacao));
-        int[] questoesFormulario = ConstantesIdsFormularios.arrayIdsFragmentCamaraoRegional4Piores;
-        for(int i=1; i<=9; i++){
+        int[] questoesFormulario = ConstantesIdsFormularios.arrayIdsFragmentCamaraoRegional;
+        for(int i=1; i<=9; i++){ //TODO Alterar para o tamanho do array
             int idFormulario = getResources().getIdentifier("fcmr_reg_b1_q"+i, "layout", getPackageName());
             mValues.add(new ItemMenuLateral(i, "Questão "+i, idFormulario));
         }
@@ -107,7 +94,7 @@ public class FormularioCamaraoRegionalActivity extends AppCompatActivity {
                     questao.setIdFormulario(formulario.getId());
                     questao.setPerguntas(buildPerguntaList(questao.getId())); //Constroi Perguntas e Respostas
                     if(questao.getPerguntas() != null && !questao.getPerguntas().isEmpty())
-                         questoes.add(questaoDAO.insertQuestao(questao));
+                        questoes.add(questaoDAO.insertQuestao(questao));
                 }else{
                     questao.setOrdem(ultQuestPos+1); //TODO mudar para ID da Questao Corrente
                     questao.setIdFormulario(formulario.getId());
@@ -143,9 +130,6 @@ public class FormularioCamaraoRegionalActivity extends AppCompatActivity {
         assert recyclerView != null;
         setupRecyclerView((RecyclerView) recyclerView);
 
-        if (findViewById(R.id.questao_detail_container) != null) {
-            mTwoPane = true;
-        }
     }
 
     private List<Pergunta> buildPerguntaList(int idQuestao){

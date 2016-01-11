@@ -1,26 +1,23 @@
 package br.org.unesco.appesca.control;
 
 import android.support.v7.widget.RecyclerView;
-import java.util.ArrayList;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.List;
+
 import br.org.unesco.appesca.R;
 import br.org.unesco.appesca.model.Formulario;
-import br.org.unesco.appesca.model.ItemMenuLateral;
 
 /**
  * Created by marcosmagalhaes on 29/11/15.
  */
-public class FormularioDetailAdapter extends RecyclerView.Adapter<FormularioDetailAdapter.ViewHolder>{
+public class FormularioListAdapter extends RecyclerView.Adapter<FormularioListAdapter.ViewHolder>{
 
-    private ArrayList<Formulario> mListFormulario = new ArrayList<Formulario>();
-
-    private ItemMenuLateral mCurrentItemMenuLateral;
-
+    private List<Formulario> mListFormulario;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView situacao;
@@ -48,12 +45,12 @@ public class FormularioDetailAdapter extends RecyclerView.Adapter<FormularioDeta
         notifyItemRemoved(position);
     }
 
-    public FormularioDetailAdapter(ItemMenuLateral itemMenuLateral) {
-        mCurrentItemMenuLateral = itemMenuLateral;
+    public FormularioListAdapter(List<Formulario> listFormulario) {
+        mListFormulario = listFormulario;
     }
 
     @Override
-    public FormularioDetailAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
+    public FormularioListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
                                                                  int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_formulario, parent, false);
         ViewHolder vh = new ViewHolder(v);
@@ -63,8 +60,9 @@ public class FormularioDetailAdapter extends RecyclerView.Adapter<FormularioDeta
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         final Formulario formulario = mListFormulario.get(position);
-        holder.nome.setText("Nome da identificacao do Entrevistado");
+        holder.nome.setText(formulario.getNome());
         holder.ufmunicipio.setText("Estado".concat("/").concat("Municipio"));
+        holder.funcao.setText("Funcao");
 
     }
 

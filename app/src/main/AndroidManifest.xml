@@ -46,17 +46,6 @@
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name="br.org.unesco.appesca.view.QuestaoDetailActivity"
-            android:label="@string/title_questao_detail"
-            android:parentActivityName=".view.FormularioCaranguejoActivity"
-            android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.FormularioCaranguejoActivity" />
-        </activity>
-
-        <activity
             android:name="br.org.unesco.appesca.view.LoginUnescoActivity"
             android:screenOrientation="landscape"
             android:label="@string/title_activity_login_unesco">

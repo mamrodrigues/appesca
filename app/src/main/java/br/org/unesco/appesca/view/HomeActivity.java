@@ -18,38 +18,32 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
 import android.view.animation.OvershootInterpolator;
-import android.webkit.WebViewClient;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import br.org.unesco.appesca.R;
+import br.org.unesco.appesca.control.FormularioListDetailFragment;
 import br.org.unesco.appesca.dao.TipoFormularioDAO;
 import br.org.unesco.appesca.floatingbuttonlibrary.FloatingActionButton;
-import br.org.unesco.appesca.control.FormularioListDetailFragment;
-import br.org.unesco.appesca.R;
 import br.org.unesco.appesca.floatingbuttonlibrary.FloatingActionMenu;
 import br.org.unesco.appesca.model.Formulario;
 import br.org.unesco.appesca.model.ItemMenuLateral;
 import br.org.unesco.appesca.model.MenuContent;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class HomeActivity extends AppCompatActivity {
 
     private FloatingActionMenu menu1;
-
     public static Formulario formularioAtual;
 
     private LocationManager locationManager;
-    private String urlBase = "http://maps.googleapis.com/maps/api" +
-            "/staticmap?size=400x400&sensor=true&markers=color:red|%s,%s";
-    private WebView mapa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_formulario_list);
+        setContentView(R.layout.activity_home);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -62,26 +56,14 @@ public class HomeActivity extends AppCompatActivity {
         txtEmailUsuarioLogado.setText(LoginUnescoActivity.usuarioAutenticado.getEmail());
         menu1 = (FloatingActionMenu) findViewById(R.id.formulario_floating_menu);
 
-        mapa = (WebView) findViewById(R.id.mapa);
-        mapa.getSettings().setJavaScriptEnabled(true);
-        mapa.setWebViewClient(new WebViewClient());
-        mapa.loadUrl("https://www.google.com.br/maps?source=tldsi&hl=pt-BR");
-
-
         locationManager = (LocationManager)
                 this.getSystemService(Context.LOCATION_SERVICE);
 
         LocationListener locationListener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
-
                 String latitudeStr = String.valueOf(location.getLatitude());
                 String longitudeStr = String.valueOf(location.getLongitude());
-
-
-                String url = String.format(urlBase, latitudeStr, longitudeStr);
-                mapa.loadUrl(url);
-
             }
 
             @Override
@@ -110,7 +92,7 @@ public class HomeActivity extends AppCompatActivity {
 //                LocationManager.GPS_PROVIDER,
 //                tempoAtualizacao, distancia, locationListener);
 
-        View recyclerView = findViewById(R.id.formulario_list);
+        View recyclerView = findViewById(R.id.formulario_list_situation);
         assert recyclerView != null;
         setupRecyclerView((RecyclerView) recyclerView);
 
@@ -138,23 +120,17 @@ public class HomeActivity extends AppCompatActivity {
         }
 
         @Override
-        public void onBindViewHolder(final ViewHolder holder, int position) {
+        public void onBindViewHolder(final ViewHolder holder, final int position) {
             holder.mItem = mValues.get(position);
-
             holder.mTitleView.setText(mValues.get(position).title);
 
             holder.mView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                        Bundle arguments = new Bundle();
-                        arguments.putInt(FormularioListDetailFragment.ARG_ITEM_ID, holder.mItem.id);
-                        FormularioListDetailFragment fragment = new FormularioListDetailFragment();
-                        fragment.setArguments(arguments);
-                        getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.formulario_detail_container, fragment)
-                                .commit();
+                    openFragment(position);
                 }
             });
+
         }
 
         @Override
@@ -180,7 +156,15 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
-
+    public void openFragment(int position){
+        Bundle arguments = new Bundle();
+        arguments.putInt(FormularioListDetailFragment.ARG_ITEM_ID, position);
+        FormularioListDetailFragment fragment = new FormularioListDetailFragment();
+        fragment.setArguments(arguments);
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.formulario_detail_container, fragment)
+                .commit();
+    }
 
     protected void createFloatButton() {
 
@@ -212,7 +196,7 @@ public class HomeActivity extends AppCompatActivity {
                 //TipoFormularioDAO.findListaFormulario().add(formularioAtual);
 
                 Context context = v.getContext();
-                Intent intent = new Intent(context, FormularioCamaraoRegionalActivity.class);
+                Intent intent = new Intent(context, FormularioCamaraoActivity.class);
 
                 context.startActivity(intent);
             }
@@ -242,7 +226,7 @@ public class HomeActivity extends AppCompatActivity {
                 //TipoFormularioDAO.findListaFormulario().add(formularioAtual);
 
                 Context context = v.getContext();
-                Intent intent = new Intent(context, FormularioCamaraoActivity.class);
+                Intent intent = new Intent(context, FormularioCamaraoRegionalActivity.class);
 
                 context.startActivity(intent);
             }
