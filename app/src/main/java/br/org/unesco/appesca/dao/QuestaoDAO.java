@@ -132,4 +132,28 @@ public class QuestaoDAO {
         }
         return questaoList;
     }
+
+    public Questao findQuestaoByOrdemIdFormulario(int ordem, int idFormulario) {
+        SQLiteDatabase db = appescaHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery(
+                "SELECT " + AppescaHelper.COL_QUESTAO_ID + " , " +
+                        AppescaHelper.COL_QUESTAO_TITULO + " , " +
+                        AppescaHelper.COL_QUESTAO_ORDEM + " , " +
+                        AppescaHelper.COL_QUESTAO_ID_FORMULARIO +
+                        " FROM " + AppescaHelper.TABLE_QUESTAO +
+                        " WHERE " + AppescaHelper.COL_QUESTAO_ID_FORMULARIO + " = ?"+
+                        " AND " + AppescaHelper.COL_QUESTAO_ORDEM + " = ?", new String[]{String.valueOf(idFormulario),String.valueOf(ordem)});
+        cursor.moveToFirst();
+
+        Questao questao = new Questao();
+        questao.setId(cursor.getInt(0));
+        questao.setTitulo(cursor.getString(1));
+        questao.setOrdem(cursor.getInt(2));
+        questao.setIdFormulario(cursor.getInt(3));
+
+        PerguntaDAO respostaDAO = new PerguntaDAO(context);
+        questao.setPerguntas(respostaDAO.getPerguntasByQuestao(questao.getId()));
+
+        return questao;
+    }
 }

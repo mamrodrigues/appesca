@@ -24,6 +24,7 @@ public class AppescaHelper extends SQLiteOpenHelper{
     public static final String COL_FORMULARIO_ID_TIPO_FORMULARIO = "ID_TIPO_FORMULARIO";
     public static final String COL_FORMULARIO_ID_USUARIO = "ID_USUARIO";
     public static final String COL_FORMULARIO_DATA_APLICACAO = "DATA_APLICACAO";
+    public static final String COL_FORMULARIO_SITUACAO = "SITUACAO";
 
     public static final String TABLE_QUESTAO = "QUESTAO";
     public static final String COL_QUESTAO_ID = "ID_QUESTAO";
@@ -155,6 +156,7 @@ public class AppescaHelper extends SQLiteOpenHelper{
         sql.append(COL_FORMULARIO_DATA_APLICACAO + " DATETIME , ");
         sql.append(COL_FORMULARIO_ID_USUARIO + " INTEGER , ");
         sql.append(COL_FORMULARIO_ID_TIPO_FORMULARIO + " INTEGER , ");
+        sql.append(COL_FORMULARIO_SITUACAO + " INTEGER , ");
         sql.append(" FOREIGN KEY ("+ COL_FORMULARIO_ID_USUARIO +") REFERENCES "+ TABLE_USUARIO+" ("+ COL_USUARIO_ID +") ");
         sql.append(" FOREIGN KEY ("+ COL_FORMULARIO_ID_TIPO_FORMULARIO +") REFERENCES "+ TABLE_TIPO_FORMULARIO+" ("+ COL_TIPO_FORMULARIO_ID +") ");
 

@@ -35,6 +35,7 @@ public class FormularioDAO {
         values.put(AppescaHelper.COL_FORMULARIO_DATA_APLICACAO, dateFormat);
         values.put(AppescaHelper.COL_FORMULARIO_ID_USUARIO, formulario.getIdUsuario());
         values.put(AppescaHelper.COL_FORMULARIO_ID_TIPO_FORMULARIO, formulario.getIdTipoFormulario());
+        values.put(AppescaHelper.COL_FORMULARIO_SITUACAO, formulario.isEnviado());
 
         long id = db.insert(AppescaHelper.TABLE_FORMULARIO, null, values);
         return getFormularioById((int)id);

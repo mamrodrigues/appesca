@@ -26,17 +26,14 @@ import java.util.List;
 
 import br.org.unesco.appesca.R;
 import br.org.unesco.appesca.control.FormularioListDetailFragment;
-import br.org.unesco.appesca.dao.TipoFormularioDAO;
 import br.org.unesco.appesca.floatingbuttonlibrary.FloatingActionButton;
 import br.org.unesco.appesca.floatingbuttonlibrary.FloatingActionMenu;
-import br.org.unesco.appesca.model.Formulario;
 import br.org.unesco.appesca.model.ItemMenuLateral;
 import br.org.unesco.appesca.model.MenuContent;
 
 public class HomeActivity extends AppCompatActivity {
 
     private FloatingActionMenu menu1;
-    public static Formulario formularioAtual;
 
     private LocationManager locationManager;
 
@@ -51,9 +48,9 @@ public class HomeActivity extends AppCompatActivity {
 
         //PREENCHENDO OS DADOS DE LOGIN
         TextView txtNomeUsuarioLogado = (TextView)findViewById(R.id.txtNomeUsuarioLogado);
-        txtNomeUsuarioLogado.setText(LoginUnescoActivity.usuarioAutenticado.getNome());
+        txtNomeUsuarioLogado.setText(LoginActivity.usuarioAutenticado.getNome());
         TextView txtEmailUsuarioLogado = (TextView)findViewById(R.id.txtEmailUsuarioLogado);
-        txtEmailUsuarioLogado.setText(LoginUnescoActivity.usuarioAutenticado.getEmail());
+        txtEmailUsuarioLogado.setText(LoginActivity.usuarioAutenticado.getEmail());
         menu1 = (FloatingActionMenu) findViewById(R.id.formulario_floating_menu);
 
         locationManager = (LocationManager)
@@ -190,11 +187,6 @@ public class HomeActivity extends AppCompatActivity {
         formCamarao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                formularioAtual = new Formulario();
-
-//                TipoFormularioDAO tipoFormularioDAO = new TipoFormularioDAO(HomeActivity.this);
-                //TipoFormularioDAO.findListaFormulario().add(formularioAtual);
-
                 Context context = v.getContext();
                 Intent intent = new Intent(context, FormularioCamaraoActivity.class);
 
@@ -205,11 +197,6 @@ public class HomeActivity extends AppCompatActivity {
         formCaranguejo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                formularioAtual = new Formulario();
-
-                TipoFormularioDAO tipoFormularioDAO = new TipoFormularioDAO(HomeActivity.this);
-                //TipoFormularioDAO.findListaFormulario().add(formularioAtual);
-
                 Context context = v.getContext();
                 Intent intent = new Intent(context, FormularioCaranguejoActivity.class);
 
@@ -220,11 +207,6 @@ public class HomeActivity extends AppCompatActivity {
         formCamaraoRegional.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                formularioAtual = new Formulario();
-
-                TipoFormularioDAO tipoFormularioDAO = new TipoFormularioDAO(HomeActivity.this);
-                //TipoFormularioDAO.findListaFormulario().add(formularioAtual);
-
                 Context context = v.getContext();
                 Intent intent = new Intent(context, FormularioCamaraoRegionalActivity.class);
 

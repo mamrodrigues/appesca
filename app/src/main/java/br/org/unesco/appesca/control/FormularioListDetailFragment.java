@@ -46,11 +46,7 @@ public class FormularioListDetailFragment extends Fragment {
                     mFormularioList = formularioDAO.getFormulariosByTipoFormulario(2);
                     break;
             }
-
-            //Activity activity = this.getActivity();
-            //CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
         }
-
     }
 
     @Override
@@ -69,6 +65,12 @@ public class FormularioListDetailFragment extends Fragment {
         formulario.setNome("Nome");
         formulario.setDataAplicacao(new Date());
         formulario.setIdUsuario(1);
+
+        Formulario formulario1 = new Formulario();
+        formulario1.setId(0);
+        formulario1.setNome("Nome");
+        formulario1.setDataAplicacao(new Date());
+        formulario1.setIdUsuario(0);
 
         mFormularioList.add(formulario);
 

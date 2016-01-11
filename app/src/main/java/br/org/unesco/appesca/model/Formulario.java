@@ -11,6 +11,7 @@ public class Formulario implements java.io.Serializable {
 	private int idTipoFormulario;
 	private int idUsuario;
 	private Date dataAplicacao;
+	private boolean isEnviado;
 
 	public Formulario() {
 	}
@@ -62,4 +63,11 @@ public class Formulario implements java.io.Serializable {
 		this.dataAplicacao = dataAplicacao;
 	}
 
+	public boolean isEnviado() {
+		return isEnviado;
+	}
+
+	public void setIsEnviado(boolean isEnviado) {
+		this.isEnviado = isEnviado;
+	}
 }

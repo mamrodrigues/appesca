@@ -60,7 +60,7 @@ public class FormularioCamaraoRegionalActivity extends AppCompatActivity {
 
         mValues.add(new ItemMenuLateral(1, "Identificação do entrevistado", R.layout.questao_identificacao));
         int[] questoesFormulario = ConstantesIdsFormularios.arrayIdsFragmentCamaraoRegional;
-        for(int i=1; i<=9; i++){ //TODO Alterar para o tamanho do array
+        for(int i=1; i<=questoesFormulario.length; i++){
             int idFormulario = getResources().getIdentifier("fcmr_reg_b1_q"+i, "layout", getPackageName());
             mValues.add(new ItemMenuLateral(i, "Questão "+i, idFormulario));
         }
@@ -70,6 +70,7 @@ public class FormularioCamaraoRegionalActivity extends AppCompatActivity {
         formulario.setIdUsuario(1);
         formulario.setDataAplicacao(new Date());
         formulario.setNome("Formulário Camarão Regional");
+        formulario.setIsEnviado(false);
 
         FormularioDAO formularioDAO = new FormularioDAO(this);
         formulario = formularioDAO.insertFormulario(formulario);
@@ -85,18 +86,20 @@ public class FormularioCamaraoRegionalActivity extends AppCompatActivity {
                 }
 
                 Questao questao;
+
                 QuestaoDAO questaoDAO = new QuestaoDAO(FormularioCamaraoRegionalActivity.this);
-                questao = questaoDAO.getQuestaoById(ultQuestPos+1); //mudar para ID da Questao Corrente
+                questao = questaoDAO.findQuestaoByOrdemIdFormulario(ultQuestPos, formulario.getId());
 
                 if(questao == null){
                     questao = new Questao();
-                    questao.setOrdem(ultQuestPos+1); //TODO mudar para ID da Questao Corrente
+                    questao.setOrdem(ultQuestPos);
                     questao.setIdFormulario(formulario.getId());
                     questao.setPerguntas(buildPerguntaList(questao.getId())); //Constroi Perguntas e Respostas
                     if(questao.getPerguntas() != null && !questao.getPerguntas().isEmpty())
                         questoes.add(questaoDAO.insertQuestao(questao));
                 }else{
-                    questao.setOrdem(ultQuestPos+1); //TODO mudar para ID da Questao Corrente
+
+                    questao.setOrdem(ultQuestPos);
                     questao.setIdFormulario(formulario.getId());
                     questao.setPerguntas(buildPerguntaList(questao.getId())); //Constroi Perguntas e Respostas
                     if(questao.getPerguntas() != null && !questao.getPerguntas().isEmpty())
@@ -147,7 +150,6 @@ public class FormularioCamaraoRegionalActivity extends AppCompatActivity {
 
                 Pergunta pergunta = new Pergunta();
                 pergunta.setOrdem(seqPergunta);
-                pergunta.setId(seqPergunta);
                 pergunta.setIdQuestao(idQuestao);
 
                 /** RADIOBUTTON **/
