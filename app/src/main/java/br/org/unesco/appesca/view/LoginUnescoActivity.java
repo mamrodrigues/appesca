@@ -30,12 +30,15 @@ import android.widget.TextView;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.DomDriver;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import br.org.unesco.appesca.R;
-import br.org.unesco.appesca.model.Autenticado;
+import br.org.unesco.appesca.model.Identity;
+import br.org.unesco.appesca.rest.model.RespAutenticacaoREST;
 import br.org.unesco.appesca.util.ConstantesREST;
 import cz.msebera.android.httpclient.Header;
 
@@ -44,10 +47,8 @@ import static android.Manifest.permission.READ_CONTACTS;
 /**
  * A login screen that offers login via email/password.
  */
-public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
+public class LoginUnescoActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
-
-    public static Autenticado usuarioAutenticado;
 
     private static final int REQUEST_READ_CONTACTS = 0;
 
@@ -180,25 +181,27 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, byte[] response) {
-                    String json = new String(response);
-                    Log.i("JSON AUTENTICACAO", json);
+                    String xmlRetorno = new String(response).toString();
+                    XStream xStream = new XStream(new DomDriver());
+                    Log.i("xmlRetornoLogin", xmlRetorno);
+
+                    RespAutenticacaoREST auth = (RespAutenticacaoREST) xStream.fromXML(xmlRetorno);
+
+                    if(!auth.isErro()){
+                        Identity.setUsuarioLogado(auth.getUsuario());
+                    }
+
                     showProgress(false);
 
-                    usuarioAutenticado = new Autenticado();
-
-                    usuarioAutenticado.setNome("yesus");
-                    usuarioAutenticado.setEmail("yesus");
-
-                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                    Intent intent = new Intent(LoginUnescoActivity.this, HomeActivity.class);
                     startActivity(intent);
-
                 }
 
                 @Override
                 public void onFailure(int statusCode, Header[] headers, byte[] errorResponse, Throwable e) {
                     showProgress(false);
 
-                    mPasswordView.setError(getString(R.string.error_incorrect_password));
+                    mPasswordView.setError("Aconteceu um problema ao conectar.");
                     mPasswordView.requestFocus();
                 }
 
@@ -293,7 +296,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private void addEmailsToAutoComplete(List<String> emailAddressCollection) {
         //Create adapter to tell the AutoCompleteTextView what to show in its dropdown list.
         ArrayAdapter<String> adapter =
-                new ArrayAdapter<>(LoginActivity.this,
+                new ArrayAdapter<>(LoginUnescoActivity.this,
                         android.R.layout.simple_dropdown_item_1line, emailAddressCollection);
 
         mEmailView.setAdapter(adapter);

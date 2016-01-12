@@ -28,6 +28,7 @@ import br.org.unesco.appesca.R;
 import br.org.unesco.appesca.control.FormularioListDetailFragment;
 import br.org.unesco.appesca.floatingbuttonlibrary.FloatingActionButton;
 import br.org.unesco.appesca.floatingbuttonlibrary.FloatingActionMenu;
+import br.org.unesco.appesca.model.Identity;
 import br.org.unesco.appesca.model.ItemMenuLateral;
 import br.org.unesco.appesca.model.MenuContent;
 
@@ -48,9 +49,9 @@ public class HomeActivity extends AppCompatActivity {
 
         //PREENCHENDO OS DADOS DE LOGIN
         TextView txtNomeUsuarioLogado = (TextView)findViewById(R.id.txtNomeUsuarioLogado);
-        txtNomeUsuarioLogado.setText(LoginUnescoActivity.usuarioAutenticado.getNome());
+        txtNomeUsuarioLogado.setText(Identity.getUsuarioLogado().getNome());
         TextView txtEmailUsuarioLogado = (TextView)findViewById(R.id.txtEmailUsuarioLogado);
-        txtEmailUsuarioLogado.setText(LoginUnescoActivity.usuarioAutenticado.getEmail());
+        txtEmailUsuarioLogado.setText(Identity.getUsuarioLogado().getEmail());
         menu1 = (FloatingActionMenu) findViewById(R.id.formulario_floating_menu);
 
         locationManager = (LocationManager)

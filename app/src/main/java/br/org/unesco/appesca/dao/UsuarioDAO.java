@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.org.unesco.appesca.enums.PerfilEnum;
 import br.org.unesco.appesca.model.Usuario;
 
 /**
@@ -31,9 +32,9 @@ public class UsuarioDAO {
         values.put(AppescaHelper.COL_USUARIO_ENDERECO, usuario.getEndereco());
         values.put(AppescaHelper.COL_USUARIO_LOGIN, usuario.getLogin());
         values.put(AppescaHelper.COL_USUARIO_SENHA, usuario.getSenha());
-        values.put(AppescaHelper.COL_USUARIO_PERFIL, usuario.getPerfil());
+        values.put(AppescaHelper.COL_USUARIO_PERFIL, usuario.getPerfil().getValor());
 
-        db.insert(AppescaHelper.TABLE_USUARIO, null,values);
+        db.insert(AppescaHelper.TABLE_USUARIO, null, values);
     }
 
     public void updateUsuario(Usuario usuario){
@@ -45,7 +46,7 @@ public class UsuarioDAO {
         values.put(AppescaHelper.COL_USUARIO_ENDERECO, usuario.getEndereco());
         values.put(AppescaHelper.COL_USUARIO_LOGIN, usuario.getLogin());
         values.put(AppescaHelper.COL_USUARIO_SENHA, usuario.getSenha());
-        values.put(AppescaHelper.COL_USUARIO_PERFIL, usuario.getPerfil());
+        values.put(AppescaHelper.COL_USUARIO_PERFIL, usuario.getPerfil().getValor());
 
         db.update(AppescaHelper.TABLE_USUARIO, values,
                 AppescaHelper.COL_USUARIO_ID + " = ?",
@@ -80,7 +81,13 @@ public class UsuarioDAO {
             u.setEndereco(cursor.getString(2));
             u.setLogin(cursor.getString(3));
             u.setSenha(cursor.getString(4));
-            u.setPerfil(cursor.getInt(5));
+
+            switch (cursor.getInt(5)){
+                case 1 : u.setPerfil(PerfilEnum.ADMINISTRADOR); break;
+                case 2 : u.setPerfil(PerfilEnum.COORDENADOR); break;
+                case 3 : u.setPerfil(PerfilEnum.DEGRAVADOR); break;
+                case 4 : u.setPerfil(PerfilEnum.PESQUISADOR); break;
+            }
 
             usuarioList.add(u);
             cursor.moveToNext();
@@ -107,7 +114,12 @@ public class UsuarioDAO {
         u.setEndereco(cursor.getString(2));
         u.setLogin(cursor.getString(3));
         u.setSenha(cursor.getString(4));
-        u.setPerfil(cursor.getInt(5));
+        switch (cursor.getInt(5)){
+            case 1 : u.setPerfil(PerfilEnum.ADMINISTRADOR); break;
+            case 2 : u.setPerfil(PerfilEnum.COORDENADOR); break;
+            case 3 : u.setPerfil(PerfilEnum.DEGRAVADOR); break;
+            case 4 : u.setPerfil(PerfilEnum.PESQUISADOR); break;
+        }
 
         return u;
     }

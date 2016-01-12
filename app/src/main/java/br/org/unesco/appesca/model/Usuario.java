@@ -1,29 +1,27 @@
 package br.org.unesco.appesca.model;
 
+import java.util.List;
+
+import br.org.unesco.appesca.enums.PerfilEnum;
+
 public class Usuario implements java.io.Serializable {
 
 	private static final long serialVersionUID = -8637469199477374376L;
 
 	private Integer id;
 	private String nome;
+	private String email;
 	private String endereco;
 	private String login;
 	private String senha;
-	private Integer perfil;
+	private PerfilEnum perfil;
+	private byte[] imagem;
 
-	public Usuario() {
-	}
+	private List<Equipe> listaEquipes;
 
-	public Usuario(String nome, String endereco, String login, String senha, Integer perfil) {
-		this.nome = nome;
-		this.endereco = endereco;
-		this.login = login;
-		this.senha = senha;
-		this.perfil = perfil;
-	}
 
 	public Integer getId() {
-		return this.id;
+		return id;
 	}
 
 	public void setId(Integer id) {
@@ -31,15 +29,23 @@ public class Usuario implements java.io.Serializable {
 	}
 
 	public String getNome() {
-		return this.nome;
+		return nome;
 	}
 
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public String getEndereco() {
-		return this.endereco;
+		return endereco;
 	}
 
 	public void setEndereco(String endereco) {
@@ -47,7 +53,7 @@ public class Usuario implements java.io.Serializable {
 	}
 
 	public String getLogin() {
-		return this.login;
+		return login;
 	}
 
 	public void setLogin(String login) {
@@ -55,19 +61,34 @@ public class Usuario implements java.io.Serializable {
 	}
 
 	public String getSenha() {
-		return this.senha;
+		return senha;
 	}
 
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
 
-	public Integer getPerfil() {
-		return this.perfil;
+	public PerfilEnum getPerfil() {
+		return perfil;
 	}
 
-	public void setPerfil(Integer perfil) {
+	public void setPerfil(PerfilEnum perfil) {
 		this.perfil = perfil;
 	}
 
+	public byte[] getImagem() {
+		return imagem;
+	}
+
+	public void setImagem(byte[] imagem) {
+		this.imagem = imagem;
+	}
+
+	public List<Equipe> getListaEquipes() {
+		return listaEquipes;
+	}
+
+	public void setListaEquipes(List<Equipe> listaEquipes) {
+		this.listaEquipes = listaEquipes;
+	}
 }
