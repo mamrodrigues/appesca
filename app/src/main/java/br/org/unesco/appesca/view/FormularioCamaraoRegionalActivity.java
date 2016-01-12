@@ -80,52 +80,55 @@ public class FormularioCamaraoRegionalActivity extends AppCompatActivity {
         btnProx = (Button) findViewById(R.id.btnQuestProx) ;
         btnAnt = (Button) findViewById(R.id.btnQuestAnterior) ;
 
-        btnProx.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(ultQuestPos == mValues.size()-1){
-                    return;
-                }
-
-                QuestaoDAO questaoDAO = new QuestaoDAO(FormularioCamaraoRegionalActivity.this);
-                Questao questao = questaoDAO.findQuestaoByOrdemIdFormulario(ultQuestPos, formulario.getId());
-
-                if(questao == null){
-                    questao = new Questao();
-                    questao.setOrdem(ultQuestPos);
-                    questao.setIdFormulario(formulario.getId());
-                    questao.setTitulo("Questao" + ultQuestPos);
-                    questao = questaoDAO.insertQuestao(questao);
-
-                    questao.setPerguntas(buildPerguntaList(questao));
-
-                    if(questao.getPerguntas() != null && !questao.getPerguntas().isEmpty()){
-                        questaoDAO.updateQuestao(questao);
-                        questoes.add(questao);
+        if (btnProx != null && btnAnt != null) {
+            btnProx.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(ultQuestPos == mValues.size()-1){
+                        return;
                     }
-                }else{
+
+                    QuestaoDAO questaoDAO = new QuestaoDAO(FormularioCamaraoRegionalActivity.this);
+                    Questao questao = questaoDAO.findQuestaoByOrdemIdFormulario(ultQuestPos, formulario.getId());
+
+                    if(questao == null){
+                        questao = new Questao();
+                        questao.setOrdem(ultQuestPos);
+                        questao.setIdFormulario(formulario.getId());
+                        questao.setTitulo("Questao" + ultQuestPos);
+                        questao = questaoDAO.insertQuestao(questao);
+
+                        questao.setPerguntas(buildPerguntaList(questao));
+
+                        if(questao.getPerguntas() != null && !questao.getPerguntas().isEmpty()){
+                            questaoDAO.updateQuestao(questao);
+                            questoes.add(questao);
+                        }
+                    }else{
+                        questao.setPerguntas(buildPerguntaList(questao));
+                        if(questao.getPerguntas() != null && !questao.getPerguntas().isEmpty())
+                            questaoDAO.updateQuestao(questao);
+                    }
+                    openFragment(++ultQuestPos, v);
+                }
+            });
+
+            btnAnt.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(ultQuestPos == 0){
+                        return;
+                    }
+
+                    Questao questao = new Questao();
+                    questao.setId(ultQuestPos);
                     questao.setPerguntas(buildPerguntaList(questao));
-                    if(questao.getPerguntas() != null && !questao.getPerguntas().isEmpty())
-                        questaoDAO.updateQuestao(questao);
+
+                    openFragment(--ultQuestPos, v);
                 }
-                openFragment(++ultQuestPos, v);
-            }
-        });
+            });
 
-        btnAnt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(ultQuestPos == 0){
-                    return;
-                }
-
-                Questao questao = new Questao();
-                questao.setId(ultQuestPos);
-                questao.setPerguntas(buildPerguntaList(questao));
-
-                openFragment(--ultQuestPos, v);
-            }
-        });
+        }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

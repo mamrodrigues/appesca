@@ -6,9 +6,12 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -19,8 +22,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.OvershootInterpolator;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,6 +62,31 @@ public class HomeActivity extends AppCompatActivity {
 
         locationManager = (LocationManager)
                 this.getSystemService(Context.LOCATION_SERVICE);
+
+        final ImageView fotoUsuario = (ImageView)findViewById(R.id.fotoUsuario);
+
+        new AsyncTask<Void, Void, Void>() {
+            Bitmap bitmap;
+
+            @Override
+            protected Void doInBackground(Void... params) {
+
+                try {
+                    URL newurl = new URL("http://192.168.1.3:8080/appesca-web/rest/usuario/imagem?login=" + Identity.getUsuarioLogado().getLogin() + "&senha=" + Identity.getUsuarioLogado().getSenha());
+                    bitmap=  BitmapFactory.decodeStream(newurl.openConnection().getInputStream());
+                }
+                catch(IOException e ) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                fotoUsuario.setImageBitmap(bitmap);
+                super.onPostExecute(aVoid);
+            }
+        }.execute();
 
         LocationListener locationListener = new LocationListener() {
             @Override

@@ -1,10 +1,12 @@
 package br.org.unesco.appesca.enums;
 
+import java.io.Serializable;
+
 /**
  * Created by yesus on 1/12/16.
  */
 
-public enum PerfilEnum {
+public enum PerfilEnum implements Serializable {
 
     ADMINISTRADOR(0, "Administrador", "fa-user-secret"),
     COORDENADOR(1, "Coordenador", "fa-users"),
