@@ -13,6 +13,7 @@ public class ConstantesREST {
     public final static String AUTHENTICATION_SERVICE = "rest/usuario/autenticacao";
     public final static String USUARIO_IMAGEM = "rest/usuario/imagem";
     public final static String FORMULARIO_LISTA = "rest/formulario/lista";
+    public final static String IMAGEM_USUARIO = "rest/usuario/imagem";
 
 
     public static String getURLService(String SERVICE_REST){

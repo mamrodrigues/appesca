@@ -37,12 +37,14 @@ import br.org.unesco.appesca.floatingbuttonlibrary.FloatingActionMenu;
 import br.org.unesco.appesca.model.Identity;
 import br.org.unesco.appesca.model.ItemMenuLateral;
 import br.org.unesco.appesca.model.MenuContent;
+import br.org.unesco.appesca.util.ConstantesREST;
 
 public class HomeActivity extends AppCompatActivity {
 
     private FloatingActionMenu menu1;
 
     private LocationManager locationManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,12 +54,19 @@ public class HomeActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
+        toolbar.setNavigationIcon(R.mipmap.ic_launcher);
 
         //PREENCHENDO OS DADOS DE LOGIN
-        TextView txtNomeUsuarioLogado = (TextView)findViewById(R.id.txtNomeUsuarioLogado);
-        txtNomeUsuarioLogado.setText(Identity.getUsuarioLogado().getNome());
-        TextView txtEmailUsuarioLogado = (TextView)findViewById(R.id.txtEmailUsuarioLogado);
-        txtEmailUsuarioLogado.setText(Identity.getUsuarioLogado().getEmail());
+
+        if(Identity.getUsuarioLogado()!=null && Identity.getUsuarioLogado().getNome()!=null) {
+            TextView txtNomeUsuarioLogado = (TextView)findViewById(R.id.txtNomeUsuarioLogado);
+            txtNomeUsuarioLogado.setText(Identity.getUsuarioLogado().getNome());
+        }
+        if(Identity.getUsuarioLogado()!=null && Identity.getUsuarioLogado().getEmail()!=null) {
+            TextView txtEmailUsuarioLogado = (TextView) findViewById(R.id.txtEmailUsuarioLogado);
+            txtEmailUsuarioLogado.setText(Identity.getUsuarioLogado().getEmail());
+        }
+        
         menu1 = (FloatingActionMenu) findViewById(R.id.formulario_floating_menu);
 
         locationManager = (LocationManager)
@@ -72,7 +81,9 @@ public class HomeActivity extends AppCompatActivity {
             protected Void doInBackground(Void... params) {
 
                 try {
-                    URL newurl = new URL("http://192.168.1.3:8080/appesca-web/rest/usuario/imagem?login=" + Identity.getUsuarioLogado().getLogin() + "&senha=" + Identity.getUsuarioLogado().getSenha());
+                    URL newurl = new URL(
+                                ConstantesREST.getURLService(ConstantesREST.IMAGEM_USUARIO)
+                                        + "?login=" + Identity.getUsuarioLogado().getLogin() + "&senha=" + Identity.getUsuarioLogado().getSenha());
                     bitmap=  BitmapFactory.decodeStream(newurl.openConnection().getInputStream());
                 }
                 catch(IOException e ) {
@@ -114,18 +125,17 @@ public class HomeActivity extends AppCompatActivity {
         long tempoAtualizacao = 0;
         float distancia = 0;
 
-//        locationManager.requestLocationUpdates(
-//                LocationManager.NETWORK_PROVIDER,
-//                tempoAtualizacao, distancia, locationListener);
-//        locationManager.requestLocationUpdates(
-//                LocationManager.GPS_PROVIDER,
-//                tempoAtualizacao, distancia, locationListener);
 
         View recyclerView = findViewById(R.id.formulario_list_situation);
         assert recyclerView != null;
         setupRecyclerView((RecyclerView) recyclerView);
 
         createFloatButton();
+    }
+
+    @Override
+    public void onBackPressed() {
+//        super.onBackPressed();
     }
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {

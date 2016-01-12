@@ -58,6 +58,8 @@ public class LoginUnescoActivity extends AppCompatActivity implements LoaderCall
     private View mProgressView;
     private View mLoginFormView;
 
+    public static boolean ENCERRAR_APP = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,6 +90,16 @@ public class LoginUnescoActivity extends AppCompatActivity implements LoaderCall
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if(ENCERRAR_APP){
+            ENCERRAR_APP = false;
+            finish();
+        }
     }
 
     private void populateAutoComplete() {
@@ -193,7 +205,7 @@ public class LoginUnescoActivity extends AppCompatActivity implements LoaderCall
 
                     showProgress(false);
 
-                    Intent intent = new Intent(LoginUnescoActivity.this, HomeActivity.class);
+                    Intent intent = new Intent(LoginUnescoActivity.this, MainActivity.class);
                     startActivity(intent);
                 }
 

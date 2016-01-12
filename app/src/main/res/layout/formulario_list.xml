@@ -10,6 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="center_vertical"
+        android:layout_marginLeft="4dp"
         tools:ignore="WebViewLayout">
 
         <ImageView
@@ -39,11 +40,12 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Formulários"
+            android:textStyle="bold"
             android:id="@+id/textView" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/formulario_list_situation"
-            android:layout_width="@dimen/item_width"
+            android:layout_width="151dp"
             android:layout_height="150dp"
             app:layoutManager="LinearLayoutManager"
             tools:listitem="@layout/formulario_list_title" />
