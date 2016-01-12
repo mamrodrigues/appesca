@@ -1,6 +1,7 @@
 package br.org.unesco.appesca.model;
 
 import java.util.Date;
+import java.util.List;
 
 public class Formulario implements java.io.Serializable {
 
@@ -12,6 +13,7 @@ public class Formulario implements java.io.Serializable {
 	private int idUsuario;
 	private Date dataAplicacao;
 	private boolean isEnviado;
+	private List<Questao> listQuestoes;
 
 	public Formulario() {
 	}
@@ -69,5 +71,13 @@ public class Formulario implements java.io.Serializable {
 
 	public void setIsEnviado(boolean isEnviado) {
 		this.isEnviado = isEnviado;
+	}
+
+	public List<Questao> getListQuestoes() {
+		return listQuestoes;
+	}
+
+	public void setListQuestoes(List<Questao> listQuestoes) {
+		this.listQuestoes = listQuestoes;
 	}
 }

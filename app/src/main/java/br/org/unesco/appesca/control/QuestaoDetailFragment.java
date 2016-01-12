@@ -23,12 +23,7 @@ public class QuestaoDetailFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         if (getArguments().containsKey(ARG_ITEM_ID)) {
-
             id_layout_inflate = getArguments().getString(ARG_ITEM_ID);
-
-            Activity activity = this.getActivity();
-            CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
-
         }
     }
 

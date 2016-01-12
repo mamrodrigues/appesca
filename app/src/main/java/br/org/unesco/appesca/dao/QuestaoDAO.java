@@ -99,7 +99,7 @@ public class QuestaoDAO {
         questao.setIdFormulario(cursor.getInt(3));
 
         PerguntaDAO respostaDAO = new PerguntaDAO(context);
-        questao.setPerguntas(respostaDAO.getPerguntasByQuestao(questao.getId()));
+        questao.setPerguntas(respostaDAO.findPerguntasByQuestao(questao.getId()));
 
         return questao;
     }
@@ -125,7 +125,7 @@ public class QuestaoDAO {
             questao.setIdFormulario(cursor.getInt(3));
 
             PerguntaDAO respostaDAO = new PerguntaDAO(context);
-            questao.setPerguntas(respostaDAO.getPerguntasByQuestao(questao.getId()));
+            questao.setPerguntas(respostaDAO.findPerguntasByQuestao(questao.getId()));
 
             questaoList.add(questao);
             cursor.moveToNext();
@@ -141,19 +141,20 @@ public class QuestaoDAO {
                         AppescaHelper.COL_QUESTAO_ORDEM + " , " +
                         AppescaHelper.COL_QUESTAO_ID_FORMULARIO +
                         " FROM " + AppescaHelper.TABLE_QUESTAO +
-                        " WHERE " + AppescaHelper.COL_QUESTAO_ID_FORMULARIO + " = ?"+
-                        " AND " + AppescaHelper.COL_QUESTAO_ORDEM + " = ?", new String[]{String.valueOf(idFormulario),String.valueOf(ordem)});
-        cursor.moveToFirst();
+                        " WHERE " + AppescaHelper.COL_QUESTAO_ID_FORMULARIO + " = ?" +
+                        " AND " + AppescaHelper.COL_QUESTAO_ORDEM + " = ?", new String[]{String.valueOf(idFormulario), String.valueOf(ordem)});
 
-        Questao questao = new Questao();
-        questao.setId(cursor.getInt(0));
-        questao.setTitulo(cursor.getString(1));
-        questao.setOrdem(cursor.getInt(2));
-        questao.setIdFormulario(cursor.getInt(3));
+        Questao questao = null;
+        if(cursor.moveToFirst()){
+            questao = new Questao();
+            questao.setId(cursor.getInt(0));
+            questao.setTitulo(cursor.getString(1));
+            questao.setOrdem(cursor.getInt(2));
+            questao.setIdFormulario(cursor.getInt(3));
 
-        PerguntaDAO respostaDAO = new PerguntaDAO(context);
-        questao.setPerguntas(respostaDAO.getPerguntasByQuestao(questao.getId()));
-
+            PerguntaDAO respostaDAO = new PerguntaDAO(context);
+            questao.setPerguntas(respostaDAO.findPerguntasByQuestao(questao.getId()));
+        }
         return questao;
     }
 }

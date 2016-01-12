@@ -48,9 +48,9 @@ public class HomeActivity extends AppCompatActivity {
 
         //PREENCHENDO OS DADOS DE LOGIN
         TextView txtNomeUsuarioLogado = (TextView)findViewById(R.id.txtNomeUsuarioLogado);
-        txtNomeUsuarioLogado.setText(LoginActivity.usuarioAutenticado.getNome());
+        txtNomeUsuarioLogado.setText(LoginUnescoActivity.usuarioAutenticado.getNome());
         TextView txtEmailUsuarioLogado = (TextView)findViewById(R.id.txtEmailUsuarioLogado);
-        txtEmailUsuarioLogado.setText(LoginActivity.usuarioAutenticado.getEmail());
+        txtEmailUsuarioLogado.setText(LoginUnescoActivity.usuarioAutenticado.getEmail());
         menu1 = (FloatingActionMenu) findViewById(R.id.formulario_floating_menu);
 
         locationManager = (LocationManager)

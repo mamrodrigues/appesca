@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.org.unesco.appesca.model.Questao;
 import br.org.unesco.appesca.model.Resposta;
 
 /**
@@ -23,16 +24,18 @@ public class RespostaDAO {
         appescaHelper = new AppescaHelper(this.context);
     }
 
-    public void insertResposta(Resposta resposta){
+    public Resposta insertResposta(Resposta resposta){
         SQLiteDatabase db = appescaHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
         values.put(AppescaHelper.COL_RESPOSTA_OPCAO, resposta.getOpcao());
         values.put(AppescaHelper.COL_RESPOSTA_TEXTO, resposta.getTexto());
         values.put(AppescaHelper.COL_RESPOSTA_AUDIO, resposta.getAudio());
+        values.put(AppescaHelper.COL_RESPOSTA_ORDEM, resposta.getOrdem());
         values.put(AppescaHelper.COL_RESPOSTA_ID_PERGUNTA, resposta.getIdPergunta());
 
-        db.insert(AppescaHelper.TABLE_RESPOSTA, null,values);
+        long id = db.insert(AppescaHelper.TABLE_RESPOSTA, null,values);
+        return findRespostaById((int)id);
     }
 
     public void updateResposta(Resposta resposta){
@@ -43,6 +46,7 @@ public class RespostaDAO {
         values.put(AppescaHelper.COL_RESPOSTA_OPCAO, resposta.getOpcao());
         values.put(AppescaHelper.COL_RESPOSTA_TEXTO, resposta.getTexto());
         values.put(AppescaHelper.COL_RESPOSTA_AUDIO, resposta.getAudio());
+        values.put(AppescaHelper.COL_RESPOSTA_ORDEM, resposta.getOrdem());
         values.put(AppescaHelper.COL_RESPOSTA_ID_PERGUNTA, resposta.getIdPergunta());
 
         db.update(AppescaHelper.TABLE_RESPOSTA, values,
@@ -57,13 +61,14 @@ public class RespostaDAO {
                 new String[]{String.valueOf(idResposta)});
     }
 
-    public List<Resposta> getAllResposta() {
+    public List<Resposta> findAllRespostas() {
         SQLiteDatabase db = appescaHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery(
                 "SELECT " + AppescaHelper.COL_RESPOSTA_ID + " , " +
                         AppescaHelper.COL_RESPOSTA_OPCAO + " , " +
                         AppescaHelper.COL_RESPOSTA_TEXTO + " , " +
                         AppescaHelper.COL_RESPOSTA_AUDIO + " , " +
+                        AppescaHelper.COL_RESPOSTA_ORDEM + " , " +
                         AppescaHelper.COL_RESPOSTA_ID_PERGUNTA +
                         " FROM " + AppescaHelper.TABLE_RESPOSTA, null);
         cursor.moveToFirst();
@@ -76,21 +81,47 @@ public class RespostaDAO {
             resposta.setOpcao(cursor.getInt(1));
             resposta.setTexto(cursor.getString(2));
             resposta.setAudio(cursor.getBlob(3));
-            resposta.setIdPergunta(cursor.getInt(4));
+            resposta.setOrdem(cursor.getInt(4));
+            resposta.setIdPergunta(cursor.getInt(5));
 
             respostaList.add(resposta);
             cursor.moveToNext();
         }
         return respostaList;
     }
-
-    public List<Resposta> getRespostasByPergunta(int idPergunta) {
+    public Resposta findRespostaById(int idResposta) {
         SQLiteDatabase db = appescaHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery(
                 "SELECT " + AppescaHelper.COL_RESPOSTA_ID + " , " +
                         AppescaHelper.COL_RESPOSTA_OPCAO + " , " +
                         AppescaHelper.COL_RESPOSTA_TEXTO + " , " +
                         AppescaHelper.COL_RESPOSTA_AUDIO + " , " +
+                        AppescaHelper.COL_RESPOSTA_ORDEM + " , " +
+                        AppescaHelper.COL_RESPOSTA_ID_PERGUNTA +
+                        " FROM " + AppescaHelper.TABLE_RESPOSTA +
+                        " WHERE " + AppescaHelper.COL_RESPOSTA_ID + " = ?", new String[]{String.valueOf(idResposta)});
+
+        Resposta resposta = null;
+        if(cursor.moveToFirst()){
+            resposta = new Resposta();
+            resposta.setId(cursor.getInt(0));
+            resposta.setOpcao(cursor.getInt(1));
+            resposta.setTexto(cursor.getString(2));
+            resposta.setAudio(cursor.getBlob(3));
+            resposta.setOrdem(cursor.getInt(4));
+            resposta.setIdPergunta(cursor.getInt(5));
+        }
+        return resposta;
+    }
+
+    public List<Resposta> findRespostasByPergunta(int idPergunta) {
+        SQLiteDatabase db = appescaHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery(
+                "SELECT " + AppescaHelper.COL_RESPOSTA_ID + " , " +
+                        AppescaHelper.COL_RESPOSTA_OPCAO + " , " +
+                        AppescaHelper.COL_RESPOSTA_TEXTO + " , " +
+                        AppescaHelper.COL_RESPOSTA_AUDIO + " , " +
+                        AppescaHelper.COL_RESPOSTA_ORDEM + " , " +
                         AppescaHelper.COL_RESPOSTA_ID_PERGUNTA +
                         " FROM " + AppescaHelper.TABLE_RESPOSTA +
                         " WHERE " + AppescaHelper.COL_RESPOSTA_ID_PERGUNTA + " = ?", new String[]{String.valueOf(idPergunta)});
@@ -104,11 +135,38 @@ public class RespostaDAO {
             resposta.setOpcao(cursor.getInt(1));
             resposta.setTexto(cursor.getString(2));
             resposta.setAudio(cursor.getBlob(3));
-            resposta.setIdPergunta(cursor.getInt(4));
+            resposta.setOrdem(cursor.getInt(4));
+            resposta.setIdPergunta(cursor.getInt(5));
 
             respostaList.add(resposta);
             cursor.moveToNext();
         }
         return respostaList;
+    }
+
+    public Resposta findRespostaByOrdemIdPergunta(int ordem, int idPergunta) {
+        SQLiteDatabase db = appescaHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery(
+                "SELECT " + AppescaHelper.COL_RESPOSTA_ID + " , " +
+                        AppescaHelper.COL_RESPOSTA_OPCAO + " , " +
+                        AppescaHelper.COL_RESPOSTA_TEXTO + " , " +
+                        AppescaHelper.COL_RESPOSTA_AUDIO + " , " +
+                        AppescaHelper.COL_RESPOSTA_ORDEM + " , " +
+                        AppescaHelper.COL_RESPOSTA_ID_PERGUNTA +
+                        " FROM " + AppescaHelper.TABLE_RESPOSTA +
+                        " WHERE " + AppescaHelper.COL_RESPOSTA_ORDEM + " = ?"+
+                        " AND " + AppescaHelper.COL_RESPOSTA_ID_PERGUNTA + " = ?", new String[]{String.valueOf(ordem), String.valueOf(idPergunta)});
+
+        Resposta resposta = null;
+        if(cursor.moveToFirst()){
+            resposta = new Resposta();
+            resposta.setId(cursor.getInt(0));
+            resposta.setOpcao(cursor.getInt(1));
+            resposta.setTexto(cursor.getString(2));
+            resposta.setAudio(cursor.getBlob(3));
+            resposta.setOrdem(cursor.getInt(4));
+            resposta.setIdPergunta(cursor.getInt(5));
+        }
+        return resposta;
     }
 }
