@@ -46,7 +46,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".view.LoginActivity"
+            android:name=".view.LoginUnescoActivity"
             android:screenOrientation="landscape"
             android:label="@string/title_activity_login_unesco">
             <intent-filter>
