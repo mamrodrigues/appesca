@@ -202,7 +202,7 @@ public class LoginUnescoActivity extends AppCompatActivity implements LoaderCall
 
                     if(!auth.isErro()){
                         Identity.setUsuarioLogado(auth.getUsuario());
-                        Intent intent = new Intent(LoginUnescoActivity.this, MainActivity.class);
+                        Intent intent = new Intent(LoginUnescoActivity.this, PrincipalUnescoActivity.class);
                         startActivity(intent);
                     }else{
                         new AlertDialog.Builder(LoginUnescoActivity.this)

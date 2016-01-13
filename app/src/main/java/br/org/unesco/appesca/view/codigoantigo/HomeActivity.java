@@ -1,4 +1,4 @@
-package br.org.unesco.appesca.view;
+package br.org.unesco.appesca.view.codigoantigo;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

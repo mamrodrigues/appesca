@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/endereco_icon"
+            android:title="Localização da residência" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ident_icon"
+            android:title="Identificação do entrevistado" />
+    </group>
+
+    <item android:title="Bloco 1 - Aspectos sociais">
+        <menu>
+            <item
+                android:id="@+id/b1_q1"
+                android:icon="@drawable/questao_icon"
+                android:title="Questão 1" />
+            <item
+                android:id="@+id/b1_q2"
+                android:icon="@drawable/questao_icon"
+                android:title="Questão 2" />
+            <item
+                android:id="@+id/b1_q3"
+                android:icon="@drawable/questao_icon"
+                android:title="Questão 3" />
+            <item
+                android:id="@+id/b1_q4"
+                android:icon="@drawable/questao_icon"
+                android:title="Questão 4" />
+            <item
+                android:id="@+id/b1_q5"
+                android:icon="@drawable/questao_icon"
+                android:title="Questão 5" />
+            <item
+                android:id="@+id/b1_q6"
+                android:icon="@drawable/questao_icon"
+                android:title="Questão 6" />
+            <item
+                android:id="@+id/b1_q7"
+                android:icon="@drawable/questao_icon"
+                android:title="Questão 7" />
+            <item
+                android:id="@+id/b1_q8"
+                android:icon="@drawable/questao_icon"
+                android:title="Questão 8" />
+            <item
+                android:id="@+id/b1_q9"
+                android:icon="@drawable/questao_icon"
+                android:title="Questão 9" />
+            <item
+                android:id="@+id/b1_q10"
+                android:icon="@drawable/questao_icon"
+                android:title="Questão 10" />
+        </menu>
+    </item>
+    <item android:title="Bloco 2 - Aspectos econômicos">
+        <menu>
+            <item
+                android:id="@+id/b2_q1"
+                android:icon="@drawable/questao_icon"
+                android:title="Questão 1" />
+            <item
+                android:id="@+id/b2_q2"
+                android:icon="@drawable/questao_icon"
+                android:title="Questão 2" />
+            <item
+                android:id="@+id/b2_q3"
+                android:icon="@drawable/questao_icon"
+                android:title="Questão 3" />
+            <item
+                android:id="@+id/b2_q4"
+                android:icon="@drawable/questao_icon"
+                android:title="Questão 4" />
+            <item
+                android:id="@+id/b2_q5"
+                android:icon="@drawable/questao_icon"
+                android:title="Questão 5" />
+            <item
+                android:id="@+id/b2_q6"
+                android:icon="@drawable/questao_icon"
+                android:title="Questão 6" />
+            <item
+                android:id="@+id/b2_q7"
+                android:icon="@drawable/questao_icon"
+                android:title="Questão 7" />
+            <item
+                android:id="@+id/b2_q8"
+                android:icon="@drawable/questao_icon"
+                android:title="Questão 8" />
+            <item
+                android:id="@+id/b2_q9"
+                android:icon="@drawable/questao_icon"
+                android:title="Questão 9" />
+            <item
+                android:id="@+id/b2_q10"
+                android:icon="@drawable/questao_icon"
+                android:title="Questão 10" />
+        </menu>
+    </item>
+</menu>

@@ -1,4 +1,4 @@
-package br.org.unesco.appesca.view;
+package br.org.unesco.appesca.view.codigoantigo;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -18,7 +18,7 @@ import br.org.unesco.appesca.control.QuestaoDetailFragment;
 import br.org.unesco.appesca.model.ItemMenuLateral;
 import br.org.unesco.appesca.util.ConstantesIdsFormularios;
 
-public class FormularioCaranguejoActivity extends AppCompatActivity {
+public class FormularioCamaraoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +37,13 @@ public class FormularioCaranguejoActivity extends AppCompatActivity {
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView){
 
-        List<ItemMenuLateral> listaMenuLateral = new ArrayList<ItemMenuLateral>();
+        List<ItemMenuLateral> listaMenuLateral = new ArrayList<>();
+        listaMenuLateral.add(new ItemMenuLateral(1, "Identificação do entrevistado", R.layout.questao_identificacao));
+
         int[] questoesFormulario = ConstantesIdsFormularios.arrayIdsFragmentCamaraoRegional;
 
-        listaMenuLateral.add(new ItemMenuLateral(1, "Identificação do entrevistado", R.layout.questao_identificacao));
         for(int i=1; i<questoesFormulario.length; i++){
-            listaMenuLateral.add(new ItemMenuLateral(i, "Questão " + i, questoesFormulario[i]));
+            listaMenuLateral.add(new ItemMenuLateral(i, "Questão "+i, questoesFormulario[i]));
         }
 
         recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(listaMenuLateral));
@@ -79,7 +80,6 @@ public class FormularioCaranguejoActivity extends AppCompatActivity {
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.questao_detail_container, fragment)
                             .commit();
-
                 }
             });
         }

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="teste.teste.myapplication.MainActivity"
+    tools:showIn="@layout/app_bar_formcamreg">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        >
+        <!--<Button-->
+            <!--android:id="@+id/btnQuestAnterior"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:text="A"/>-->
+        <FrameLayout
+            android:id="@+id/questao_detail_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+            <!--android:layout_toRightOf="@+id/btnQuestAnterior"-->
+            <!--android:layout_toLeftOf="@+id/btnQuestProx"-->
+            <!--android:layout_toStartOf="@+id/btnQuestProx" />-->
+        <!--<Button-->
+            <!--android:id="@+id/btnQuestProx"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:text="P"/>-->
+    </RelativeLayout>
+
+</RelativeLayout>

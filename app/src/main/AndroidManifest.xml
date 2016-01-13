@@ -23,26 +23,32 @@
         android:logo="@mipmap/ic_launcher"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".view.HomeActivity"
+            android:name=".view.codigoantigo.HomeActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"/>
 
-        <activity
-            android:name=".view.FormularioCaranguejoActivity"
-            android:label="@string/title_questao_list"
-            android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar" />
+        <!--<activity-->
+            <!--android:name=".view.codigoantigo.FormularioCaranguejoActivity"-->
+            <!--android:label="@string/title_questao_list"-->
+            <!--android:screenOrientation="landscape"-->
+            <!--android:theme="@style/AppTheme.NoActionBar" />-->
+
+        <!--<activity-->
+            <!--android:name=".view.codigoantigo.FormularioCamaraoRegionalActivity"-->
+            <!--android:label="@string/title_questao_list"-->
+            <!--android:theme="@style/AppTheme.NoActionBar" />-->
+
+        <!--<activity-->
+        <!--android:name=".view.codigoantigo.FormularioCamaraoActivity"-->
+        <!--android:label="@string/title_questao_list"-->
+        <!--android:screenOrientation="landscape"-->
+        <!--android:theme="@style/AppTheme.NoActionBar" />-->
 
         <activity
-            android:name=".view.FormularioCamaraoRegionalActivity"
-            android:label="@string/title_questao_list"
+            android:name=".view.FormCamRegActivityNew"
+            android:label="@string/titulo_activity_fcr"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity
-            android:name=".view.FormularioCamaraoActivity"
-            android:label="@string/title_questao_list"
-            android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
             android:name=".view.LoginUnescoActivity"
@@ -54,7 +60,7 @@
         </activity>
 
         <activity
-            android:name=".view.MainActivity"
+            android:name=".view.PrincipalUnescoActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>
