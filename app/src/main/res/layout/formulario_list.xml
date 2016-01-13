@@ -11,6 +11,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="4dp"
+        android:visibility="gone"
         tools:ignore="WebViewLayout">
 
         <ImageView

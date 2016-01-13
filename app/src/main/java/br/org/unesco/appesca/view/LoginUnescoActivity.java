@@ -3,6 +3,7 @@ package br.org.unesco.appesca.view;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.app.AlertDialog;
 import android.app.LoaderManager.LoaderCallbacks;
 import android.content.CursorLoader;
 import android.content.Intent;
@@ -201,12 +202,17 @@ public class LoginUnescoActivity extends AppCompatActivity implements LoaderCall
 
                     if(!auth.isErro()){
                         Identity.setUsuarioLogado(auth.getUsuario());
+                        Intent intent = new Intent(LoginUnescoActivity.this, MainActivity.class);
+                        startActivity(intent);
+                    }else{
+                        new AlertDialog.Builder(LoginUnescoActivity.this)
+                                .setTitle("Appesca")
+                                .setMessage("Login ou senha inválidos!")
+                                .setIcon(android.R.drawable.ic_dialog_alert)
+                                .setPositiveButton(android.R.string.ok, null).show();
                     }
 
                     showProgress(false);
-
-                    Intent intent = new Intent(LoginUnescoActivity.this, MainActivity.class);
-                    startActivity(intent);
                 }
 
                 @Override
