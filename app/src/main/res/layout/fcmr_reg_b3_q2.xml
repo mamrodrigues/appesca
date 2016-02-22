@@ -22,7 +22,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Questão 02"
+                android:text="Bloco 3 - Questão 02"
                 android:textColor="@android:color/white"
                 android:textSize="40dp"
                 android:gravity="center"
@@ -54,15 +54,14 @@
                 <RadioGroup
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:checkedButton="@+id/perg1_rb_resp1">
+                    android:orientation="horizontal">
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Sim"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/perg1_rb_resp1"
-                        android:checked="false"
+                        
                         android:paddingRight="15dp"/>
 
                     <RadioButton
@@ -71,7 +70,7 @@
                         android:text="Não"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/perg1_rb_resp2"
-                        android:checked="false"
+                        
                         android:paddingRight="15dp"/>
                 </RadioGroup>
             </LinearLayout>
@@ -100,73 +99,84 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="30dp"
                 android:paddingBottom="10dp">
-
-                <CheckBox
-                    android:layout_width="wrap_content"
+                <RadioGroup
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Católica"
-                    android:textAppearance="@style/style_resposta"
-                    android:id="@+id/perg2_cb_resp1"
-                    android:checked="false" />
+                    android:orientation="vertical">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Católica"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/perg2_rb_resp1"
+                             />
 
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Protestante"
-                    android:textAppearance="@style/style_resposta"
-                    android:id="@+id/perg2_cb_resp2"
-                    android:checked="false" />
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Protestante"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/perg2_rb_resp2"
+                             />
 
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Evangélica"
-                    android:textAppearance="@style/style_resposta"
-                    android:id="@+id/perg2_cb_resp3"
-                    android:checked="false" />
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Evangélica"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/perg2_rb_resp3"
+                             />
 
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Espírita"
-                    android:textAppearance="@style/style_resposta"
-                    android:id="@+id/perg2_cb_resp4"
-                    android:checked="false" />
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Espírita"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/perg2_rb_resp4"
+                             />
 
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Umbanda"
-                    android:textAppearance="@style/style_resposta"
-                    android:id="@+id/perg2_cb_resp5"
-                    android:checked="false" />
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Umbanda"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/perg2_rb_resp5"
+                             />
 
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Candomblé"
-                    android:textAppearance="@style/style_resposta"
-                    android:id="@+id/perg2_cb_resp6"
-                    android:checked="false" />
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Candomblé"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/perg2_rb_resp6"
+                            />
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tambor de Mina"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/perg2_rb_resp7"
+                            />
 
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Outra:"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg2_cb_resp7"
-                        android:checked="false" />
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Outra:"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg2_rb_resp8"
+                                 />
 
-                    <EditText
-                        android:layout_width="241dp"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/perg2_et_resp1"
-                        android:textAppearance="@style/style_resposta"/>
-                </LinearLayout>
+                            <EditText
+                                android:layout_width="241dp"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/perg2_et_resp9"
+                                android:textAppearance="@style/style_resposta"/>
+                        </LinearLayout>
+                </RadioGroup>
             </LinearLayout>
 
         </LinearLayout>

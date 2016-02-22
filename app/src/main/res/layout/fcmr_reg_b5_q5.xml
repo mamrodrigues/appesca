@@ -22,7 +22,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Questão 05"
+                android:text="Bloco 5 - Questão 05"
                 android:textColor="@android:color/white"
                 android:textSize="40dp"
                 android:gravity="center"
@@ -42,8 +42,7 @@
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
                 android:textAppearance="@style/style_questao"
-                android:text="Você é beneficiário de algum projeto ou programa para o
-desenvolvimento da pesca?"/>
+                android:text="Você é beneficiário de algum projeto ou programa para o desenvolvimento comunitário?"/>
         </LinearLayout>
 
             <LinearLayout
@@ -54,15 +53,13 @@ desenvolvimento da pesca?"/>
                 <RadioGroup
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:checkedButton="@+id/perg1_rb_resp1">
+                    android:orientation="horizontal">
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Sim"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/perg1_rb_resp1"
-                        android:checked="false"
                         android:paddingRight="15dp"/>
 
                     <RadioButton
@@ -71,14 +68,13 @@ desenvolvimento da pesca?"/>
                         android:text="Não"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/perg1_rb_resp2"
-                        android:checked="false"
                         android:paddingRight="15dp"/>
                 </RadioGroup>
             </LinearLayout>
 
             <!-- RESPOSTA + TABULACAO DAS OPCOES -->
             <LinearLayout
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="10dp"
@@ -90,18 +86,88 @@ desenvolvimento da pesca?"/>
                     android:layout_height="wrap_content"
                     android:paddingBottom="5dp"
                     android:textAppearance="@style/style_questao"
-                    android:text="se sim quais?"/>
+                    android:text="Se sim, qual?"/>
 
-                <EditText
-                    android:layout_width="241dp"
+                <!-- TABULACAO DAS OPCOES -->
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/perg2_et_resp1"
-                    android:textAppearance="@style/style_resposta"
-                    android:lines="2" />
+                    android:paddingLeft="30dp"
+                    android:paddingBottom="10dp">
 
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Entre marés"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg2_rb_resp1"
+                              />
+        
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Maré solidária"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg2_rb_resp2"
+                              />
+        
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Conservação Internacional"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg2_rb_resp3"
+                              />
+        
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Unesco"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg2_rb_resp4"
+                              />
+        
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Manguezais do Brasil"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg2_rb_resp5"
+                              />
+        
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Feiras do governo do Estado"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg2_rb_resp6"
+                              />
+        
+        
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Outro. Qual?"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg2_rb_resp7"
+                              />
+        
+                            <EditText
+                                android:layout_width="241dp"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/perg2_et_resp8"
+                                android:textAppearance="@style/style_resposta"
+                                android:lines="2" />
+                    </RadioGroup>
+                </LinearLayout>
 
             </LinearLayout>
 
+            </LinearLayout>
 
-    </LinearLayout>
 </LinearLayout>

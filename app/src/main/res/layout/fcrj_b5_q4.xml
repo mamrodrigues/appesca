@@ -57,7 +57,7 @@
                 android:text="Nada"
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/opcao_a"
-                android:checked="false" />
+              />
 
             <CheckBox
                 android:layout_width="wrap_content"
@@ -65,7 +65,7 @@
                 android:text="Menos da Metade"
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/opcao_b"
-                android:checked="false" />
+              />
 
             <CheckBox
                 android:layout_width="wrap_content"
@@ -73,7 +73,7 @@
                 android:text="Metade "
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/opcao_c"
-                android:checked="false" />
+              />
 
             <CheckBox
                 android:layout_width="wrap_content"
@@ -81,14 +81,14 @@
                 android:text="Mais da Metade "
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/opcao_d"
-                android:checked="false" />
+              />
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tudo"
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/opcao_e"
-                android:checked="false" />
+              />
 
         </LinearLayout>
 

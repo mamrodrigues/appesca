@@ -21,7 +21,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Questão 2"
+                android:text="Bloco 6 - Questão 2"
                 android:textColor="@android:color/white"
                 android:textSize="40dp"
                 android:gravity="center"
@@ -41,164 +41,166 @@
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
                 android:textAppearance="@style/style_questao"
-                android:text="Quais são os locais de pesca (pesqueiros) mais utilizados?"/>
+                android:text="Quais são os principais locais de pesca (pesqueiros) mais utilizados? Quanto tempo se gasta ir até lá?"/>
 
             <LinearLayout
                 android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="5dp"
+                    android:textAppearance="@style/style_questao"
+                    android:text="Local 1"/>
 
                 <EditText
-                    android:layout_width="match_parent"
+                    android:layout_width="240dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/perg1_et_resp1"
                     android:textAppearance="@style/style_resposta"/>
 
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="20dp">
-
-            <TextView
-                android:id="@+id/perg2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="5dp"
-                android:textAppearance="@style/style_questao"
-                android:text="Quanto tempo se gasta para chegar ao local de pesca (pesqueiro) mais distante?"/>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="5dp"
+                    android:textAppearance="@style/style_questao"
+                    android:text="Quanto tempo?"/>
 
                 <EditText
-                    android:layout_width="match_parent"
+                    android:layout_width="240dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/perg2_et_resp1"
+                    android:id="@+id/perg1_et_resp2"
                     android:textAppearance="@style/style_resposta"/>
 
             </LinearLayout>
 
-            <!-- RESPOSTA + TABULACAO DAS OPCOES -->
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
-                android:paddingLeft="30dp">
+                android:layout_height="match_parent">
 
-                <RadioGroup
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:checkedButton="@+id/perg2_rb_resp1">
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Horas"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg2_rb_resp1"
-                        android:checked="false"
-                        android:paddingRight="15dp"/>
+                    android:paddingBottom="5dp"
+                    android:textAppearance="@style/style_questao"
+                    android:text="Local 1"/>
 
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Não sabe"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg2_rb_resp2"
-                        android:checked="false"
-                        android:paddingRight="15dp"/>
+                <EditText
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/perg2_et_resp1"
+                    android:textAppearance="@style/style_resposta"/>
 
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Não respondeu"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg2_rb_resp3"
-                        android:checked="false"
-                        android:paddingRight="15dp"/>
-                </RadioGroup>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="5dp"
+                    android:textAppearance="@style/style_questao"
+                    android:text="Quanto tempo?"/>
+
+                <EditText
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/perg2_et_resp2"
+                    android:textAppearance="@style/style_resposta"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="5dp"
+                    android:textAppearance="@style/style_questao"
+                    android:text="Local 1"/>
+
+                <EditText
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/perg3_et_resp1"
+                    android:textAppearance="@style/style_resposta"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="5dp"
+                    android:textAppearance="@style/style_questao"
+                    android:text="Quanto tempo?"/>
+
+                <EditText
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/perg3_et_resp2"
+                    android:textAppearance="@style/style_resposta"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="5dp"
+                    android:textAppearance="@style/style_questao"
+                    android:text="Local 1"/>
+
+                <EditText
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/perg4_et_resp1"
+                    android:textAppearance="@style/style_resposta"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="5dp"
+                    android:textAppearance="@style/style_questao"
+                    android:text="Quanto tempo?"/>
+
+                <EditText
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/perg4_et_resp2"
+                    android:textAppearance="@style/style_resposta"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Não Sabe"
+                    android:textAppearance="@style/style_resposta"
+                    android:id="@+id/perg5_cb_resp1"
+                    android:paddingRight="15dp"/>
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Não Respondeu"
+                    android:textAppearance="@style/style_resposta"
+                    android:id="@+id/perg5_cb_resp2"
+                    android:paddingRight="15dp"/>
+
             </LinearLayout>
 
         </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="20dp">
-
-        <TextView
-            android:id="@+id/perg3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingBottom="5dp"
-            android:textAppearance="@style/style_questao"
-            android:text="Quanto tempo se gasta para chegar ao local de pesca (pesqueiro) mais perto?"/>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/perg3_et_resp1"
-                android:textAppearance="@style/style_resposta"/>
-
-        </LinearLayout>
-
-        <!-- RESPOSTA + TABULACAO DAS OPCOES -->
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingBottom="10dp"
-            android:paddingLeft="30dp">
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:checkedButton="@+id/perg3_rb_resp1">
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Horas"
-                    android:textAppearance="@style/style_resposta"
-                    android:id="@+id/perg3_rb_resp1"
-                    android:checked="false"
-                    android:paddingRight="15dp"/>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Não sabe"
-                    android:textAppearance="@style/style_resposta"
-                    android:id="@+id/perg3_rb_resp2"
-                    android:checked="false"
-                    android:paddingRight="15dp"/>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Não respondeu"
-                    android:textAppearance="@style/style_resposta"
-                    android:id="@+id/perg3_rb_resp3"
-                    android:checked="false"
-                    android:paddingRight="15dp"/>
-            </RadioGroup>
-        </LinearLayout>
-
-    </LinearLayout>
 
     </LinearLayout>
 

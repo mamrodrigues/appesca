@@ -22,7 +22,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Questão 08"
+                android:text="Bloco 1 - Questão 08"
                 android:textColor="@android:color/white"
                 android:textSize="40dp"
                 android:gravity="center"
@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
                 android:textAppearance="@style/style_questao"
-                android:text="Você tem acesso à informação por quais meios? [ler alternativas]"/>
+                android:text="Você tem acesso à informação por quais meios? [ler alternativas] (Pode haver mais de uma resposta)"/>
 
         </LinearLayout>
 
@@ -60,7 +60,7 @@
                 android:text="Televisão"
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/perg1_cb_resp1"
-                android:checked="false" />
+              />
 
             <CheckBox
                 android:layout_width="wrap_content"
@@ -68,7 +68,7 @@
                 android:text="Rádio"
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/perg1_cb_resp2"
-                android:checked="false" />
+              />
 
             <CheckBox
                 android:layout_width="wrap_content"
@@ -76,7 +76,7 @@
                 android:text="Rádio Comunitária"
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/perg1_cb_resp3"
-                android:checked="false" />
+              />
 
             <CheckBox
                 android:layout_width="wrap_content"

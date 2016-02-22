@@ -68,7 +68,7 @@
                         android:text="Canoa a vela"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_a"
-                        android:checked="false" />
+                      />
 
                     <CheckBox
                         android:layout_width="wrap_content"
@@ -76,7 +76,7 @@
                         android:text="Canoa a Remo "
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_b"
-                        android:checked="false" />
+                      />
 
                     <CheckBox
                         android:layout_width="wrap_content"
@@ -84,7 +84,7 @@
                         android:text="Canoa a motor"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_c"
-                        android:checked="false" />
+                      />
 
                     <CheckBox
                         android:layout_width="wrap_content"
@@ -92,7 +92,7 @@
                         android:text="Biana a vela"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_d"
-                        android:checked="false" />
+                      />
 
                     <CheckBox
                         android:layout_width="wrap_content"
@@ -100,7 +100,7 @@
                         android:text="Biana a Motor "
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_e"
-                        android:checked="false" />
+                      />
 
                     <CheckBox
                         android:layout_width="wrap_content"
@@ -108,7 +108,7 @@
                         android:text="Barco a vela"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_f"
-                        android:checked="false" />
+                      />
 
                     <CheckBox
                         android:layout_width="wrap_content"
@@ -116,7 +116,7 @@
                         android:text="Barco a motor"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_g"
-                        android:checked="false" />
+                      />
 
                     <CheckBox
                         android:layout_width="wrap_content"
@@ -226,7 +226,7 @@
                             android:text="Sim (pule para 6)"
                             android:textAppearance="@style/style_resposta"
                             android:id="@+id/opcao_a1"
-                            android:checked="false" />
+                          />
 
                         <CheckBox
                             android:layout_width="wrap_content"
@@ -234,7 +234,7 @@
                             android:text="Não "
                             android:textAppearance="@style/style_resposta"
                             android:id="@+id/opcao_b1"
-                            android:checked="false" />
+                          />
                         </LinearLayout>
 
 
@@ -270,7 +270,7 @@
                         android:text="Emprestada gratuitamente pela família (pule para 6)"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_a2"
-                        android:checked="false" />
+                      />
 
                     <CheckBox
                         android:layout_width="wrap_content"
@@ -278,7 +278,7 @@
                         android:text="Emprestado gratuitamente por amigos (pule para 6)"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_b2"
-                        android:checked="false" />
+                      />
 
                     <CheckBox
                         android:layout_width="wrap_content"
@@ -286,7 +286,7 @@
                         android:text="Alugada de família ou amigos"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_c2"
-                        android:checked="false" />
+                      />
 
                     <CheckBox
                         android:layout_width="wrap_content"
@@ -294,14 +294,14 @@
                         android:text="Alugada do patrão de pesca."
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_d2"
-                        android:checked="false" />
+                      />
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Carona"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_e2"
-                        android:checked="false" />
+                      />
 
                     <CheckBox
                         android:layout_width="wrap_content"
@@ -309,7 +309,7 @@
                         android:text="Outros:"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_f2"
-                        android:checked="false" />
+                      />
 
                     <EditText
                         android:layout_width="170dp"
@@ -355,7 +355,7 @@
                         android:text="Por dia"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_a3"
-                        android:checked="false" />
+                      />
 
                     <CheckBox
                         android:layout_width="wrap_content"
@@ -363,14 +363,14 @@
                         android:text="Por semana"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_b3"
-                        android:checked="false" />
+                      />
                     <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Por mês"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_c3"
-                        android:checked="false" />
+                      />
                 </LinearLayout>
 
                 <!--QUESTAO  -->
@@ -402,7 +402,7 @@
                         android:text="Diesel"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_a4"
-                        android:checked="false" />
+                      />
 
                     <CheckBox
                         android:layout_width="wrap_content"
@@ -410,7 +410,7 @@
                         android:text="Gasolina"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_b4"
-                        android:checked="false" />
+                      />
 
                 </LinearLayout>
 
@@ -444,7 +444,7 @@
                     android:text="Soalho do Barco"
                     android:textAppearance="@style/style_resposta"
                     android:id="@+id/opcao_a5"
-                    android:checked="false" />
+                  />
 
                 <CheckBox
                     android:layout_width="wrap_content"
@@ -452,7 +452,7 @@
                     android:text="Monobloco (cesto de cipó)"
                     android:textAppearance="@style/style_resposta"
                     android:id="@+id/opcao_b5"
-                    android:checked="false" />
+                  />
 
                 <CheckBox
                     android:layout_width="wrap_content"
@@ -460,7 +460,7 @@
                     android:text="Paneiro"
                     android:textAppearance="@style/style_resposta"
                     android:id="@+id/opcao_c5"
-                    android:checked="false" />
+                  />
 
                 <CheckBox
                     android:layout_width="wrap_content"
@@ -468,7 +468,7 @@
                     android:text="Cofo"
                     android:textAppearance="@style/style_resposta"
                     android:id="@+id/opcao_d5"
-                    android:checked="false" />
+                  />
 
                 <CheckBox
                     android:layout_width="wrap_content"
@@ -476,7 +476,7 @@
                     android:text="Caixa de isopor"
                     android:textAppearance="@style/style_resposta"
                     android:id="@+id/opcao_e5"
-                    android:checked="false" />
+                  />
 
                 <CheckBox
                     android:layout_width="wrap_content"
@@ -484,7 +484,7 @@
                     android:text="Caixa Plástica"
                     android:textAppearance="@style/style_resposta"
                     android:id="@+id/opcao_f5"
-                    android:checked="false" />
+                  />
 
                 <CheckBox
                     android:layout_width="wrap_content"
@@ -492,7 +492,7 @@
                     android:text="Balde"
                     android:textAppearance="@style/style_resposta"
                     android:id="@+id/opcao_g5"
-                    android:checked="false" />
+                  />
 
                 <CheckBox
                     android:layout_width="wrap_content"
@@ -500,7 +500,7 @@
                     android:text="Saca  de feira"
                     android:textAppearance="@style/style_resposta"
                     android:id="@+id/opcao_h5"
-                    android:checked="false" />
+                  />
 
                 <CheckBox
                     android:layout_width="wrap_content"
@@ -508,7 +508,7 @@
                     android:text="Carote Plástico 5lts"
                     android:textAppearance="@style/style_resposta"
                     android:id="@+id/opcao_i5"
-                    android:checked="false" />
+                  />
 
                 <CheckBox
                     android:layout_width="wrap_content"
@@ -516,7 +516,7 @@
                     android:text="Outros:"
                     android:textAppearance="@style/style_resposta"
                     android:id="@+id/opcao_j5"
-                    android:checked="false" />
+                  />
 
                 <EditText
                     android:layout_width="170dp"

@@ -55,7 +55,7 @@
                     android:text="Sim"
                     android:textAppearance="@style/style_resposta"
                     android:id="@+id/sim"
-                    android:checked="false"
+
                     android:paddingRight="15dp"/>
 
                 <RadioButton
@@ -64,7 +64,7 @@
                     android:text="Não"
                     android:textAppearance="@style/style_resposta"
                     android:id="@+id/nao"
-                    android:checked="false"
+
                     android:paddingRight="15dp"/>
 
 

@@ -22,7 +22,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Questão 06"
+                android:text="Bloco 3 - Questão 06"
                 android:textColor="@android:color/white"
                 android:textSize="40dp"
                 android:gravity="center"
@@ -58,68 +58,56 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="30dp">
+                    
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Posto de saúde"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg1_cb_resp1" />
 
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Posto de saúde"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp1" />
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Hospital"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg1_cb_resp2" />
 
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Hospital"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp2" />
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Unidades fluviais de saúde"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg1_cb_resp3" />
 
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Unidades fluviais de saúde"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp3" />
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Agentes de saúde"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg1_cb_resp4" />
 
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Agentes de saúde"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp4" />
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Remédios caseiros"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg1_cb_resp5" />
 
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Remédios caseiros"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp5" />
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rezas e benzeduras"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg1_cb_resp6" />
 
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Rezas e benzeduras"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp6" />
-
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <CheckBox
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Outros. Quais?"
-                            android:textAppearance="@style/style_resposta"
-                            android:id="@+id/perg1_cb_resp7" />
-                        <EditText
-                            android:layout_width="241dp"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/perg1_et_resp1"
-                            android:textAppearance="@style/style_resposta"/>
-
-                    </LinearLayout>
-
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Outros"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg1_cb_resp7"
+                                 />
                 </LinearLayout>
 
             </LinearLayout>

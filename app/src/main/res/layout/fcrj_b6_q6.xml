@@ -68,7 +68,7 @@
                         android:text="Vai e volta no mesmo dia (“ir e vir”)"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_a"
-                        android:checked="false" />
+                      />
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -97,7 +97,7 @@
                         android:text="Vai e retorna em um ou mais dias depois (“decida”)"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/opcao_b"
-                        android:checked="false" />
+                      />
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -160,7 +160,7 @@
                             android:text="Horas"
                             android:textAppearance="@style/style_resposta"
                             android:id="@+id/opcao_a1"
-                            android:checked="false" />
+                          />
 
                         <CheckBox
                             android:layout_width="wrap_content"
@@ -168,7 +168,7 @@
                             android:text="Minutos"
                             android:textAppearance="@style/style_resposta"
                             android:id="@+id/opcao_b1"
-                            android:checked="false" />
+                          />
                         </LinearLayout>
 
                     <!--QUESTAO  -->
@@ -201,7 +201,7 @@
                             android:text="Horas"
                             android:textAppearance="@style/style_resposta"
                             android:id="@+id/opcao_a2"
-                            android:checked="false" />
+                          />
 
                         <CheckBox
                             android:layout_width="wrap_content"
@@ -209,7 +209,7 @@
                             android:text="Minutos"
                             android:textAppearance="@style/style_resposta"
                             android:id="@+id/opcao_b2"
-                            android:checked="false" />
+                          />
                     </LinearLayout>
 
                   </LinearLayout>

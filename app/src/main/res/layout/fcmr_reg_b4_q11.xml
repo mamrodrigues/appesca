@@ -21,7 +21,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Questão 11"
+                android:text="Bloco 4 - Questão 11"
                 android:textColor="@android:color/white"
                 android:textSize="40dp"
                 android:gravity="center"
@@ -54,15 +54,13 @@ para conscientizar as pessoas da comunidade sobre o meio ambiente?"/>
                 <RadioGroup
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:checkedButton="@+id/perg1_rb_resp1">
+                    android:orientation="horizontal">
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Sim"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/perg1_rb_resp1"
-                        android:checked="false"
                         android:paddingRight="15dp"/>
 
                     <RadioButton
@@ -71,7 +69,6 @@ para conscientizar as pessoas da comunidade sobre o meio ambiente?"/>
                         android:text="Não"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/perg1_rb_resp2"
-                        android:checked="false"
                         android:paddingRight="15dp"/>
 
                     <RadioButton
@@ -80,7 +77,6 @@ para conscientizar as pessoas da comunidade sobre o meio ambiente?"/>
                         android:text="Não sei"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/perg1_rb_resp3"
-                        android:checked="false"
                         android:paddingRight="15dp"/>
                 </RadioGroup>
 

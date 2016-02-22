@@ -3,66 +3,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:layout_marginLeft="4dp"
+    android:layout_marginRight="4dp"
+    android:orientation="vertical">
 
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="4dp"
-        android:visibility="gone"
+        android:layout_marginTop="10dp"
         tools:ignore="WebViewLayout">
 
-        <ImageView
-            android:layout_width="92dp"
-            android:layout_height="92dp"
-            android:id="@+id/fotoUsuario"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/perfil" />
-
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nome do Pesquisador"
-            android:id="@+id/txtNomeUsuarioLogado"
-            android:layout_gravity="center_horizontal"
+            android:text="Titulo da lista de formulários"
+            android:textSize="25dp"
+            android:id="@+id/txtTituloListaFormularios"
+            android:gravity="center"
             android:textStyle="bold" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="email"
-            android:id="@+id/txtEmailUsuarioLogado"
-            android:layout_gravity="center_horizontal"
-            android:textStyle="italic" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Formulários"
-            android:textStyle="bold"
-            android:id="@+id/textView" />
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/formulario_list_situation"
-            android:layout_width="151dp"
-            android:layout_height="150dp"
-            app:layoutManager="LinearLayoutManager"
-            tools:listitem="@layout/formulario_list_title" />
-
     </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/formulario_detail_container"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="10dp"
+        tools:ignore="WebViewLayout">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/formulario_list_rv"
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="x formulários encontrados"
+            android:textSize="12dp"
+            android:id="@+id/txtMensagemQuantidade"
+            android:gravity="center"
+            android:textStyle="italic" />
+    </LinearLayout>
 
-    </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <FrameLayout
+            android:id="@+id/formulario_detail_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/formulario_list_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </FrameLayout>
+    </LinearLayout>
 
 </LinearLayout>

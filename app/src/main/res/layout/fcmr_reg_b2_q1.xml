@@ -21,7 +21,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Questão 01"
+                android:text="Bloco 2 - Questão 01"
                 android:textColor="@android:color/white"
                 android:textSize="40dp"
                 android:gravity="center"
@@ -67,114 +67,133 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="30dp">
-
-                    <CheckBox
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                    <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Pescador(a)"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp1" />
+                        android:id="@+id/perg1_rb_resp1" />
 
-                    <CheckBox
+                    <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Energia elétrica de má qualidade"
+                        android:text="Pescador(a) de camarão / caranguejo"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp2" />
+                        android:id="@+id/perg1_rb_resp2"
+                      />
 
-                    <CheckBox
+                    <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Falta de distribuição de água"
+                        android:text="Agricultor(a) familiar / Trabalhador(a) rural"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp3" />
+                        android:id="@+id/perg1_rb_resp3"
+                      />
 
-                    <CheckBox
+                    <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Água de má qualidade"
+                        android:text="Extrativista - Açaí"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp4" />
+                        android:id="@+id/perg1_rb_resp4"
+                      />
 
-                    <CheckBox
+                    <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Falta de posto de saúde"
+                        android:text="Extrativista (castanha, castanha de andiroba, buriti, pracaxi, bacaba, taperebá, etc.)"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp5" />
+                        android:id="@+id/perg1_rb_resp5"
+                      />
 
-                    <CheckBox
+                    <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Má qualidade no atendimento de saúde"
+                        android:text="Criador(a) de gado"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp6" />
+                        android:id="@+id/perg1_rb_resp6"
+                      />
 
-                    <CheckBox
+                    <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Lixo"
+                        android:text="Criador de animais (pato, galinha, porco, boi)"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp7" />
+                        android:id="@+id/perg1_rb_resp7"
+                      />
 
-                    <CheckBox
+                    <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Violência"
+                        android:text="Artesão / Artesã"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp8" />
+                        android:id="@+id/perg1_rb_resp8"
+                      />
 
-                    <CheckBox
+                    <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Conflitos entre moradores"
+                        android:text="Dona de casa"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp9" />
+                        android:id="@+id/perg1_rb_resp9"
+                      />
 
-                    <CheckBox
+                    <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Falta de oportunidades de emprego"
+                        android:text="Estudante"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp10" />
+                        android:id="@+id/perg1_rb_resp10"
+                      />
 
-                    <CheckBox
+                    <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Falta de escola"
+                        android:text="Professor(a)"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp11"/>
+                        android:id="@+id/perg1_rb_resp11"
+                      />
 
-                    <CheckBox
+                    <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Falta de transporte escolar"
+                        android:text="Aposentado(a)"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp12" />
-                    <CheckBox
+                        android:id="@+id/perg1_rb_resp12"
+                      />
+                    <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Falta de estradas de acesso"
+                        android:text="Comerciante"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp13" />
-                    <CheckBox
+                        android:id="@+id/perg1_rb_resp13"
+                      />
+                    <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Falta de trapiche"
+                        android:text="Funcionário(a) público(a) "
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp14" />
-                    <CheckBox
+                        android:id="@+id/perg1_rb_resp14"
+                      />
+                    <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Outros"
+                        android:text="Funcionário(a) de empresa privada "
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp15" />
-                    <EditText
-                        android:layout_width="241dp"
+                        android:id="@+id/perg1_rb_resp15"
+                      />
+                    <RadioButton
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/perg1_et_resp1"
+                        android:text="Outra"
                         android:textAppearance="@style/style_resposta"
-                        android:lines="2" />
+                        android:id="@+id/perg1_rb_resp16"
+                      />
+                    </RadioGroup>
                 </LinearLayout>
             </LinearLayout>
 

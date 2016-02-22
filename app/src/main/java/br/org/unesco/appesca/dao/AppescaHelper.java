@@ -4,20 +4,19 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-/**
- * Created by marcosmagalhaes on 06/01/2015.
- */
 public class AppescaHelper extends SQLiteOpenHelper{
 
     private static final String DATABASE_NAME = "appescadb";
     private static final int DATABASE_VERSION = 1;
 
+    /********************* TABELA TIPO FORMULARIO ***********************/
     public static final String TABLE_TIPO_FORMULARIO = "TIPO_FORMULARIO";
     public static final String COL_TIPO_FORMULARIO_ID = "ID_TIPO_FORMULARIO";
     public static final String COL_TIPO_FORMULARIO_NOME = "NOME";
     public static final String COL_TIPO_FORMULARIO_DESCRICAO = "DESCRICAO";
     public static final String COL_TIPO_FORMULARIO_ORDEM = "ORDEM";
 
+    /********************* TABELA FORMULARIO ***********************/
     public static final String TABLE_FORMULARIO = "FORMULARIO";
     public static final String COL_FORMULARIO_ID = "ID_FORMULARIO";
     public static final String COL_FORMULARIO_NOME = "NOME";
@@ -26,12 +25,14 @@ public class AppescaHelper extends SQLiteOpenHelper{
     public static final String COL_FORMULARIO_DATA_APLICACAO = "DATA_APLICACAO";
     public static final String COL_FORMULARIO_SITUACAO = "SITUACAO";
 
+    /********************* TABELA QUESTAO ***********************/
     public static final String TABLE_QUESTAO = "QUESTAO";
     public static final String COL_QUESTAO_ID = "ID_QUESTAO";
     public static final String COL_QUESTAO_TITULO = "TITULO";
     public static final String COL_QUESTAO_ORDEM = "ORDEM";
     public static final String COL_QUESTAO_ID_FORMULARIO = "ID_FORMULARIO";
 
+    /********************* TABELA PERGUNTA ***********************/
     public static final String TABLE_PERGUNTA = "PERGUNTA";
     public static final String COL_PERGUNTA_ID = "ID_PERGUNTA";
     public static final String COL_PERGUNTA_BOOLEANA = "BOOLEANA";
@@ -39,6 +40,7 @@ public class AppescaHelper extends SQLiteOpenHelper{
     public static final String COL_PERGUNTA_ORDEM = "ORDEM";
     public static final String COL_PERGUNTA_ID_QUESTAO = "ID_QUESTAO";
 
+    /********************* TABELA RESPOSTA ***********************/
     public static final String TABLE_RESPOSTA = "RESPOSTA";
     public static final String COL_RESPOSTA_ID = "ID_RESPOSTA";
     public static final String COL_RESPOSTA_OPCAO = "OPCAO";
@@ -47,6 +49,7 @@ public class AppescaHelper extends SQLiteOpenHelper{
     public static final String COL_RESPOSTA_ORDEM = "ORDEM";
     public static final String COL_RESPOSTA_ID_PERGUNTA = "ID_PERGUNTA";
 
+    /********************* TABELA USUARIO ***********************/
     public static final String TABLE_USUARIO = "USUARIO";
     public static final String COL_USUARIO_ID = "ID_USUARIO";
     public static final String COL_USUARIO_NOME = "NOME";
@@ -54,13 +57,17 @@ public class AppescaHelper extends SQLiteOpenHelper{
     public static final String COL_USUARIO_LOGIN = "LOGIN";
     public static final String COL_USUARIO_SENHA = "SENHA";
     public static final String COL_USUARIO_PERFIL = "PERFIL";
+    public static final String COL_USUARIO_IMAGEM = "IMAGEM";
+    public static final String COL_USUARIO_EMAIL = "EMAIL";
 
+    /********************* TABELA LOCALIZACAO RESIDENCIA ***********************/
     public static final String TABLE_LOC_RESIDENCIA = "LOC_RESIDENCIA";
     public static final String COL_LOC_RESIDENCIA_ID = "ID_LOC_RESIDENCIA";
     public static final String COL_LOC_RESIDENCIA_LOCAL_RESID = "LOCAL_RESID";
     public static final String COL_LOC_RESIDENCIA_RESID_UN_CONSERV = "RESID_UN_CONSERV";
     public static final String COL_LOC_RESIDENCIA_ID_FORMULARIO = "ID_FORMULARIO";
 
+    /********************* TABELA ENTREVISTADO ***********************/
     public static final String TABLE_ENTREVISTADO = "IDENT_ENTREVISTADO";
     public static final String COL_ENTREVISTADO_ID = "ID_IDENT_ENTREVISTADO";
     public static final String COL_ENTREVISTADO_NOME_COMPLETO = "NOME_COMPLETO";
@@ -85,6 +92,21 @@ public class AppescaHelper extends SQLiteOpenHelper{
     public static final String COL_ENTREVISTADO_REPONS_UN_FAM = "REPONS_UN_FAM";
     public static final String COL_ENTREVISTADO_ID_FORMULARIO = "ID_FORMULARIO";
 
+
+    /********************* TABELA EQUIPE ***********************/
+    public static final String TABLE_EQUIPE = "EQUIPE";
+    public static final String COL_EQUIPE_ID = "ID_EQUIPE";
+    public static final String COL_EQUIPE_NOME = "NOME";
+    public static final String COL_EQUIPE_ULTIMOS_AVISOS = "ULTIMOS_AVISOS";
+    public static final String COL_EQUIPE_REGULAMENTO = "REGULAMENTO";
+    public static final String COL_EQUIPE_COORDENADOR_ID = "ID_COORDENADOR";
+    public static final String COL_EQUIPE_DATA_CRIACAO = "DATA_CRIACAO";
+
+    /********************* TABELA MEMBROS_EQUIPE ***********************/
+    public static final String TABLE_MEMBROS_EQUIPE = "MEMBROS_EQUIPE";
+    public static final String COL_MEMBRO_EQUIPE_ID = "ID_MEMBRO_EQUIPE";
+    public static final String COL_MEMBROS_EQUIPE_DATA_CRIACAO = "DATA_CRIACAO";
+
     private Context mContext;
     private SQLiteDatabase mDataBase;
 
@@ -105,7 +127,8 @@ public class AppescaHelper extends SQLiteOpenHelper{
         sqLiteDatabase.execSQL(criarTabelaResposta());
         sqLiteDatabase.execSQL(criarTabelaLocResidencia());
         sqLiteDatabase.execSQL(criarTabelaEntrevistado());
-
+        sqLiteDatabase.execSQL(criarTabelaEquipe());
+        sqLiteDatabase.execSQL(criarTabelaMembrosEquipe());
     }
 
     @Override
@@ -134,12 +157,15 @@ public class AppescaHelper extends SQLiteOpenHelper{
         sql.append("CREATE TABLE IF NOT EXISTS ");
         sql.append(TABLE_USUARIO);
         sql.append(" ( ");
-        sql.append(COL_USUARIO_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL , ");
+//        sql.append(COL_USUARIO_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL , ");
+        sql.append(COL_USUARIO_ID + " INTEGER PRIMARY KEY NOT NULL , ");
         sql.append(COL_USUARIO_NOME + " TEXT , ");
         sql.append(COL_USUARIO_ENDERECO + " TEXT , ");
         sql.append(COL_USUARIO_LOGIN + " TEXT , ");
         sql.append(COL_USUARIO_SENHA + " TEXT , ");
-        sql.append(COL_USUARIO_PERFIL + " INTEGER ");
+        sql.append(COL_USUARIO_PERFIL + " TEXT, ");
+        sql.append(COL_USUARIO_IMAGEM + " BLOB, ");
+        sql.append(COL_USUARIO_EMAIL + " TEXT ");
 
         sql.append("); ");
 
@@ -272,4 +298,41 @@ public class AppescaHelper extends SQLiteOpenHelper{
         return sql.toString();
     }
 
+    private static String criarTabelaEquipe() {
+        final StringBuffer sql = new StringBuffer();
+
+        sql.append("CREATE TABLE IF NOT EXISTS ");
+        sql.append(TABLE_EQUIPE);
+        sql.append(" ( ");
+        sql.append(COL_EQUIPE_ID + " INTEGER PRIMARY KEY NOT NULL , ");
+        sql.append(COL_EQUIPE_NOME + " TEXT , ");
+        sql.append(COL_EQUIPE_ULTIMOS_AVISOS + " TEXT , ");
+        sql.append(COL_EQUIPE_REGULAMENTO + " TEXT , ");
+        sql.append(COL_EQUIPE_COORDENADOR_ID + " INTEGER , ");
+        sql.append(COL_EQUIPE_DATA_CRIACAO + " DATETIME , ");
+        sql.append(" FOREIGN KEY ("+ COL_EQUIPE_COORDENADOR_ID +") REFERENCES "+ TABLE_USUARIO+" ("+ COL_USUARIO_ID +") ");
+
+        sql.append("); ");
+
+        return sql.toString();
+    }
+
+
+    private static String criarTabelaMembrosEquipe() {
+        final StringBuffer sql = new StringBuffer();
+
+        sql.append("CREATE TABLE IF NOT EXISTS ");
+        sql.append(TABLE_MEMBROS_EQUIPE);
+        sql.append(" ( ");
+        sql.append(COL_MEMBRO_EQUIPE_ID + " INTEGER PRIMARY KEY NOT NULL , ");
+        sql.append(COL_EQUIPE_ID + " INTEGER , ");
+        sql.append(COL_USUARIO_ID + " INTEGER , ");
+        sql.append(COL_MEMBROS_EQUIPE_DATA_CRIACAO + " DATETIME , ");
+        sql.append(" FOREIGN KEY ("+ COL_EQUIPE_ID +") REFERENCES "+ TABLE_EQUIPE+" ("+ COL_EQUIPE_ID +") ");
+        sql.append(" FOREIGN KEY ("+ COL_USUARIO_ID +") REFERENCES "+ TABLE_USUARIO+" ("+ COL_USUARIO_ID +") ");
+
+        sql.append("); ");
+
+        return sql.toString();
+    }
 }

@@ -1,6 +1,5 @@
 package br.org.unesco.appesca.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Questao implements java.io.Serializable {

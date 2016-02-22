@@ -6,6 +6,7 @@ import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.LoaderManager.LoaderCallbacks;
 import android.content.CursorLoader;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.Loader;
 import android.content.pm.PackageManager;
@@ -19,15 +20,13 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -38,8 +37,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.org.unesco.appesca.R;
+import br.org.unesco.appesca.dao.UsuarioDAO;
 import br.org.unesco.appesca.model.Identity;
+import br.org.unesco.appesca.model.Usuario;
 import br.org.unesco.appesca.rest.model.RespAutenticacaoREST;
+import br.org.unesco.appesca.util.ConnectionNetwork;
 import br.org.unesco.appesca.util.ConstantesREST;
 import cz.msebera.android.httpclient.Header;
 
@@ -70,16 +72,16 @@ public class LoginUnescoActivity extends AppCompatActivity implements LoaderCall
         populateAutoComplete();
 
         mPasswordView = (EditText) findViewById(R.id.password);
-        mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-                if (id == R.id.login || id == EditorInfo.IME_NULL) {
-                    efetuarLogin();
-                    return true;
-                }
-                return false;
-            }
-        });
+//        mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+//            @Override
+//            public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
+//                if (id == R.id.login || id == EditorInfo.IME_NULL) {
+//                    efetuarLogin();
+//                    return true;
+//                }
+//                return false;
+//            }
+//        });
 
         Button btnEntrar = (Button) findViewById(R.id.email_sign_in_button);
         btnEntrar.setOnClickListener(new OnClickListener() {
@@ -148,9 +150,7 @@ public class LoginUnescoActivity extends AppCompatActivity implements LoaderCall
 
 
     /**
-     * Attempts to sign in or register the account specified by the login form.
-     * If there are form errors (invalid email, missing fields, etc.), the
-     * errors are presented and no actual login attempt is made.
+     * @author yesus
      */
     private void efetuarLogin() {
 
@@ -159,8 +159,8 @@ public class LoginUnescoActivity extends AppCompatActivity implements LoaderCall
         mPasswordView.setError(null);
 
         // Store values at the time of the login attempt.
-        String email = mEmailView.getText().toString();
-        String password = mPasswordView.getText().toString();
+        final String email = mEmailView.getText().toString();
+        final String password = mPasswordView.getText().toString();
 
         boolean cancel = false;
         View focusView = null;
@@ -182,53 +182,117 @@ public class LoginUnescoActivity extends AppCompatActivity implements LoaderCall
         if (cancel) {
             focusView.requestFocus();
         } else {
-            String strURL= ConstantesREST.getURLService(ConstantesREST.AUTHENTICATION_SERVICE) +
-                    "?login="+email+"&senha="+password;
+            //Se tiver internet sempre vai no servidor.
+            if(ConnectionNetwork.verifiedInternetConnection(this)){
+                loginNoServidor( email,  password);
+                return;
+            }else {//LOGIN LOCAL
+                UsuarioDAO usuarioDAO = new UsuarioDAO(LoginUnescoActivity.this);
 
-            AsyncHttpClient client = new AsyncHttpClient();
-            client.get(strURL, new AsyncHttpResponseHandler() {
-                @Override
-                public void onStart() {
-                    showProgress(true);
-                }
+                List<Usuario> lista = usuarioDAO.listAll();
+                if (lista != null && lista.size() > 0) {
+                    for (Usuario usr : lista) {
+                        if (((usr.getLogin() != null && usr.getLogin().equals(email))
+                                ||
+                                (usr.getEmail() != null && usr.getEmail().equals(email))
+                        )
+                                &&
+                                usr.getSenha().equals(password)
+                                ) { //LOGIN CORRETO
 
-                @Override
-                public void onSuccess(int statusCode, Header[] headers, byte[] response) {
-                    String xmlRetorno = new String(response).toString();
-                    XStream xStream = new XStream(new DomDriver());
-                    Log.i("xmlRetornoLogin", xmlRetorno);
-
-                    RespAutenticacaoREST auth = (RespAutenticacaoREST) xStream.fromXML(xmlRetorno);
-
-                    if(!auth.isErro()){
-                        Identity.setUsuarioLogado(auth.getUsuario());
-                        Intent intent = new Intent(LoginUnescoActivity.this, PrincipalUnescoActivity.class);
-                        startActivity(intent);
-                    }else{
-                        new AlertDialog.Builder(LoginUnescoActivity.this)
-                                .setTitle("Appesca")
-                                .setMessage("Login ou senha inválidos!")
-                                .setIcon(android.R.drawable.ic_dialog_alert)
-                                .setPositiveButton(android.R.string.ok, null).show();
+                            Identity.setUsuarioLogado(usr);
+                            Intent intent = new Intent(LoginUnescoActivity.this, PrincipalUnescoActivity.class);
+                            startActivity(intent);
+                            Toast.makeText(getApplicationContext(), "Bem vindo ao Appesca. Conectado pela base local.", Toast.LENGTH_LONG).show();
+                            return;
+                        } else {
+                            new AlertDialog.Builder(LoginUnescoActivity.this)
+                                    .setTitle("Appesca")
+                                    .setMessage("Não foi possível autenticar este usuário na base local, é possível que a senha tenha sido alterada. Deseja se conectar aos servidores da Appesca?")
+                                    .setIcon(android.R.drawable.ic_dialog_alert)
+                                    .setPositiveButton("Realizar login pela internet", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            loginNoServidor(email, password);
+                                        }
+                                    })
+                                    .setNegativeButton(android.R.string.no, null).show();
+                            Identity.setUsuarioLogado(null);
+                        }
                     }
-
-                    showProgress(false);
+                }else{
+                    Toast.makeText(getApplicationContext(), "Não existem usuários na base local. Conecte-se na internet e tente novamente.", Toast.LENGTH_LONG).show();
                 }
-
-                @Override
-                public void onFailure(int statusCode, Header[] headers, byte[] errorResponse, Throwable e) {
-                    showProgress(false);
-
-                    mPasswordView.setError("Aconteceu um problema ao conectar.");
-                    mPasswordView.requestFocus();
-                }
-
-                @Override
-                public void onRetry(int retryNo) {
-                    showProgress(false);
-                }
-            });
+            }
         }
+    }
+
+    /**
+     * @author yesus
+     * @param email
+     * @param password
+     */
+    private void loginNoServidor(String email, String password) {
+
+        if(!ConnectionNetwork.verifiedInternetConnection(this)){
+            String mensagemErro = "Seu aparelho está sem conectividade com a internet. Por favor habilite seu WIFI ou rede de celular.";
+            Toast toast = Toast.makeText(LoginUnescoActivity.this, mensagemErro, Toast.LENGTH_LONG);
+            toast.show();
+            return;
+        }
+
+        String strURL = ConstantesREST.getURLService(ConstantesREST.AUTHENTICATION_SERVICE) +
+                "?login=" + email + "&senha=" + password;
+
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.get(strURL, new AsyncHttpResponseHandler() {
+            @Override
+            public void onStart() {
+                showProgress(true);
+            }
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] response) {
+                String xmlRetorno = new String(response).toString();
+                XStream xStream = new XStream(new DomDriver());
+                Log.i("xmlRetornoLogin", xmlRetorno);
+
+                RespAutenticacaoREST auth = (RespAutenticacaoREST) xStream.fromXML(xmlRetorno);
+
+                if (!auth.isErro()) { //LOGIN CORRETO
+                    Identity.setUsuarioLogado(auth.getUsuario());
+                    UsuarioDAO usuarioDAO = new UsuarioDAO(LoginUnescoActivity.this);
+                    usuarioDAO.save(auth.getUsuario());
+
+                    Intent intent = new Intent(LoginUnescoActivity.this, PrincipalUnescoActivity.class);
+                    startActivity(intent);
+
+                    Toast.makeText(getApplicationContext(), "Bem vindo ao Appesca", Toast.LENGTH_SHORT).show();
+                } else {
+                    new AlertDialog.Builder(LoginUnescoActivity.this)
+                            .setTitle("Appesca")
+                            .setMessage("Login ou senha inválidos!")
+                            .setIcon(android.R.drawable.ic_dialog_alert)
+                            .setPositiveButton(android.R.string.ok, null).show();
+                    Identity.setUsuarioLogado(null);
+                }
+
+                showProgress(false);
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] errorResponse, Throwable e) {
+                showProgress(false);
+
+                mPasswordView.setError("Aconteceu um problema ao conectar.");
+                mPasswordView.requestFocus();
+            }
+
+            @Override
+            public void onRetry(int retryNo) {
+                showProgress(false);
+            }
+        });
     }
 
     private boolean isEmailValid(String email) {
@@ -302,13 +366,11 @@ public class LoginUnescoActivity extends AppCompatActivity implements LoaderCall
             emails.add(cursor.getString(ProfileQuery.ADDRESS));
             cursor.moveToNext();
         }
-
         addEmailsToAutoComplete(emails);
     }
 
     @Override
     public void onLoaderReset(Loader<Cursor> cursorLoader) {
-
     }
 
     private void addEmailsToAutoComplete(List<String> emailAddressCollection) {
@@ -320,7 +382,6 @@ public class LoginUnescoActivity extends AppCompatActivity implements LoaderCall
         mEmailView.setAdapter(adapter);
     }
 
-
     private interface ProfileQuery {
         String[] PROJECTION = {
                 ContactsContract.CommonDataKinds.Email.ADDRESS,
@@ -330,7 +391,5 @@ public class LoginUnescoActivity extends AppCompatActivity implements LoaderCall
         int ADDRESS = 0;
         int IS_PRIMARY = 1;
     }
-
-
 }
 

@@ -167,8 +167,7 @@
                         android:layout_height="wrap_content"
                         android:text="Outros. Quais?"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/opcao_o"
-                        android:checked="false" />
+                        android:id="@+id/opcao_o"/>
                     <EditText
                         android:layout_width="241dp"
                         android:layout_height="wrap_content"

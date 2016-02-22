@@ -7,11 +7,15 @@ import java.util.List;
 /**
  * Created by yesus on 1/12/16.
  */
-public class Equipe implements Serializable{
+public class Equipe extends BaseModel implements Serializable{
+
+
+    private static final long serialVersionUID = -4258798850777666253L;
 
     private Integer id;
     private String nome;
-    private String descricao;
+    private String ultimosAvisos;
+    private String regulamento;
 
     private Usuario coordenador;
 
@@ -35,12 +39,20 @@ public class Equipe implements Serializable{
         this.nome = nome;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getUltimosAvisos() {
+        return ultimosAvisos;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setUltimosAvisos(String ultimosAvisos) {
+        this.ultimosAvisos = ultimosAvisos;
+    }
+
+    public String getRegulamento() {
+        return regulamento;
+    }
+
+    public void setRegulamento(String regulamento) {
+        this.regulamento = regulamento;
     }
 
     public Usuario getCoordenador() {

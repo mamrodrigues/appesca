@@ -22,7 +22,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Questão 05"
+                android:text="Bloco 1 - Questão 05"
                 android:textColor="@android:color/white"
                 android:textSize="40dp"
                 android:gravity="center"
@@ -68,49 +68,54 @@
                     android:layout_height="wrap_content"
                     android:paddingLeft="30dp">
 
-                    <CheckBox
+                    <RadioGroup
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="rede de distribuiçāo"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp1" />
+                        android:orientation="vertical">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="rede de distribuiçāo"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg1_rb_resp3" />
 
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="poço"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp2" />
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="poço"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg1_rb_resp3" />
 
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Pega do rio (ou igarapé) com o balde"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp3" />
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Pega do rio (ou igarapé) com o balde"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg1_rb_resp3" />
 
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Usa bomba elétrica para puxar a água do rio (ou igarapé)"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp4" />
-
-
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Outro. Qual?"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp5" />
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Usa bomba elétrica para puxar a água do rio (ou igarapé)"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg1_rb_resp4" />
 
 
-                    <EditText
-                        android:layout_width="241dp"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/perg1_et_resp1"
-                        android:textAppearance="@style/style_resposta"
-                        android:lines="2" />
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Outro. Qual?"
+                                android:textAppearance="@style/style_resposta"
+                                android:id="@+id/perg1_rb_resp5" />
+
+
+                            <EditText
+                                android:layout_width="241dp"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/perg1_et_resp6"
+                                android:textAppearance="@style/style_resposta"
+                                android:lines="2" />
+                    </RadioGroup>
                 </LinearLayout>
             </LinearLayout>
 

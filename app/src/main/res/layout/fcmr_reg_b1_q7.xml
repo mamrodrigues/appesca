@@ -22,7 +22,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Questão 07"
+                android:text="Bloco 1 - Questão 07"
                 android:textColor="@android:color/white"
                 android:textSize="40dp"
                 android:gravity="center"
@@ -68,49 +68,48 @@
                     android:layout_height="wrap_content"
                     android:paddingLeft="30dp">
 
-                    <CheckBox
+                    <RadioGroup
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="é queimado"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp1" />
+                            android:orientation="vertical">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="é queimado"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/perg1_rb_resp3" />
 
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="é enterrado"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp2" />
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="é enterrado"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/perg1_rb_resp3" />
 
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="jogado no terreno"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp3" />
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="jogado no terreno"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/perg1_rb_resp3" />
 
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="jogado em rio, igarapé, lago ou mar"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp4" />
-
-
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Outro. Qual?"
-                        android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg1_cb_resp5" />
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="jogado em rio, igarapé, lago ou mar"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/perg1_rb_resp4" />
 
 
-                    <EditText
-                        android:layout_width="241dp"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/perg1_et_resp1"
-                        android:textAppearance="@style/style_resposta"
-                        android:lines="2" />
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Outro"
+                            android:textAppearance="@style/style_resposta"
+                            android:id="@+id/perg1_rb_resp5"
+                          />
+                    </RadioGroup>
+
                 </LinearLayout>
             </LinearLayout>
 

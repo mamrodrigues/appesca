@@ -22,7 +22,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Questão 10"
+                android:text="Bloco 1 - Questão 10"
                 android:textColor="@android:color/white"
                 android:textSize="40dp"
                 android:gravity="center"
@@ -53,15 +53,14 @@
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:checkedButton="@+id/perg1_rb_resp1">
+                android:orientation="horizontal">
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sim"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/perg1_rb_resp1"
-                android:checked="false"
+                android:id="@+id/perg1_rb_resp3"
+                
                 android:paddingRight="15dp"/>
 
             <RadioButton
@@ -69,8 +68,8 @@
                 android:layout_height="wrap_content"
                 android:text="Não"
                 android:textAppearance="@style/style_resposta"
-                android:id="@+id/perg1_rb_resp2"
-                android:checked="false"
+                android:id="@+id/perg1_rb_resp3"
+                
                 android:paddingRight="15dp"/>
             </RadioGroup>
         </LinearLayout>
@@ -80,21 +79,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/perg2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="5dp"
-                android:textAppearance="@style/style_questao"
-                android:text="Se sim, quantos?"/>
-
         </LinearLayout>
-
-        <EditText
-            android:layout_width="241dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/perg2_et_resp1"
-            android:paddingBottom="5dp"/>
 
         <LinearLayout
             android:orientation="vertical"
@@ -143,35 +128,35 @@
                     android:layout_height="wrap_content"
                     android:text="Associação de mulheres"
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/perg3_cb_resp3" />
+                    android:id="@+id/perg2_cb_resp3" />
 
                 <CheckBox
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Colônia de pescadores"
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/perg3_cb_resp4" />
+                    android:id="@+id/perg2_cb_resp4" />
 
                 <CheckBox
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Sindicato de pescadores"
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/perg3_cb_resp5"  />
+                    android:id="@+id/perg2_cb_resp5"  />
 
                 <CheckBox
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Sindicato dos Trabalhadores Rurais"
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/perg3_cb_resp6" />
+                    android:id="@+id/perg2_cb_resp6" />
 
                 <CheckBox
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Cooperativas de pesca"
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/perg3_cb_resp7" />
+                    android:id="@+id/perg2_cb_resp7" />
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -182,12 +167,12 @@
                         android:layout_height="wrap_content"
                         android:text="Outras. Quais?"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg3_cb_resp8" />
+                        android:id="@+id/perg2_cb_resp8" />
 
                     <EditText
                         android:layout_width="241dp"
                         android:layout_height="wrap_content"
-                        android:id="@+id/perg3_et_resp1"
+                        android:id="@+id/perg2_et_resp9"
                         android:textAppearance="@style/style_resposta" />
                 </LinearLayout>
             </LinearLayout>
@@ -217,15 +202,13 @@
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:checkedButton="@+id/perg4_rb_resp1">
+                android:orientation="horizontal">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Sim"
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/perg4_rb_resp1"
-                    android:checked="false"
+                    android:id="@+id/perg3_rb_resp1"
                     android:paddingRight="15dp"/>
 
                 <RadioButton
@@ -233,8 +216,7 @@
                     android:layout_height="wrap_content"
                     android:text="Não"
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/perg4_rb_resp2"
-                    android:checked="false"
+                    android:id="@+id/perg3_rb_resp2"
                     android:paddingRight="15dp"/>
             </RadioGroup>
         </LinearLayout>
@@ -273,14 +255,14 @@
                     android:layout_height="wrap_content"
                     android:text="Mãe"
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/perg5_cb_resp1" />
+                    android:id="@+id/perg4_cb_resp1" />
 
                 <CheckBox
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Pai"
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/perg5_cb_resp2" />
+                    android:id="@+id/perg4_cb_resp2" />
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -292,12 +274,12 @@
                         android:layout_height="wrap_content"
                         android:text="Irmão / irmã. Quantos?"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg5_cb_resp3" />
+                        android:id="@+id/perg4_cb_resp3" />
 
                     <EditText
                         android:layout_width="241dp"
                         android:layout_height="wrap_content"
-                        android:id="@+id/perg5_et_resp1"
+                        android:id="@+id/perg4_et_resp4"
                         android:textAppearance="@style/style_resposta"
                         android:paddingBottom="5dp"/>
                 </LinearLayout>
@@ -307,7 +289,7 @@
                     android:layout_height="wrap_content"
                     android:text="Marido / esposa"
                     android:textAppearance="@style/style_resposta"
-                    android:id="@+id/perg5_cb_resp4" />
+                    android:id="@+id/perg4_cb_resp5" />
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -319,12 +301,12 @@
                         android:layout_height="wrap_content"
                         android:text="Filha / filho. Quantos?"
                         android:textAppearance="@style/style_resposta"
-                        android:id="@+id/perg5_cb_resp5" />
+                        android:id="@+id/perg4_cb_resp6" />
 
                     <EditText
                         android:layout_width="241dp"
                         android:layout_height="wrap_content"
-                        android:id="@+id/perg5_et_resp2"
+                        android:id="@+id/perg4_et_resp7"
                         android:textAppearance="@style/style_resposta" />
 
                 </LinearLayout>

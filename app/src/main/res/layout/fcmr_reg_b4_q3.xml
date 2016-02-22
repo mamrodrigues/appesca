@@ -22,7 +22,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Questão 03"
+                android:text="Bloco 4 - Questão 03"
                 android:textColor="@android:color/white"
                 android:textSize="40dp"
                 android:gravity="center"
@@ -55,15 +55,13 @@ ambiente aqui na região?"/>
                 <RadioGroup
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:checkedButton="@+id/perg1_rb_resp1">
+                    android:orientation="horizontal">
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Sim"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/perg1_rb_resp1"
-                        android:checked="false"
                         android:paddingRight="15dp"/>
 
                     <RadioButton
@@ -72,7 +70,6 @@ ambiente aqui na região?"/>
                         android:text="Não"
                         android:textAppearance="@style/style_resposta"
                         android:id="@+id/perg1_rb_resp2"
-                        android:checked="false"
                         android:paddingRight="15dp"/>
                 </RadioGroup>
             </LinearLayout>
@@ -153,7 +150,7 @@ ambiente aqui na região?"/>
                     <EditText
                         android:layout_width="241dp"
                         android:layout_height="wrap_content"
-                        android:id="@+id/perg2_et_resp1"
+                        android:id="@+id/perg2_et_resp8"
                         android:textAppearance="@style/style_resposta"
                         android:lines="2" />
                 </LinearLayout>

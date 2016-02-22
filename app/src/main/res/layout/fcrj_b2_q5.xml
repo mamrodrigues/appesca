@@ -59,7 +59,7 @@
                 android:text="Sim"
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/sim"
-                android:checked="false"
+
                 android:paddingRight="15dp"/>
 
             <RadioButton
@@ -68,7 +68,7 @@
                 android:text="Não"
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/nao"
-                android:checked="false"
+
                 android:paddingRight="15dp"/>
 
 
@@ -103,7 +103,7 @@
                 android:text="Compra de material de pesca"
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/opcao_a"
-                android:checked="false" />
+              />
 
             <CheckBox
                 android:layout_width="wrap_content"
@@ -111,7 +111,7 @@
                 android:text="Compra de embarcação"
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/opcao_b"
-                android:checked="false" />
+              />
 
             <CheckBox
                 android:layout_width="wrap_content"
@@ -119,7 +119,7 @@
                 android:text="Beneficiamento de pescado"
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/opcao_c"
-                android:checked="false" />
+              />
 
             <CheckBox
                 android:layout_width="wrap_content"
@@ -127,7 +127,7 @@
                 android:text="Produção agrícola"
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/opcao_d"
-                android:checked="false" />
+              />
 
             <CheckBox
                 android:layout_width="wrap_content"
@@ -135,7 +135,7 @@
                 android:text="Criação de animais"
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/opcao_e"
-                android:checked="false" />
+              />
 
             <CheckBox
                 android:layout_width="wrap_content"
@@ -143,7 +143,7 @@
                 android:text="Pequenos empreendimentos"
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/opcao_f"
-                android:checked="false" />
+              />
 
             <CheckBox
                 android:layout_width="wrap_content"
@@ -151,7 +151,7 @@
                 android:text="Artesanato"
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/opcao_g"
-                android:checked="false" />
+              />
 
             <CheckBox
                 android:layout_width="wrap_content"
@@ -159,7 +159,7 @@
                 android:text="Beneficiamento de produtos extrativistas"
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/opcao_h"
-                android:checked="false" />
+              />
 
             <CheckBox
                 android:layout_width="wrap_content"
@@ -167,7 +167,7 @@
                 android:text="Outros. Quais?"
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/opcao_i"
-                android:checked="false" />
+              />
 
             <EditText
                 android:layout_width="241dp"
@@ -206,7 +206,7 @@
                 android:text="Banco da Amazônia"
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/opcao_a2"
-                android:checked="false" />
+              />
 
             <CheckBox
                 android:layout_width="wrap_content"
@@ -214,7 +214,7 @@
                 android:text=" Banco do Nordeste"
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/opcao_b2"
-                android:checked="false" />
+              />
 
             <CheckBox
                 android:layout_width="wrap_content"
@@ -222,7 +222,7 @@
                 android:text="Caixa Econômica"
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/opcao_c2"
-                android:checked="false" />
+              />
 
             <CheckBox
                 android:layout_width="wrap_content"
@@ -230,7 +230,7 @@
                 android:text="Banco do Pará"
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/opcao_d2"
-                android:checked="false" />
+              />
 
             <CheckBox
                 android:layout_width="wrap_content"
@@ -238,7 +238,7 @@
                 android:text="Banco do Brasil"
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/opcao_e2"
-                android:checked="false" />
+              />
 
 
             <CheckBox
@@ -247,7 +247,7 @@
                 android:text="Outros. Quais?"
                 android:textAppearance="@style/style_resposta"
                 android:id="@+id/opcao_f2"
-                android:checked="false" />
+              />
 
             <EditText
                 android:layout_width="241dp"

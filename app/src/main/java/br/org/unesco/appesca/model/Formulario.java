@@ -12,7 +12,7 @@ public class Formulario implements java.io.Serializable {
 	private int idTipoFormulario;
 	private int idUsuario;
 	private Date dataAplicacao;
-	private boolean isEnviado;
+	private int situacao;
 	private List<Questao> listQuestoes;
 
 	public Formulario() {
@@ -65,19 +65,19 @@ public class Formulario implements java.io.Serializable {
 		this.dataAplicacao = dataAplicacao;
 	}
 
-	public boolean isEnviado() {
-		return isEnviado;
-	}
-
-	public void setIsEnviado(boolean isEnviado) {
-		this.isEnviado = isEnviado;
-	}
-
 	public List<Questao> getListQuestoes() {
 		return listQuestoes;
 	}
 
 	public void setListQuestoes(List<Questao> listQuestoes) {
 		this.listQuestoes = listQuestoes;
+	}
+
+	public int getSituacao() {
+		return situacao;
+	}
+
+	public void setSituacao(int situacao) {
+		this.situacao = situacao;
 	}
 }

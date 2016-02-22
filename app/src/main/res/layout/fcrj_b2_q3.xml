@@ -107,7 +107,7 @@
                             android:text="M"
                             android:textAppearance="@style/style_resposta"
                             android:id="@+id/masculino_a"
-                            android:checked="false"/>
+                         />
 
                         <RadioButton
                             android:layout_width="wrap_content"
@@ -115,7 +115,7 @@
                             android:text="F"
                             android:textAppearance="@style/style_resposta"
                             android:id="@+id/feminino_a"
-                            android:checked="false"/>
+                         />
                     </TableRow>
                 </TableLayout>
 
@@ -149,7 +149,7 @@
                             android:text="M"
                             android:textAppearance="@style/style_resposta"
                             android:id="@+id/masculino_b"
-                            android:checked="false"/>
+                         />
 
                         <RadioButton
                             android:layout_width="wrap_content"
@@ -157,7 +157,7 @@
                             android:text="F"
                             android:textAppearance="@style/style_resposta"
                             android:id="@+id/feminino_b"
-                            android:checked="false"/>
+                         />
                     </TableRow>
                 </TableLayout>
 
@@ -191,7 +191,7 @@
                             android:text="M"
                             android:textAppearance="@style/style_resposta"
                             android:id="@+id/masculino_c"
-                            android:checked="false"/>
+                         />
 
                         <RadioButton
                             android:layout_width="wrap_content"
@@ -199,7 +199,7 @@
                             android:text="F"
                             android:textAppearance="@style/style_resposta"
                             android:id="@+id/feminino_c"
-                            android:checked="false"/>
+                         />
                     </TableRow>
                 </TableLayout>
 
@@ -232,7 +232,7 @@
                             android:text="M"
                             android:textAppearance="@style/style_resposta"
                             android:id="@+id/masculino_d"
-                            android:checked="false"/>
+                         />
 
                         <RadioButton
                             android:layout_width="wrap_content"
@@ -240,7 +240,7 @@
                             android:text="F"
                             android:textAppearance="@style/style_resposta"
                             android:id="@+id/feminino_d"
-                            android:checked="false"/>
+                         />
                     </TableRow>
                 </TableLayout>
 
